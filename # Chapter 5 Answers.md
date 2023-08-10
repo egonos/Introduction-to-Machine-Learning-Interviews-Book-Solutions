@@ -69,3 +69,32 @@ Conversely, if a metric has the above properties, then d(u,0)
 More informally, the metric induced by a norm "plays nicely" with the vector space structure. The usual metric on Rn has the two properties mentioned above. But there are metrics on Rn that are topologically equivalent to the usual metric, but not translation invariant, and so are not induced by a norm.
 
 (ref: https://math.stackexchange.com/questions/38634/difference-between-metric-and-norm-made-concrete-the-case-of-euclid)
+
+
+# 5.1.2 Matrices
+
+**1.** Why do we say that matrices are linear transformations?
+
+Definition. A linear transformation is a transformation T : R n → R m satisfying. T ( u + v )= T ( u )+ T ( v ) T ( cu )= cT ( u ) for all vectors u , v in R n and all scalars c .
+
+T(x)=the counter clockwise rotation of x by 90◦.
+
+(ref: https://textbooks.math.gatech.edu/ila/linear-transformations.html#:~:text=come%20from%20matrices.-,Definition,n%20and%20all%20scalars%20c%20.)
+
+By using matricies we can do that. For instance:
+
+v = [[1,1,1],[1,1,1],[1,1,1]] -> R3
+
+3v = [[3,3,3],[3,3,3],[3,3,3]] -> R3
+
+u = [2,2,2]T -> R
+
+j = [1,1,1]T 
+<v,u> = [[2,2,2],[2,2,2],[2,2,2]] -> R3
+
+T(u+v) = [[2,2,2],[2,2,2],[2,2,2]] =  cT( u ) where c = 1
+
+**2.** What’s the inverse of a matrix? Do all matrices have an inverse? Is the inverse of a matrix always unique?
+
+Let A-1 be the inverse of matrix A. Then <A-1,A> = I. No all the matrix have an inverse (has to be square matrix and det(A) != 0)and the inverse of a matrix does not have to be unique.
+
