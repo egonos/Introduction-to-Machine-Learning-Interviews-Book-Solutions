@@ -104,3 +104,14 @@ Let A-1 be the inverse of matrix A. Then <A-1,A> = I. No all the matrix have an 
 **4.** What happens to the determinant of a matrix if we multiply one of its rows by a scalar ?
 
 Also multiplied with the same scaler. Consider these examples:
+
+![Matrix Determinants](image.png)
+
+ **5.** A  4×4 matrix has four eigenvalues  3,3,2,−1. What can we say about the trace and the determinant of this matrix?
+
+ ****
+
+ 
+**6.**Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
+
+Col1 = Col3*(-0.5); ;No llinear independency. Det(A) = 0
