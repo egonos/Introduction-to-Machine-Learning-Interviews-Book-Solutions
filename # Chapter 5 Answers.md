@@ -52,7 +52,7 @@ To represent d dimensions we have to have d number of linear independent vectors
 
 * i. What's a norm? What is  L0,L1,L2,Lnorm?
 
-Norm is a metric to compute the distantance between two vectors.
+Norm is a metric to compute the distantance between two vectors. Norms listed in the question are differ from each other in terms of the way of defining the distance. For example let's take the most common ones. L1 = |x1-x2| & L2 = sqrt{(x1-x2)**2}
 
 * ii. How do norm and metric differ? Given a norm, make a metric. Given a metric, can we make a norm?
 
@@ -81,20 +81,22 @@ T(x)=the counter clockwise rotation of x by 90◦.
 
 (ref: https://textbooks.math.gatech.edu/ila/linear-transformations.html#:~:text=come%20from%20matrices.-,Definition,n%20and%20all%20scalars%20c%20.)
 
-By using matricies we can do that. For instance:
+Formally to prove a claim is true, we have to use x and y's but for the sake of understanding I will use numerical examples.
 
-v = [[1,1,1],[1,1,1],[1,1,1]] -> R3
+v = [[1,1,1],[1,1,1],[1,1,1]]  ; c = 3
 
-3v = [[3,3,3],[3,3,3],[3,3,3]] -> R3
+3v = [[3,3,3],[3,3,3],[3,3,3]]   {T ( cu )= cT ( u ), the result is the same if we mulptiply elementwise}
 
-u = [2,2,2]T -> R
+u = [2,2,2]
 
-j = [1,1,1]T 
-<v,u> = [[2,2,2],[2,2,2],[2,2,2]] -> R3
+j = [1,1,1]
 
-T(u+v) = [[2,2,2],[2,2,2],[2,2,2]] =  cT( u ) where c = 1
+u+j = [3,3,3] {T ( u + v )= T ( u )+ T ( v ), the result is the same if we sum up the values elementwise}
 
 **2.** What’s the inverse of a matrix? Do all matrices have an inverse? Is the inverse of a matrix always unique?
 
 Let A-1 be the inverse of matrix A. Then <A-1,A> = I. No all the matrix have an inverse (has to be square matrix and det(A) != 0)and the inverse of a matrix does not have to be unique.
 
+**3.**  What does the determinant of a matrix represent?
+
+> *In mathematics, the determinant is a scalar value that is a function of the entries of a square matrix. It characterizes some properties of the matrix and the linear map > represented by the matrix. In particular, the determinant is nonzero if and only if the matrix is invertible and the linear map represented by the matrix is an isomorphism. The > determinant of a product of matrices is the product of their determinants (the preceding property is a corollary of this one). The determinant of a matrix A is denoted det(A), det A, > or |A|*. (https://en.wikipedia.org/wiki/Determinant)
