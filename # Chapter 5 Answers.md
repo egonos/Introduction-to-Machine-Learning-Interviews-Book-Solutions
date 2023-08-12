@@ -105,7 +105,7 @@ Let A-1 be the inverse of matrix A. Then <A-1,A> = I. No all the matrix have an 
 
 Also multiplied with the same scaler. Consider these examples:
 
-![MatrixDeterminants](./Images/Matrix%20Determinants.png)
+![Matrix%20Determinants](Images/Matrix%20Determinants.png)
 
  **5.** A  4×4 matrix has four eigenvalues  3,3,2,−1. What can we say about the trace and the determinant of this matrix?
 
@@ -133,7 +133,7 @@ Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 
 No it is not. Consider these eigenvalue-eigenvector pairs:
 
-![eigenvector](eigenvector.png)
+![eigenvector](Images/eigenvector.png)
 
 **3.** Name some applications of eigenvalues and eigenvectors.
 
