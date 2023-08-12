@@ -112,7 +112,7 @@ Also multiplied with the same scaler. Consider these examples:
  ****
 
 
-**6.**Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
+**6.** Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
 
 Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 
