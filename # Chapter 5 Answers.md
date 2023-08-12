@@ -111,7 +111,27 @@ Also multiplied with the same scaler. Consider these examples:
 
  ****
 
- 
+
 **6.**Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
 
-Col1 = Col3*(-0.5); ;No llinear independency. Det(A) = 0
+Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
+
+**7.** What’s the difference between the covariance matrix  ATA and the Gram matrix  AAT?
+
+****
+
+# 5.1.3 Dimensionality reduction
+
+**1.** Why do we need dimensionality reduction?
+
+* To decrease computational requirements
+* To visualize the data
+
+**An important note from Andrew NG:** Don't use dimension reduction for regularization!
+
+
+**4.** We want to do PCA on a dataset of multiple features in different ranges. For example, one is in the range 0-1 and one is in the range 10 - 1000. Will PCA work on this dataset?
+
+No beacuse PCA algorithm uses distance metrics while converging. If we have predictors having different scales the algorithm won't work properly.
+
+! (PCA.png)
