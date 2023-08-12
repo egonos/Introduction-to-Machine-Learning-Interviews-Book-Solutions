@@ -161,3 +161,28 @@ By using SVD, we can run PCA.
 **6.** How does t-SNE (T-distributed Stochastic Neighbor Embedding) work? Why do we need it?
 
 https://www.youtube.com/watch?v=NEaUSP4YerM
+
+# 5.1.4 Calculus and convex optimization
+
+**1.** Differentiable functions
+
+* i. What does it mean when a function is differentiable?
+
+Let f be a differable function at R. Then for ∀x in R f'(x) exists.
+
+* ii. Give an example of when a function doesn’t have a derivative at a point.
+
+f(x) = x ∀ x>= 0
+f(x) = -x ∀ x<= 0
+
+* iii. Give an example of non-differentiable functions that are frequently used in machine learning. How do we do backpropagation if those functions aren’t differentiable?
+
+ReLU & any form of subgradients. We have to choose a really small step size so that we can converge the optima.
+
+**2.** Convexity
+* i. What does it mean for a function to be convex or concave? Draw it.
+* ii. Why is convexity desirable in an optimization problem?
+* iii. Show that the cross-entropy loss function is convex.
+
+![Convex](Images/Convex.png)
+
