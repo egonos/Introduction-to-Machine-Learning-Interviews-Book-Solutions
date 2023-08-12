@@ -144,7 +144,7 @@ As a centrality measure in Network Science (Eigenvector Centrality)
 
 No beacuse PCA algorithm uses distance metrics while converging. If we have predictors having different scales the algorithm won't work properly.
 
-![PCA](PCA.png)
+![PCA](Images/PCA.png)
 
 **5.** Under what conditions can one apply eigendecomposition? What about SVD?
 
