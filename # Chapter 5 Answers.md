@@ -151,6 +151,7 @@ No beacuse PCA algorithm uses distance metrics while converging. If we have pred
 We can only apply eigendecomposition if the matrix A is diagonizable.
 
 * i. What is the relationship between SVD and eigendecomposition?
+
 SVD is the generalized form of eigendecomposition i.e. SVD can be applied to any matrix, whether it's square or not. 
 
 * What’s the relationship between PCA and SVD?
