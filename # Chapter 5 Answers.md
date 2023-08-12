@@ -133,7 +133,9 @@ Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 
 No it is not. Consider these eigenvalue-eigenvector pairs:
 
-![eigenvalue-eigenvector](eigenvalue-eigenvector.png)
+
+
+![eigenvector](eigenvector.png)
 
 A-> matrix
 lambda,u-> Eigenvalue eigenvector pairs.
