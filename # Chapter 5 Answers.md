@@ -105,7 +105,7 @@ Let A-1 be the inverse of matrix A. Then <A-1,A> = I. No all the matrix have an 
 
 Also multiplied with the same scaler. Consider these examples:
 
-![Matrix Determinants](image.png)
+![Matrix Determinants](Images/Matrix Determinants.png)
 
  **5.** A  4×4 matrix has four eigenvalues  3,3,2,−1. What can we say about the trace and the determinant of this matrix?
 
