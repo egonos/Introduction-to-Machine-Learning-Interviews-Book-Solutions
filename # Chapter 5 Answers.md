@@ -133,12 +133,8 @@ Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 
 No it is not. Consider these eigenvalue-eigenvector pairs:
 
-
-
 ![eigenvector](eigenvector.png)
 
-A-> matrix
-lambda,u-> Eigenvalue eigenvector pairs.
 
 **4.** We want to do PCA on a dataset of multiple features in different ranges. For example, one is in the range 0-1 and one is in the range 10 - 1000. Will PCA work on this dataset?
 
