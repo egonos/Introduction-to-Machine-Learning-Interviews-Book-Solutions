@@ -186,3 +186,26 @@ ReLU & any form of subgradients. We have to choose a really small step size so t
 
 ![Convex](Images/Convex.png)
 
+3. Given a logistic discriminant classifier:
+
+p(y=1|x)=σ(wTx)
+ 
+where the sigmoid function is given by:
+
+σ(z)=(1+exp(−z))−1
+ 
+The logistic loss for a training sample  xi
+  with class label  yi
+  is given by:
+
+L(yi,xi;w)=−logp(yi|xi)
+ 
+Show that  p(y=−1|x)=σ(−wTx)
+ 
+Show that  ΔwL(yi,xi;w)=−yi(1−p(yi|xi))xi
+ 
+Show that  ΔwL(yi,xi;w) is convex.
+
+![Proof1](Images/Proof1.png)
+
+![Proof2](Images/Proof2.png)
