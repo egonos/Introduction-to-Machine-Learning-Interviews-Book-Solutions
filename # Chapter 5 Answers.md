@@ -134,4 +134,4 @@ Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 
 No beacuse PCA algorithm uses distance metrics while converging. If we have predictors having different scales the algorithm won't work properly.
 
-! (PCA.png)
+![PCA](PCA.png)
