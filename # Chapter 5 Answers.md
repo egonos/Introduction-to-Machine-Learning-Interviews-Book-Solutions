@@ -209,3 +209,5 @@ Show that  ΔwL(yi,xi;w) is convex.
 ![Proof1](Images/Proof1.png)
 
 ![Proof2](Images/Proof2.png)
+
+iii. I've already showed the convexity of loss function.
