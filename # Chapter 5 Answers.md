@@ -309,7 +309,14 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 
 **1.** Explain frequentist vs. Bayesian statistics.
 
-*********
+Frequenistics argue that events are relevant to frequencies. Given the model, how does outcome change?
+
+* They utilize likelihoods.
+
+
+Bayesians claim that events are about beliefs. Given the data, how does model varies? 
+
+* They utilize Bayes Theorem and prior probabilities to compute posterior probabilities.
 
 **2.** Given the array  [1,5,3,2,4,4] find its mean, median, variance, and standard deviation.
 
@@ -320,9 +327,17 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 
 When the distribution is skewed, the mean losses it's interpretability. Consider power law distributions. Mean means almost nothing in that case. Median is a lot better metric.
 
-The median mean losses its interpretability when the data is not ordered or the gap between the values are too much. In these kind of scenarios, the median is a better choice.
+The median losses its interpretability when the data is not ordered or the gap between the values are too much. In these kind of scenarios, the median is a better choice.
 
 
 **4.** What is a moment of function? Explain the meanings of the zeroth to fourth moments.
 
+0th moment is 1 (referes to total probability) and fourth moment is kurtosis. The moments are used for interpreting distances from a reference point (0). Each moment is defined as Σx**moment_number/n in crude form. 
+
+To eliminate the effect of previous moments, we generally substract the previous moments from the crude forms. Finally we standardize the results and get 1,mean,variance,skewness,kurtosis.
+
 **5.** Are independence and zero covariance the same? Give a counterexample if not.
+
+Coveraience is about linear independency on the other hand independency does not have to be linear. Any non linear relationship can given as an example.
+
+y = x**2
