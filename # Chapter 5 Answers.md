@@ -292,12 +292,18 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 
 * ii. What’s the probability that a person has the disease if two independent tests both come back positive?
 
+
+![Probability14](Images/Probability14.png)
+
 **15.** A dating site allows users to select 10 out of 50 adjectives to describe themselves. Two users are said to match if they share at least 5 adjectives. If Jack and Jin randomly pick adjectives, what is the probability that they match?
+
+
+![Probability15](Images/Probability15.png)
 
 **16.** Consider a person A whose sex we don’t know. We know that for the general human height, there are two distributions: the height of males follows  hm=N(μm,σ2m)and the height of females follows  hj=N(μj,σ2j). Derive a probability density function to describe A’s height.
 
-**17.** There are three weather apps, each the probability of being wrong ⅓ of the time. What’s the probability that it will be foggy in San Francisco tomorrow if all the apps predict that it’s going to be foggy in San Francisco tomorrow and during this time of the year, San Francisco is foggy 50% of the time? Hint: you’d need to consider both the cases where all the apps are independent and where they are dependent.
+*****
 
-**18.** Given  n samples from a uniform distribution  [0,d]. How do you estimate  d? (Also known as the German tank problem)
+
 
 
