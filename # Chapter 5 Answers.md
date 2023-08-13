@@ -305,5 +305,24 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 *****
 
 
+# 5.2.2 Stats
+
+**1.** Explain frequentist vs. Bayesian statistics.
+
+*********
+
+**2.** Given the array  [1,5,3,2,4,4] find its mean, median, variance, and standard deviation.
+
+![Stats](Images/Stats1.png)
 
 
+**3.** When should we use median instead of mean? When should we use mean instead of median?
+
+When the distribution is skewed, the mean losses it's interpretability. Consider power law distributions. Mean means almost nothing in that case. Median is a lot better metric.
+
+The median mean losses its interpretability when the data is not ordered or the gap between the values are too much. In these kind of scenarios, the median is a better choice.
+
+
+**4.** What is a moment of function? Explain the meanings of the zeroth to fourth moments.
+
+**5.** Are independence and zero covariance the same? Give a counterexample if not.
