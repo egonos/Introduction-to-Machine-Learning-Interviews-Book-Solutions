@@ -283,7 +283,7 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 
 * ii. Suppose you now get two chips coming from the same company, but you don’t know which one. When you test the first chip, it appears to be functioning. What is the probability that the second electronic chip is also good?
 
-<img src="Images/Probability1.png" alt="Probability1" width="200"/>
+![Probability1](Images/Probability1.png)
 
 **14.** There’s a rare disease that only 1 in 10000 people get. Scientists have developed a test to diagnose the disease with the false positive rate and false negative rate of 1%.
 
