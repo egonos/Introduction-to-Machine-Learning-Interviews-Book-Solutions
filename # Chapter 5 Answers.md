@@ -266,3 +266,27 @@ P = (0.9)**20
 If X and Y are independent then P(X|Y) = P(X)
 
 If not, P(X|Y)*P(Y) =  P(X∩Y); P(X) = ΣP(X|Y=y) * P(Y=y) {for all y∈Y}
+
+**12.** You know that your colleague Jason has two children and one of them is a boy. What’s the probability that Jason has two sons? Hint: it’s not  12
+ 
+ ********
+
+**13.** There are only two electronic chip manufacturers: A and B, both manufacture the same amount of chips. A makes defective chips with a probability of 30%, while B makes defective chips with a probability of 70%.
+
+* i. If you randomly pick a chip from the store, what is the probability that it is defective?
+* ii. Suppose you now get two chips coming from the same company, but you don’t know which one. When you test the first chip, it appears to be functioning. What is the probability that the second electronic chip is also good?
+
+**14.** There’s a rare disease that only 1 in 10000 people get. Scientists have developed a test to diagnose the disease with the false positive rate and false negative rate of 1%.
+
+* i. Given a person is diagnosed positive, what’s the probability that this person actually has the disease?
+* ii. What’s the probability that a person has the disease if two independent tests both come back positive?
+
+**15.** A dating site allows users to select 10 out of 50 adjectives to describe themselves. Two users are said to match if they share at least 5 adjectives. If Jack and Jin randomly pick adjectives, what is the probability that they match?
+
+**16.** Consider a person A whose sex we don’t know. We know that for the general human height, there are two distributions: the height of males follows  hm=N(μm,σ2m)and the height of females follows  hj=N(μj,σ2j). Derive a probability density function to describe A’s height.
+
+**17.** There are three weather apps, each the probability of being wrong ⅓ of the time. What’s the probability that it will be foggy in San Francisco tomorrow if all the apps predict that it’s going to be foggy in San Francisco tomorrow and during this time of the year, San Francisco is foggy 50% of the time? Hint: you’d need to consider both the cases where all the apps are independent and where they are dependent.
+
+**18.** Given  n samples from a uniform distribution  [0,d]. How do you estimate  d? (Also known as the German tank problem)
+ 
+
