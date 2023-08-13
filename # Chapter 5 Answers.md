@@ -211,3 +211,58 @@ Show that  ΔwL(yi,xi;w) is convex.
 ![Proof2](Images/Proof2.png)
 
 iii. I've already showed the convexity of loss function.
+
+# 5.1.4 Probability
+
+**1.** Given a uniform random variable in the range of inclusively. What’s the probability that ?
+
+Say the random vairable m found in range n then the probability of m is 1/n.
+
+**2.** Can the values of PDF be greater than 1? If so, how do we interpret PDF?
+
+Yes it could be.
+
+**3.** What’s the difference between multivariate distribution and multimodal distribution?
+
+* Multimodal distribution: A distribution having more than one peaks.
+* Multivariate distribution: A distribution depending on multiple predictors.
+
+**4.** What does it mean for two variables to be independent?
+
+It means a change in one is irrelevant for the other.
+
+**5.** It’s a common practice to assume an unknown variable to be of the normal distribution. Why is that?
+
+Gaussian Distribution is easy to interpret and applicable for many cases.
+
+**6.** How would you turn a probabilistic model into a deterministic model?
+
+Select a probability threshold and group the probabilities based on the magnitude comparison between threshold(s) and p_hat. 
+
+**7.** Is it possible to transform non-normal variables into normal variables? How?
+
+Yes. The first example came to my mind is log transform x <- log(x). Another example could be Fisher Transform x <- 0.5*ln((1+x)/(1-x)).
+
+**8.** When is the t-distribution useful?
+
+When the sample size n<30, t-distribution could be useful.
+
+**9.** Assume you manage an unreliable file storage system that crashed 5 times in the last year, each crash happens independently.
+
+* i. What's the probability that it will crash in the next month?
+
+P(crash|month) = 5/12
+
+* ii. What's the probability that it will crash at any given moment?
+
+p(crash|sec) = 5/(12*30*24*3600)
+
+**10.** Say you built a classifier to predict the outcome of football matches. In the past, it's made 10 wrong predictions out of 100. Assume all predictions are made independently., what's the probability that the next 20 predictions are all correct?,
+
+P = (0.9)**20
+
+**11.** Given two random variables  X and Y. We have the values  P(X|Y) and  P(Y) for all values of  X and  Y. How would you calculate  P(X)?
+
+If X and Y are independent then P(X|Y) = P(X)
+
+If not, P(X|Y)*P(Y) =  P(X∩Y); P(X) = ΣP(X|Y=y) * P(Y=y) {for all y∈Y}
