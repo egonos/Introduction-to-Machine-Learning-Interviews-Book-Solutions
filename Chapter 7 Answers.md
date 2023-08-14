@@ -1,18 +1,29 @@
 # 7.1 Basics
 
-1. Explain supervised, unsupervised, weakly supervised semi-supervised, and active learning.
+**1.** Explain supervised, unsupervised, weakly supervised semi-supervised, and active learning.
 
 **Supervised Learning:** Given the set of data and labels model tries to capture the patterns.
 
 **Unsupervised Learning:** Given the set of data, model tries to cluster them (due to grouping or dimension reduction purposes)
 
-**Weakly Supervised:** .......
+**Weakly Supervised:** Weakly supervised learning is the same as supervised learning. The only difference is that the trained labels are not finely generated (low quality).
+
+-> "Contains a dog" instead of "dog"
 
 **Semi-supervised:** There are lots of data but small potion of it also has labels. Given the data and the labels, model tries to capture the patterns and apply what it learned to all the data.
 
-**Active-Learning:** ......................
+**Active-Learning:** In active learning, model has a right to choose a subset of the data giving the best results. By employing this technique, a model performs well while training less. Here's the process:
 
-2. 
+* The model trains on a very small subset of labeled data.
+* It goes to unlabeled data and picks the ones in which it has the least confidence (close to decision boundries).
+* The model gives the selected data to an expert (the user in front of the computer)
+* The user labels the data and gives it back to the model.
+
+This cycle continues until the training ends.
+
+
+
+**2.** 
 
 * i. What’s the risk in empirical risk minimization?
 
@@ -41,10 +52,15 @@ Cross Validation
 
 Adopting simpler models if possible
 
- 4. What are the conditions that allowed deep learning to gain popularity in the last decade?
+**3.** Occam's razor states that when the simple explanation and complex explanation both work equally well, the simple explanation is usually correct. How do we apply this principle in ML?
+
+**In my view,** the less dependent we are while converging the ground truth the better. Employing more staff should only be considered if necessary because this process exponentially increase the probability for us to make mistakes.
+
+ **4.** What are the conditions that allowed deep learning to gain popularity in the last decade?
 
 -> Increased data size
 
 -> Ability to record sensory data (hearth rate for instance)
 
 -> Increased computational resources
+
