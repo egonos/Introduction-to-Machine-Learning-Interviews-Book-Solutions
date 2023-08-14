@@ -377,3 +377,72 @@ From Z-table 1.28 Captures 0.8997 of the population. ~1.1536 pounds
 * iii. Suppose the weight of newborn puppies followed a skew distribution. Would it still make sense to calculate z-scores?
 
 No because all the arguments related with CI becomes wrong.
+
+**11.** Tossing a coin ten times resulted in 10 heads and 5 tails. How would you analyze whether a coin is fair?
+
+15 trials are too less to conclude something. I would repeat many more experiments then decide whether the coin is fair or not.
+
+**12.**
+
+* i. How do you assess the statistical significance of a pattern whether it is a meaningful pattern or just by chance?
+
+By utilizing p-value
+
+* ii. What’s the distribution of p-values?
+
+*****
+
+* iii. Recently, a lot of scientists started a war against statistical significance. What do we need to keep in mind when using p-value and statistical significance?
+
+****
+
+**13.** 
+
+* i. What happens to a regression model if two of their supposedly independent variables are strongly correlated?
+
+Multicolinearity. Since the variables are strongly correlated their coefficients lose thier interpretability. Furthermore the model becomes too unstable meaning that it becomes very sensitive to minor changes.
+
+* ii. How do we test for independence between two categorical variables?
+
+Chi-squared Test 
+
+* iii. How do we test for independence between two continuous variables?
+
+Checking whether the correlation is close to zero or not
+
+**14.** A/B testing is a method of comparing two versions of a solution against each other to determine which one performs better. What are some of the pros and cons of A/B testing?
+
+**Pros:**
+
+* Test whether an innovative idea works or not
+
+* Allows optimizing one step a time
+
+**Cons:**
+
+* Takes lots of resources and time
+
+* Works only when we are testing a *spesific* goal.
+
+(ref: https://www.experienceux.co.uk/ux-blog/the-pros-and-cons-of-ab-testing/)
+
+
+**17.** Imagine that you have the prices of 10,000 stocks over the last 24 month period and you only have the price at the end of each month, which means you have 24 price points for each stock. After calculating the correlations of 10,000 * 9,9992 pairs of stock, you found a pair that has the correlation to be above 0.8.
+
+* i. What’s the probability that this happens by chance?
+
+Two hypothesis:
+
+H0: The correlation found is not statistically significant.
+H1: The correlation found is real.
+
+t-stat for correlation coefficient: t = r sqrt((n-2)/(1-r**2)) ; dof = n-2 for t-stat
+
+r = 0.8; n = 24; dof = 24-2 = 22; t = 0.8sqrt(22/(1-0.8**2)) = 6.353
+
+We have to use two tailed t test because we want to test the value in two ways {<0.8 & > 0.8}
+
+from t table alpha = 2.07 < 6.353 so the result is statistically siginificant.
+
+The probability of H0 is true is extremely low.
+
