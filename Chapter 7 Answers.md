@@ -64,3 +64,17 @@ Adopting simpler models if possible
 
 -> Increased computational resources
 
+**5.** If we have a wide NN and a deep NN with the same number of parameters, which one is more expressive and why?
+
+Deep NN's are more expressive because it processes the data more firmly therefore the final predictors become the essence of the data.
+
+
+**6.** The Universal Approximation Theorem states that a neural network with 1 hidden layer can approximate any continuous function for inputs within a specific range. Then why can’t a simple neural network reach an arbitrarily small positive error?
+
+NEED HELP
+
+7. What are saddle points and local minima? Which are thought to cause more problems for training large NNs?
+
+If we think the loss function as a path in the parameter space, local minima represents a minimum point relative to its nearby points. However this point is not the global minimum.
+
+In the saddle point the gradinet of f is 0 Saddle points seem to be worse. (ref: https://or.stackexchange.com/questions/7778/quality-of-solutions-from-saddle-points-vs-local-minimums)
