@@ -71,7 +71,7 @@ Deep NN's are more expressive because it processes the data more firmly therefor
 
 **6.** The Universal Approximation Theorem states that a neural network with 1 hidden layer can approximate any continuous function for inputs within a specific range. Then why can’t a simple neural network reach an arbitrarily small positive error?
 
-NEED HELP
+********
 
 7. What are saddle points and local minima? Which are thought to cause more problems for training large NNs?
 
