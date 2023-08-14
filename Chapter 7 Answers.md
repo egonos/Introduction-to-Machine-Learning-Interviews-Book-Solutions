@@ -106,3 +106,45 @@ A classificaiton problem can be handled based on monitoring the probabilities an
 Actually by using probabilities and changing the loss function, we turn a classification problem into a regression problem. 
 
 Converting regression problem to a classification probelm is also possible. Instead of trying to estimate a number the model can estimate whether estimated number is in group 1, 2, 3 etc.
+
+**10.**
+
+* i. What’s the difference between parametric methods and non-parametric methods? Give an example of each method.
+
+Parametric methods builds the model on top of assumptions. (Possibly the base assumption is data is normally distributed.)
+After making these assumptions it finds parameters like mean and standard deviation to explain the patterns lie in the data. Ex: Linear Regression
+
+Nonparametric method makes no assumption on data. Due to this reason, it requires more computational power and data. Ex: KNN
+
+* ii. When should we use one and when should we use the other? 
+
+If we have less time, data or computational resources or we are confident enough that the data is alligned with our assumptions, we should use parametric methods.
+
+
+**11.** Why does ensembling independently trained models generally improve performance?
+
+Because the expected value of combining predictions is higher compared to using only one. Consider this example 
+
+A model 70% accuracy -> Expected_value(X) = 0.7*1 = 0.7
+
+An ensemble model containing 70% accurate 5 submodels.
+
+Expected_value(X) = 1 - (5_3)(0.3)(0.3)(0.3)(0.7)(0.7) - (5_4)(0.3)(0.3)(0.3)(0.3)(0.7) - (0.3)**5 = 0.86
+
+**12.** Why does L1 regularization tend to lead to sparsity while L2 regularization pushes weights closer to 0?
+
+Consider gradient descent. When we use L2 norm for regularization, change in gradient will be exponential therefore the final value won't be 0. The graident vanishes before that happens.
+
+On the other hand, L1 norm is a subgradient meaning all the values not being 0 treated as the same (same gradient) Eventually the final value becomes zero.
+
+![Regularization](Images/Regularization%20Comparison.png)
+
+
+**13.** Why does an ML model’s performance degrade in production?
+
+**14.** What problems might we run into when deploying large machine learning models?
+
+**15.** Your model performs really well on the test set but poorly in production.
+* i. What are your hypotheses about the causes?
+* ii. How do you validate whether your hypotheses are correct?
+[M] Imagine your hypotheses about the causes are correct. What would you do to address them?
