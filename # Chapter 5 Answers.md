@@ -341,3 +341,39 @@ To eliminate the effect of previous moments, we generally substract the previous
 Coveraience is about linear independency on the other hand independency does not have to be linear. Any non linear relationship can given as an example.
 
 y = x**2
+
+**6.** Suppose that you take 100 random newborn puppies and determine that the average weight is 1 pound with the population standard deviation of 0.12 pounds. Assuming the weight of newborn puppies follows a normal distribution, calculate the 95% confidence interval for the average weight of all newborn puppies.
+
+
+n = 100 mu = 1 std = 0.12. CI = xbar +- z*std/sqrt(n)
+                              = 1 +- 1.96(0.12/sqrt(100)) =  (0.97,1.02)
+
+A small reminder: 95% confidence interval (0.975 quartile) has a z score of 1.96.
+
+**7.** Suppose that we examine 100 newborn puppies and the 95% confidence interval for their average weight is pounds. Which of the following statements is true?
+
+* i. Given a random newborn puppy, its weight has a 95% chance of being between 0.9 and 1.1 pounds. -> False. CI does not tells an expectation about a single sample.
+* ii. If we examine another 100 newborn puppies, their mean has a 95% chance of being in that interval. -> True. This is the multiple sample varsion of i. CI tells that I'm confident that average weight of multiple samples lies within 0.97,1.02 range.
+* iii. We're 95% confident that this interval captured the true mean weight. ->True. From the definition of Central Limit Theorem.
+
+**8.** Suppose we have a random variable supported on from which we can draw samples. How can we come up with an unbiased estimate of the median of ?
+
+*****
+
+**9.** Can correlation be greater than 1? Why or why not? How to interpret a correlation value of 0.3?
+
+No it couldn't. Correlation coefficient ranges between [-1,1]. While negative correlation indicating a negative relationship between random variables, positive correlation does the reverse. 0.3 correlation indicates a weak positive relationship between two random variables.
+
+
+**10.** The weight of newborn puppies is roughly symmetric with a mean of 1 pound and a standard deviation of 0.12. Your favorite newborn puppy weighs 1.1 pounds.
+* i. Calculate your puppy’s z-score (standard score).
+
+z = (1.1-1)/0.12 = 0.83
+
+* ii. How much does your newborn puppy have to weigh to be in the top 10% in terms of weight?
+
+From Z-table 1.28 Captures 0.8997 of the population. ~1.1536 pounds
+
+* iii. Suppose the weight of newborn puppies followed a skew distribution. Would it still make sense to calculate z-scores?
+
+No because all the arguments related with CI becomes wrong.
