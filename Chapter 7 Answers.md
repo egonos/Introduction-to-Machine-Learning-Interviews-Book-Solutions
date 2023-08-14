@@ -73,8 +73,36 @@ Deep NN's are more expressive because it processes the data more firmly therefor
 
 ********
 
-7. What are saddle points and local minima? Which are thought to cause more problems for training large NNs?
+**7.** What are saddle points and local minima? Which are thought to cause more problems for training large NNs?
 
 If we think the loss function as a path in the parameter space, local minima represents a minimum point relative to its nearby points. However this point is not the global minimum.
 
 In the saddle point the gradinet of f is 0 Saddle points seem to be worse. (ref: https://or.stackexchange.com/questions/7778/quality-of-solutions-from-saddle-points-vs-local-minimums)
+
+**8.**
+
+* i. What are the differences between parameters and hyperparameters?
+
+Parameters are the coefficients of the model. Consider: WTX = y_hat. W is the parameters of the model to estimate the outcome.
+
+Hyperparameters on the other hand the *settings* of the model. They are determined previous to training and based on these values, the style of training changes. Ex: Solver: liblinear
+
+* ii. Why is hyperparameter tuning important?
+
+The best settings for each case changes. Therefore, to get most out of a model it should be tuned.
+
+* iii. Explain algorithm for tuning hyperparameters.
+
+Let me explain the GridSearch because it is the most straightforward tuning mechanism on ML world. In GridSearch we iteratively try the parameter comibnations on the model. In the end we select the best hyperparameter set and arrange the settings accordingly.
+
+**9.** 
+
+* i. What makes a classification problem different from a regression problem?
+
+A classificaiton problem can be handled based on monitoring the probabilities and expected values whereas a regression problem is more straightforward. The model determines the coefficients and computes the outcome. Based on the error, it updates its parameters in every iteration.
+
+* ii. Can a classification problem be turned into a regression problem and vice versa?
+
+Actually by using probabilities and changing the loss function, we turn a classification problem into a regression problem. 
+
+Converting regression problem to a classification probelm is also possible. Instead of trying to estimate a number the model can estimate whether estimated number is in group 1, 2, 3 etc.
