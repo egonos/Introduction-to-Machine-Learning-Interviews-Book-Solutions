@@ -48,9 +48,9 @@ Autoencoders, clustering algorithms, isolation forests
 
 * i. How would you choose the value of k?
 
--> Elbow method: We have to get get the most bang for our buck i.e. when distortion descrease becomes marginal then we need to stop to increase k.
+-> **Elbow method:** We have to get get the most bang for our buck i.e. when distortion descrease becomes marginal then we need to stop to increase k.
 
--> Sector requirements: Production availability, customer response etc.
+-> **Sector requirements:** Production availability, customer response etc.
 
 * ii. If the labels are known, how would you evaluate the performance of your k-means clustering algorithm?
 
@@ -65,3 +65,15 @@ By comparing the clustering results with true labels.
 * iv. Given the following dataset, can you predict how K-means clustering works on it? Explain.
 
 No it's not going to work. DBSCAN would perform lot better. K-means will not perform the best in cyclic datasets. The distance between data points is minimized when the data has a spherical shape. Therefore in a non-sperical geometry, K-means can not perform well.
+
+**6.**
+
+* i. How would you choose the value of k?
+
+Empirically. We have to find a balance between overfitting (small k) and underfitting (large k).
+
+* ii. What happens when you increase or decrease the value of k?
+
+**Decreasing k:** Model becomes more sensitive to any neighbor of the data point in consideration. This is a good thing up to a point. We wan't to prioritize the nearest neighbors while assigning the labels. However, this can quickly lead to overfitting. Considering more neighbors can make the model more robust.
+
+**Increasing k:** Model considers more neighbors while assigning the label of the data in consideration. This make the mdoel more resiliant to noises (little changes with no importance)
