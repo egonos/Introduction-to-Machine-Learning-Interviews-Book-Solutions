@@ -142,6 +142,8 @@ On the other hand, L1 norm is a subgradient meaning all the values not being 0 t
 
 **13.** Why does an ML model’s performance degrade in production?
 
+
+
 **14.** What problems might we run into when deploying large machine learning models?
 
 **15.** Your model performs really well on the test set but poorly in production.
