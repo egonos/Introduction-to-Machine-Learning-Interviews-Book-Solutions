@@ -124,7 +124,8 @@ Increasing k increases bias (more error) but decreases variance (less sensitive)
 
 -> Tensorflow supports tree algorithm - NN connection. We can use Gradient Boosted trees or Random Forest as the head of our NN structure.
 
--> IS THERE ANY?
+-> Creatively we can build some bagging and boosting structures with multiple NN models (This could be computationally heavy).
+ 
 
 
 
