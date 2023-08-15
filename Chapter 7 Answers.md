@@ -10,6 +10,8 @@
 
 -> "Contains a dog" instead of "dog"
 
+-> We use heuristics for the labeling.
+
 **Semi-supervised:** There are lots of data but small potion of it also has labels. Given the data and the labels, model tries to capture the patterns and apply what it learned to all the data.
 
 **Active-Learning:** In active learning, model has a right to choose a subset of the data giving the best results. By employing this technique, a model performs well while training less. Here's the process:
