@@ -77,3 +77,59 @@ Empirically. We have to find a balance between overfitting (small k) and underfi
 **Decreasing k:** Model becomes more sensitive to any neighbor of the data point in consideration. This is a good thing up to a point. We wan't to prioritize the nearest neighbors while assigning the labels. However, this can quickly lead to overfitting. Considering more neighbors can make the model more robust.
 
 **Increasing k:** Model considers more neighbors while assigning the label of the data in consideration. This make the mdoel more resiliant to noises (little changes with no importance)
+
+* iii. How does the value of k impact the bias and variance?
+
+Increasing k increases bias (more error) but decreases variance (less sensitive). Decreasing k has an opposite impact on the model.
+
+**7.**
+
+* i. Compare the two.
+
+-> Gaussian Mixture Model (GMM) utilizes Gaussian Distribution to cluster (probablilistic) the data points whereas K-Means utilizes distance metrics (deterministic).
+
+-> GMM assumes the data is normally distributed. K-Means assumes the data is spherical.
+
+-> GMM support covariances for vairety of geometrical shapes (spherical,diagonal,tied and full covariance).
+
+-> GMM needs sufficient amount of data to form clusters whereas K-Means can work even in very small data.
+
+* ii. When would you choose one over another?
+
+-> If the data distibution is close (overlapping clusters), K-Means can be inferior to detect the boundaries. GMM is a better choice in this case. 
+
+-> If computational resouces are limited or the clusters have well defined boundaries, use K-Means.
+
+**8.**
+
+* i. What are some of the fundamental differences between bagging and boosting algorithms?
+
+**Boosting**
+
+-> Sequential Learning (Each learner learns the error of the previous learner.)
+
+-> Increases variance reduces bias
+
+-> Requires relatrively weak learners
+
+**Bagging**
+
+-> Simultaneous learning
+
+-> Reduces the variance (might increase bias)
+
+-> Learners can be weak or strong
+
+* ii. How are they used in deep learning?
+
+-> Tensorflow supports tree algorithm - NN connection. We can use Gradient Boosted trees or Random Forest as the head of our NN structure.
+
+-> IS THERE ANY?
+
+
+
+
+
+
+
+
