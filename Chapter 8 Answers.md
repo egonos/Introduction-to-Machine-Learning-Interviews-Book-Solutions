@@ -22,7 +22,7 @@ The coefficients assigned to each predictor become too different from each other
 
 **3.** What are the algorithms you’d use when developing the prototype of a fraud detection model?
 
-Autoencoders, clustering algorithmsi isolation forests
+Autoencoders, clustering algorithms, isolation forests
 
 **4.**
 
@@ -36,4 +36,32 @@ Autoencoders, clustering algorithmsi isolation forests
 
 -> Reduced overfitting (Irrelevant features might causes th ml model to overfit)
 
+* ii. What are some of the algorithms for feature selection? Pros and cons of each.
 
+-> Tree algorithms: Resistant to scale differences. Able to capture **non-linear** realtionships. Prone to overfitting.
+
+-> Linear models: Simple. Prone to underfitting. LASSO can be used for feature selection (makes the coefficients of the irrelevant features 0)
+
+-> Variance inflation factor (to decrease predictor relevancies). Only considers linear relationships.
+
+**5.** 
+
+* i. How would you choose the value of k?
+
+-> Elbow method: We have to get get the most bang for our buck i.e. when distortion descrease becomes marginal then we need to stop to increase k.
+
+-> Sector requirements: Production availability, customer response etc.
+
+* ii. If the labels are known, how would you evaluate the performance of your k-means clustering algorithm?
+
+By comparing the clustering results with true labels.
+
+* iii. How would you do it if the labels aren’t known?
+
+-> Dimension reduction (if necessary) and visualization. In this way I also can decide which clustering algorithm is appropriate for this spesific case.
+
+-> Look at the distortion measure (we can use silhouette score as well). If increasing k still has a potential to deduce the distortion **significantly**, then I increase it. The opposite is true while decreasing the number of k.
+
+* iv. Given the following dataset, can you predict how K-means clustering works on it? Explain.
+
+No it's not going to work. DBSCAN would perform lot better. K-means will not perform the best in cyclic datasets. The distance between data points is minimized when the data has a spherical shape. Therefore in a non-sperical geometry, K-means can not perform well.
