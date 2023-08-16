@@ -138,7 +138,7 @@ Increasing k increases bias (more error) but decreases variance (less sensitive)
 
 * iii. What can you say about the adjacency matrices of two isomorphic graphs?
 
-Since the number of verticies, edges and connectivities are the same among these two the adjency matricies will be the same.
+Since the number of verticies, edges and connectivities are the same among these two the adjency matricies could be transformed to each other by reordering the rows or the columns.
 
 
 **10** Imagine we build a user-item collaborative filtering system to recommend to each user items similar to the items they’ve bought before.
@@ -182,6 +182,38 @@ According to your classifier, what's sentiment of the sentence `The hamster is u
 
 ![Bayes1](Images/Bayes1.png)
 ![Bayes2](Images/Bayes2.png)
+
+
+**13.** Two popular algorithms for winning Kaggle solutions are Light GBM and XGBoost. They are both gradient boosting algorithms.
+
+* i. What is gradient boosting?
+
+Graident boosting is a sequential learning technique in which each weak learner learns and possible corrects the errors made by the previous tree. The equation,
+
+F_n+1(x) = F_n(x) - eta * yhat_n(x)
+
+The biggest difference of Gradient Boosting from AdaBoost is that weak learners of a GB model is more advanced (not decision stumps).
+
+* ii. What problems is gradient boosting good for?
+
+In my experience GB outperforms most of the other ml algorithms when data is tabular and the data is not too big. Luckily novadays, both tree algorithms support GPU usage and parallel computing. (I found **Dask** to be more user friendly)
+
+**14.** SVM
+
+* i. What’s linear separation? Why is it desirable when we use SVM?
+
+It means the decision boundary is a line (2D) or a hyperplane (+2D). It is desirable because linear decision boundaries are more straightforward to compute and useful when there is not a sufficient amount of data (KNN lies on the opposite side, the more data the better, slower computation)
+
+* ii. How well would vanilla SVM work on this dataset?
+
+-> Really nicely. Even hard margins can handle this separation
+
+-> Good enough. One outlier point is not sufficient for SVM to fail. Especially by using soft margins we can accomplish sweet results.
+
+-> Not good. SVM overwhelms a lot because the clusters are overlapping and there are outliers for each cluster.
+
+
+
 
 
 
