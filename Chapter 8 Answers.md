@@ -262,11 +262,15 @@ Density estimation is an attempt for estimating a distribution using a parametri
 A language model prdicts the the outcome word probability distribution based on the data it gets.
 
 I -> am
+
   -> belive
+
   -> do
 
 I am -> happy
+
      -> tired
+     
      -> a
 
 
