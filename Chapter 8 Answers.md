@@ -280,14 +280,38 @@ Based on the word set it gets, a language model tries to predict the next word. 
 
 **4.** Word embeddings.
 
-1. Why do we need word embeddings?
+* i. Why do we need word embeddings?
 
 Alternatively, we can use OHE for tokenization. The problem of this approach is that the vocabulary matrix can grow really easily on relatively long texts. Due its sizes this sparse matrix is really hard to work on. That's why we are using word embeddings.
 
-2. What’s the difference between count-based and prediction-based word embeddings?
+* ii. What’s the difference between count-based and prediction-based word embeddings?
 
 Prediction-based word embeddings include **context** (like Word2Vec) whereas count-based embeddings only considers the counts of a word (like TF-IDF).
 
-3. Most word embedding algorithms are based on the assumption that words that appear in similar contexts have similar meanings. What are some of the problems with context-based word embeddings?
+* iii. Most word embedding algorithms are based on the assumption that words that appear in similar contexts have similar meanings. What are some of the problems with context-based word embeddings?
 
 A word may have more than one meaning. To solve this problem, we have to approach this problem more seriously. The assumption is a bit naive.
+
+**5.** Given 5 documents:
+ D1: The duck loves to eat the worm
+ D2: The worm doesn’t like the early bird
+ D3: The bird loves to get up early to get the worm
+ D4: The bird gets the worm from the early duck
+ D5: The duck and the birds are so different from each other but one thing they have in common is that they both get the worm
+
+* i. Given a query Q: “The early bird gets the worm”, find the two top-ranked documents according to the TF/IDF rank using the cosine similarity measure and the term set {bird, duck, worm, early, get, love}. Are the top-ranked documents relevant to the query?
+
+TF
+
+* Bird: D2,D3,D4,D5
+* Duck: D1,D4,D5
+* Worm: D1,D2,D3,D4,D5
+* Early: D2,D3,D4
+* Get: D3,D4,D5
+* Love: D1,D3
+
+D3 is the most relevant because it contains early,worm,get,bird. Similarly D2 ranks the second. Yes D2 and D3 are relevant with Query.
+
+* ii. Assume that document D5 goes on to tell more about the duck and the bird and mentions “bird” three times, instead of just once. What happens to the rank of D5? Is this change in the ranking of D5 a desirable property of TF/IDF? Why?
+
+Since TF increases it's rank also increases. Although the intention is good, the fact that an irrelevant addition of a word to a document increases it's ranking, this could be somewhat misleading.
