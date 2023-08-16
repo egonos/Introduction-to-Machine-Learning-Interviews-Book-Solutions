@@ -136,6 +136,48 @@ Increasing k increases bias (more error) but decreases variance (less sensitive)
 
 ![Adjency2](Images/Adjency%20Matrix2.png)
 
+* iii. What can you say about the adjacency matrices of two isomorphic graphs?
+
+Since the number of verticies, edges and connectivities are the same among these two the adjency matricies will be the same.
+
+
+**10** Imagine we build a user-item collaborative filtering system to recommend to each user items similar to the items they’ve bought before.
+
+* i. You can build either a user-item matrix or an item-item matrix. What are the pros and cons of each approach?
+
+User-item matrix is more powerful in recommendation but the memory requirement of this matrix is also can be really big especially if there are lots of customers. Item-item matrix on the othr hand is lot more memory friendly, however it is not customer spesific i.e. treats all the customers the same and this may not be optimal.
+
+* ii. How would you handle a new user who hasn’t made any purchases in the past?
+
+Trust the prior knowledge obtained form customers similar to the new user.
+
+**11.**Is feature scaling necessary for kernel methods?
+
+Yes. Consider SVM. It constructs the decision boundaries based on distances. Therefore on a disproportional space, it's decision boundary assignments wouldn't be accurate.
+
+
+**12.** Naive Bayes classifier.
+
+* i. How is Naive Bayes classifier naive?
+
+The algorithm directly assumes that all the predictors are conditionally independent from each other.
+
+P(y|x1,x2) = P(y|x1) * P(y|x2)
+
+* ii. Let’s try to construct a Naive Bayes classifier to classify whether a tweet has a positive or negative sentiment. We have four training samples
+
+
+Tweet	                              Label
+
+This makes me so upset	              Negative
+
+This puppy makes me happy	          Positive
+
+Look at this happy hamster	          Positive
+
+No hamsters allowed in my house	      Negative
+
+According to your classifier, what's sentiment of the sentence `The hamster is upset with the puppy?`
 
 
 
