@@ -237,6 +237,8 @@ Vanihing gradient problem occurs as the model continues to learn due to stack of
 
 * iii. How would you do dropouts in an RNN?
 
-Need help
+WE can apply dropouts to input and output layer of RNN. However applying dropout to a hidden state is a bit tricky. Lets look at mathematically:
+
+![DropoutRNN](Images/DropoutRNN.png)
 
 
