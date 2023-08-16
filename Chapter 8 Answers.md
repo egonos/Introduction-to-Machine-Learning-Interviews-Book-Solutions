@@ -180,6 +180,9 @@ No hamsters allowed in my house	      Negative
 According to your classifier, what's sentiment of the sentence `The hamster is upset with the puppy?`
 
 
+![Bayes1](Images/Bayes1.png)
+![Bayes2](Images/Bayes2.png)
+
 
 
 
