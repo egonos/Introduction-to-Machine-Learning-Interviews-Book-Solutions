@@ -253,7 +253,7 @@ Density estimation is an attempt for estimating a distribution using a parametri
 -> Find the best parameter combination to represent the data (like mean and variance)
 
 **Nonparametric method:** We use data points themselves to create the density estimation (like in the KNN Classification). We don't have to have a geometric shape assumption but since we use data points themselves, we need sufficient amount of data. Moreover this process is slower and not as efficient.
-THe language models predics
+
 -> Separate the data into small bins.
 
 -> Combine the bins.
