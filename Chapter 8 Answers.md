@@ -351,6 +351,21 @@ Backward Pass:
 
      ∂L/∂wi = ∂L/∂y2* ∂y2/∂z2 * ∂z2/∂y1 * ∂y1/∂z1 * ∂z1/∂wi
 
+     #MSE as loss fnc
+     L = 0.5(y2-y)**2
+     ∂L/∂y2 = y2-y
+
+     #ReLU Derivative
+     ∂y2/∂z2 = (z2>0).astype(float) # 1 in positive 0 in negative
+     
+     ∂z2/∂y1 = w1
+
+    #ReLU Derivative
+     ∂y1/∂z1 = (z1>0).astype(float)
+
+     ∂z1/∂wi = xi
+
+
 
 
 * ii. Implement vanilla dropout for the forward and backward pass in NumPy.
