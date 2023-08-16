@@ -315,3 +315,42 @@ D3 is the most relevant because it contains early,worm,get,bird. Similarly D2 ra
 * ii. Assume that document D5 goes on to tell more about the duck and the bird and mentions “bird” three times, instead of just once. What happens to the rank of D5? Is this change in the ranking of D5 a desirable property of TF/IDF? Why?
 
 Since TF increases it's rank also increases. Although the intention is good, the fact that an irrelevant addition of a word to a document increases it's ranking, this could be somewhat misleading.
+
+**6.** Your client wants you to train a language model on their dataset but their dataset is very small with only about 10,000 tokens. Would you use an n-gram or a neural language model?
+
+I would prefer n-grams because the Neural Language Models require lots of words to perform thier best. Moreover, starting with a simple model is always a good choice due to its low memory and computational requirements.
+
+
+
+
+# 8.3 Training neural networks
+
+**1.** When building a neural network, should you overfit or underfit it first?
+
+I would underfit the first and increase the model complexity if necessary.
+
+**2.** Write the vanilla gradient update.
+
+Xt+1 = Xt - eta * ∇f(Xt)
+
+**3.** Neural network in simple Numpy.
+* i. Write in plain NumPy the forward and backward pass for a two-layer feed-forward neural network with a ReLU layer in between.
+
+Forward Pass:
+
+    z1 = <w1,x>.............z1 = np.dot(w1,x)
+
+    y1 = ReLU(z1)...........y1 = np.maximum(z1,0)
+
+    z2 = <w2,y1>............z2 = np.dot(w2,y1)
+
+    y2 = ReLU(z2) ..........y2 = np.maximum(z2,0)
+
+
+Backward Pass:
+
+     ∂L/∂wi = ∂L/∂y2* ∂y2/∂z2 * ∂z2/∂y1 * ∂y1/∂z1 * ∂z1/∂wi
+
+
+
+* ii. Implement vanilla dropout for the forward and backward pass in NumPy.
