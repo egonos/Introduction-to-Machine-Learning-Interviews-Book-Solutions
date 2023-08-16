@@ -126,7 +126,11 @@ Increasing k increases bias (more error) but decreases variance (less sensitive)
 
 -> Creatively we can build some bagging and boosting structures with multiple NN models (This could be computationally heavy).
  
+**9.**
 
+* i. Construct its adjacency matrix.
+
+![Adjency](Images/Adjency%20Matrix.png)
 
 
 
