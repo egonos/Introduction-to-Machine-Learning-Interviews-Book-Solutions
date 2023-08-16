@@ -242,3 +242,32 @@ WE can apply dropouts to input and output layer of RNN. However applying dropout
 ![DropoutRNN](Images/DropoutRNN.png)
 
 
+2. What’s density estimation? Why do we say a language model is a density estimator?
+
+Density estimation is an attempt for estimating a distribution using a parametric or non parametric methods.
+
+**Parametric method:** We use a function to capture the patterns data points form. This is fast, but requires a prior geometric shape assumption (like sperical). 
+
+-> Assume a shape
+
+-> Find the best parameter combination to represent the data (like mean and variance)
+
+**Nonparametric method:** We use data points themselves to create the density estimation (like in the KNN Classification). We don't have to have a geometric shape assumption but since we use data points themselves, we need sufficient amount of data. Moreover this process is slower and not as efficient.
+THe language models predics
+-> Separate the data into small bins.
+
+-> Combine the bins.
+
+
+A language model prdicts the the outcome word probability distribution based on the data it gets.
+
+I -> am
+  -> belive
+  -> do
+
+I am -> happy
+     -> tired
+     -> a
+
+
+**3.** Language models are often referred to as unsupervised learning, but some say its mechanism isn’t that different from supervised learning. What are your thoughts?
