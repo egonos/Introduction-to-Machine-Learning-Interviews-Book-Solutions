@@ -132,6 +132,10 @@ Increasing k increases bias (more error) but decreases variance (less sensitive)
 
 ![Adjency](Images/Adjency%20Matrix.png)
 
+* ii. How would this matrix change if the graph is now undirected?
+
+![Adjency2](Images/Adjency%20Matrix2.png)
+
 
 
 
