@@ -269,9 +269,25 @@ I -> am
 
 I am -> happy
 
-     -> tired
-     
-     -> a
+    -> tired
+
+    -> a
 
 
 **3.** Language models are often referred to as unsupervised learning, but some say its mechanism isn’t that different from supervised learning. What are your thoughts?
+
+Based on the word set it gets, a language model tries to predict the next word. This is similar to the supervised learning where for each instance the model predicts a label. For the language models, each instance is the updated word set like the example above. On the other hand, it is understandable to assign the language models in unsupervised learning category because they don't require any labels to train with.
+
+**4.** Word embeddings.
+
+1. Why do we need word embeddings?
+
+Alternatively, we can use OHE for tokenization. The problem of this approach is that the vocabulary matrix can grow really easily on relatively long texts. Due its sizes this sparse matrix is really hard to work on. That's why we are using word embeddings.
+
+2. What’s the difference between count-based and prediction-based word embeddings?
+
+Prediction-based word embeddings include **context** (like Word2Vec) whereas count-based embeddings only considers the counts of a word (like TF-IDF).
+
+3. Most word embedding algorithms are based on the assumption that words that appear in similar contexts have similar meanings. What are some of the problems with context-based word embeddings?
+
+A word may have more than one meaning. To solve this problem, we have to approach this problem more seriously. The assumption is a bit naive.
