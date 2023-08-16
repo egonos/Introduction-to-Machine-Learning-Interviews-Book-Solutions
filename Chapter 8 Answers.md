@@ -215,7 +215,28 @@ It means the decision boundary is a line (2D) or a hyperplane (+2D). It is desir
 
 
 
+# 8.2.1 Natural language processing
 
 
+**1.** RNNs
+
+* i. What’s the motivation for RNN?
+
+Recurrent Neural Networks are degined to learn the sequential data like time series, text data etc. The math is:
+
+![RNN](Images/RNN.png)
+
+
+* ii. What’s the motivation for LSTM?
+
+LSTM is designed for dealing with the vanishing gradient problem occuring in RNN. The math of VGB in RNN is:
+
+![Derivative](Images/Derivative.png)
+
+Vanihing gradient problem occurs as the model continues to learn due to stack of tanh'.
+
+* iii. How would you do dropouts in an RNN?
+
+Need help
 
 
