@@ -457,7 +457,8 @@ def backward_pass_with_dropout(y2, y, z1, z2, w2, x, mask1, mask2):
 
 **tanh**
 * Good for binary classification
-CAN BE FILLED
+* Ranges from -1 to 1
+* Prone to VGP
 
 **Leaky ReLU**
 * It has all the pros of ReLU.
@@ -465,8 +466,7 @@ CAN BE FILLED
 
 * iii. Is ReLU differentiable? What to do when it’s not differentiable?
 
-At x = 0 it is not differable (subgradient)
-CAN BE FILLED
+At x = 0 it is not differable (subgradient). Therefore we use subdifferentials at x = 0. We either treat as x>0 or x<0
 
 * iv. Derive derivatives for sigmoid function when is a vector.
 
@@ -485,10 +485,12 @@ By using residual connections, we can prevent vanishing gradient problem to occu
 
 When the gradient are exploding generally the learning curve becomes significantly unstable. When we plot the learning curves and observe big zigzags then we can suspect that the exploding gradient problem takes in place.
 
+Another way to detect exploding graident problem is observing lots of `NaN` during training process.
+
 Exploding gradients can be solved by  scaling the input data (min-max scaling an be a good choice because NN models does not accept negative inputs) or scaling the hidden layer outputs (Batch Normalization or Layer Normalization can be really useful in that case)
 
 * ii. Why are RNNs especially susceptible to vanishing and exploding gradients?
 
-As I have shown in my hand writings, RNN uses sequential tanh's. The sequential derivatives of tanhs resulting gradients to vanish. (HOW EXPLODING GRADIENTS) 
+![RNNVanish](Images/RNN%20Vanishing%20Gradients.png)
 
 **7.** Weight normalization separates a weight vector’s norm from its gradient. How would it help with training?
