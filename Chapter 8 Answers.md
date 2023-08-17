@@ -442,5 +442,31 @@ def backward_pass_with_dropout(y2, y, z1, z2, w2, x, mask1, mask2):
 ![Activations](Images/Activation%20Functions.png)
 
 * ii. Pros and cons of each activation function.
+
+**Sigmoid**
+* Good for binary classification and calculating binary probabilities.
+* Easy to take derivate (p(1-p)).
+* The derivatives near to saturation points are really small therefore it results in Vanishing Gradient Problem (VGB) if it is used sequentially.
+
+**ReLU**
+* Introduces nonlinearity to the system easily.
+* Not prone to VGB.
+* Improves performance when it is used in hidden layers.
+* Can result dead neuron problem.
+
+**tanh**
+* Good for binary classification
+CAN BE FILLED
+
+**Leaky ReLU**
+* It has all the pros of ReLU.
+* Due to small slope in the negative region, it does not result in dead neuron problem.
+
 * iii. Is ReLU differentiable? What to do when it’s not differentiable?
+
+At x = 0 it is not differable (subgradient)
+CAN BE FILLED
+
 * iv. Derive derivatives for sigmoid function when is a vector.
+
+![DerivativeSig](Images/Derivative%20Sigmoid.png)
