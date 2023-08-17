@@ -561,3 +561,15 @@ Consider gradient update:
 Wt+1 = Wt - eta * ∇f
 
 We started with random initialization so that our weights are not the same and they are small. If eta is big and the gradient is big enough then updated W quickly changes a lot. Therefore we need to decrease the learning rate unitl it becomes stable. To prevent this to happen besides the adaptive learning rate, we use learning rate warmup. In this way we make sure that any part of the training does not become unstable while using higher learning rates. In warmup phase we gradiually increase the learning rate. Then if necessary, we drop the learning rate until the model converges.
+
+
+**14.** Compare batch norm and layer norm.
+
+->BatchNorm applies vertical normalization whereas layer normalization applies horizontal normalization.
+
+->BatchNorm is dependent on Batches, layer norm does not.
+
+The mathematics:
+
+![BatchNorm](Images/BatchNorm.png)
+![Layer](Images/LayerNorm.png)
