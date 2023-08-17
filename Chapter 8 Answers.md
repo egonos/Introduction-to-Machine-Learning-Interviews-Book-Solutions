@@ -434,3 +434,13 @@ def backward_pass_with_dropout(y2, y, z1, z2, w2, x, mask1, mask2):
     
     return dldw1, dldw2
 ```
+
+**4.** Activation functions.
+
+* i. Draw the graphs for sigmoid, tanh, ReLU, and leaky ReLU.
+
+![Activations](Images/Activation%20Functions.png)
+
+* ii. Pros and cons of each activation function.
+* iii. Is ReLU differentiable? What to do when it’s not differentiable?
+* iv. Derive derivatives for sigmoid function when is a vector.
