@@ -494,3 +494,27 @@ Exploding gradients can be solved by  scaling the input data (min-max scaling an
 ![RNNVanish](Images/RNN%20Vanishing%20Gradients.png)
 
 **7.** Weight normalization separates a weight vector’s norm from its gradient. How would it help with training?
+
+If the weight vector is in check during the training process then exploding or vanishing gradient problems won't occur. Moreover, our graidents will be in a similar scle resulting in a lot more stable training.
+
+
+**8.**When training a large neural network, say a language model with a billion parameters, you evaluate your model on a validation set at the end of every epoch. You realize that your validation loss is often lower than your train loss. What might be happening?
+
+**9.** What criteria would you use for early stopping?
+
+I would use validation loss because training loss will continusly drop due to overfitting as the training process continues. We have to monitor something else
+
+**10.** Gradient descent vs SGD vs mini-batch SGD.
+
+Gradient descent is a method for optimizing functions that are hard to caluclate it's optima analytically. We can conduct this process in several ways. Full batch gradient descent,computes the gradients for each instance and updates the parameters based on the average value. SGD does the same thing but considering only one randomly selected sample. Finally mini-batch gradient descent applies GD somewhere in between. If we compare these;
+
+**Full Batch GD:** Accurate, slow, computationally heavy
+
+**SGD** Fast, unstable, computationally light
+
+**Mini-batch GC** Somewhere in between
+
+The mathematics of SGD:
+
+![SGD](Images/SGD1.png)
+![SGD](Images/SGD2.png)
