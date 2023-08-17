@@ -573,3 +573,9 @@ The mathematics:
 
 ![BatchNorm](Images/BatchNorm.png)
 ![Layer](Images/LayerNorm.png)
+
+**15.** Why is squared L2 norm sometimes preferred to L2 norm for regularizing neural networks?
+
+The derivative of squared L2 norm is easier to compute and defined everywhere. 
+
+![L2](Images/L2Norm.png)
