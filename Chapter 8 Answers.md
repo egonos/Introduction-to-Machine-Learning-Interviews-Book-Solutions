@@ -579,3 +579,27 @@ The mathematics:
 The derivative of squared L2 norm is easier to compute and defined everywhere. 
 
 ![L2](Images/L2Norm.png)
+
+**16.** Some models use weight decay: after each gradient update, the weights are multiplied by a factor slightly less than 1. What is this useful for?
+
+This is useful for preventing weights to explode. Results in more stable training and acts like a L2 Norm.
+
+**17.** It’s a common practice for the learning rate to be reduced throughout the training.
+
+* i. What’s the motivation?
+
+Big learning rates are fast and robust to local minima however it is also prone to diverge the gradient descent.
+
+Small learning rates are slow not resistant to local minima but it is great to find the fine tune the minima.
+
+We want to get the benefits of two. Thats why we're implementing changing learning rates. 
+
+* ii. What might be the exceptions?
+
+If eta is already optimal applying this procedure is not beneficial.
+
+**18.** Batch size.
+
+* i. What happens to your model training when you decrease the batch size to 1?
+* ii. What happens when you use the entire training data in a batch?
+* iii. How should we adjust the learning rate as we increase or decrease the batch size?
