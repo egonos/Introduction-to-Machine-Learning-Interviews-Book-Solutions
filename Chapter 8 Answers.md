@@ -398,6 +398,36 @@ Lets combine all these on Python
 
 
 
-
-
 * ii. Implement vanilla dropout for the forward and backward pass in NumPy.
+
+    def forward_pass_with_dropout(w1, w2, x, dropout_rate):
+      keep_prob = 1 - dropout_rate
+      mask1 = np.random.choice([0, 1], size=len(x), p=[dropout_rate, keep_prob])
+      z1 = np.dot(w1, x * mask1)
+      y1 = np.maximum(z1, 0)
+      
+      mask2 = np.random.choice([0, 1], size=y1.shape[0], p=[dropout_rate, keep_prob])
+      y1 *= mask2
+      z2 = np.dot(w2, y1)
+      y2 = np.maximum(z2, 0)
+      
+      return y1, y2, z1, z2, mask1, mask2
+
+    def backward_pass_with_dropout(y2, y, z1, z2, w2, x, mask1, mask2):
+      # MSE as loss function
+      L = 0.5 * (y2 - y)**2
+      dldy2 = y2 - y
+      # ReLU Derivative
+      dy2dz2 = (z2 > 0).astype(float) 
+      dldz2 = dldy2 * dy2dz2
+      
+      dz2dy1 = w2
+      dldy1 = np.dot(dz2dy1.T, dldz2) * mask2  
+      # ReLU Derivative
+      dy1dz1 = (z1 > 0).astype(float)
+      dldz1 = dldy1 * dy1dz1
+      
+      dldw1 = np.outer(dldz1, x * mask1)  
+      dldw2 = np.outer(dldz2, y1)
+      
+      return dldw1, dldw2
