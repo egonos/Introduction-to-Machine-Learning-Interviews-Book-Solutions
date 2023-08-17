@@ -547,3 +547,9 @@ What to do?
 
 * Use regularization so that thwe weigths will always be in check.
 * Use an adaptive learning rate. Start fast and gradually slow down if necessary.
+
+**13.** Learning rate.
+
+i. Draw a graph number of training epochs vs training error for when the learning rate is too high, too low,acceptable.
+
+![Convex](Images/Convex%20Bowls.png)
