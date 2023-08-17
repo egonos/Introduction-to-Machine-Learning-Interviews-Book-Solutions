@@ -367,35 +367,36 @@ Backward Pass:
 
 Lets combine all these on Python
 
-    import numpy as np
+```python
+import numpy as np
 
-    def forward_pass(w1, w2, x):
-        z1 = np.dot(w1, x)
-        y1 = np.maximum(z1, 0)
-        z2 = np.dot(w2, y1)
-        y2 = np.maximum(z2, 0)
-        
-        return y1, y2, z1, z2
+def forward_pass(w1, w2, x):
+    z1 = np.dot(w1, x)
+    y1 = np.maximum(z1, 0)
+    z2 = np.dot(w2, y1)
+    y2 = np.maximum(z2, 0)
+    
+    return y1, y2, z1, z2
 
-    def backward_pass(y2, y, z1, z2, w2, x):
-        # MSE as loss function
-        L = 0.5 * (y2 - y)**2
-        dldy2 = y2 - y
-        # ReLU Derivative
-        dy2dz2 = (z2 > 0).astype(float) 
-        dldz2 = dldy2 * dy2dz2
-        
-        dz2dy1 = w2
-        dldy1 = np.dot(dz2dy1.T, dldz2)
-        # ReLU Derivative
-        dy1dz1 = (z1 > 0).astype(float)
-        dldz1 = dldy1 * dy1dz1
-        
-        dldw1 = np.outer(dldz1, x)
-        dldw2 = np.outer(dldz2, y1)
-        
-        return dldw1, dldw2
-
+def backward_pass(y2, y, z1, z2, w2, x):
+    # MSE as loss function
+    L = 0.5 * (y2 - y)**2
+    dldy2 = y2 - y
+    # ReLU Derivative
+    dy2dz2 = (z2 > 0).astype(float) 
+    dldz2 = dldy2 * dy2dz2
+    
+    dz2dy1 = w2
+    dldy1 = np.dot(dz2dy1.T, dldz2)
+    # ReLU Derivative
+    dy1dz1 = (z1 > 0).astype(float)
+    dldz1 = dldy1 * dy1dz1
+    
+    dldw1 = np.outer(dldz1, x)
+    dldw2 = np.outer(dldz2, y1)
+    
+    return dldw1, dldw2
+```
 
 
 * ii. Implement vanilla dropout for the forward and backward pass in NumPy.
@@ -432,3 +433,4 @@ def backward_pass_with_dropout(y2, y, z1, z2, w2, x, mask1, mask2):
     dldw2 = np.outer(dldz2, y1)
     
     return dldw1, dldw2
+```
