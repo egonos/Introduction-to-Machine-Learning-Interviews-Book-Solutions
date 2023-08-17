@@ -500,6 +500,11 @@ If the weight vector is in check during the training process then exploding or v
 
 **8.**When training a large neural network, say a language model with a billion parameters, you evaluate your model on a validation set at the end of every epoch. You realize that your validation loss is often lower than your train loss. What might be happening?
 
+-> If the validation set is small enough the errors can be monitored higher or lower than it actually is.
+
+-> Dropout or data augentation techniques make the training process harder. However they are not applied during evaluation of the validation set. This may be the cause of this problem.
+
+
 **9.** What criteria would you use for early stopping?
 
 I would use validation loss because training loss will continusly drop due to overfitting as the training process continues. We have to monitor something else
@@ -512,9 +517,33 @@ Gradient descent is a method for optimizing functions that are hard to caluclate
 
 **SGD** Fast, unstable, computationally light
 
-**Mini-batch GC** Somewhere in between
+**Mini-batch GD** Somewhere in between
 
 The mathematics of SGD:
 
 ![SGD](Images/SGD1.png)
 ![SGD](Images/SGD2.png)
+
+
+**11.** It’s a common practice to train deep learning models using epochs: we sample batches from data without replacement. Why would we use epochs instead of just sampling data with replacement?
+
+If we sample with replacement the model reinforces what it's learned even if it's wrong and some of the instances won't be selected for training. The mathematics:
+
+![OOB](Images/OOB.png)
+
+**12.** Your model’ weights fluctuate a lot during training. How does that affect your model’s performance? What to do about it?
+
+Consider a FFN having equal w matrix in each layer. We don't use any activation functions for the convenience:
+
+zi = output at layer i
+
+Assume i is the last layer. Then,
+
+y = zi = <w^i,x>
+
+If |w|>1 then y will be too large therefore ∂L/∂y will be large. This big graident forces w to switch to a opposite direction a lot. In second iteration a similar gradient having opposite direction occur and this process continues (the model diverges). You can think about this as a ball in a convex region fluctuates left and right continously.
+
+What to do?
+
+* Use regularization so that thwe weigths will always be in check.
+* Use an adaptive learning rate. Start fast and gradually slow down if necessary.
