@@ -267,7 +267,8 @@ I -> am
 
   -> do
 
-I am -> happy
+I am 
+    -> happy
 
     -> tired
 
@@ -470,3 +471,24 @@ CAN BE FILLED
 * iv. Derive derivatives for sigmoid function when is a vector.
 
 ![DerivativeSig](Images/Derivative%20Sigmoid.png)
+
+**5.** What’s the motivation for skip connection in neural works?
+
+By using residual connections, we can prevent vanishing gradient problem to occur.
+
+![ResNet](Images/ResNet1.png)
+![ResNet2](Images/ResNet2.png)
+
+**6.** Vanishing and exploding gradients.
+
+* i. How do we know that gradients are exploding? How do we prevent it?
+
+When the gradient are exploding generally the learning curve becomes significantly unstable. When we plot the learning curves and observe big zigzags then we can suspect that the exploding gradient problem takes in place.
+
+Exploding gradients can be solved by  scaling the input data (min-max scaling an be a good choice because NN models does not accept negative inputs) or scaling the hidden layer outputs (Batch Normalization or Layer Normalization can be really useful in that case)
+
+* ii. Why are RNNs especially susceptible to vanishing and exploding gradients?
+
+As I have shown in my hand writings, RNN uses sequential tanh's. The sequential derivatives of tanhs resulting gradients to vanish. (HOW EXPLODING GRADIENTS) 
+
+**7.** Weight normalization separates a weight vector’s norm from its gradient. How would it help with training?
