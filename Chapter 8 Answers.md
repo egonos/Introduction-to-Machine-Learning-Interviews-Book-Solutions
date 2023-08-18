@@ -601,5 +601,104 @@ If eta is already optimal applying this procedure is not beneficial.
 **18.** Batch size.
 
 * i. What happens to your model training when you decrease the batch size to 1?
+
+-> The epochs finish really quickly.
+
+-> The learning path could include much more zig-zags.
+
+-> The memory requirements of this process decrerases.
+
 * ii. What happens when you use the entire training data in a batch?
+
+-> The epochs take more time
+
+-> The memory requirements increases.
+
+-> The learning path expected to be more smooth.
+
 * iii. How should we adjust the learning rate as we increase or decrease the batch size?
+
+Learning rate should be decreased when a smaller batch size is used. In this way we can reduce the probability to diverge due to instability. Opposite is true for increased batch size.
+
+
+**19.** Why is Adagrad sometimes favored in problems with sparse gradients?
+
+**20.** Adam vs. SGD.
+ 
+* i. What can you say about the ability to converge and generalize of Adam vs. SGD?
+
+ADAM optimizer is a really successfull optimization algorithm compared to its relatives. Therefore, I'll use my vote for ADAM optimizer. More technically, ADAM uses weight decay and momentum at the same time. The added properties of ADAM makes it robust to hard paths i.e. the convergence probability is higher.
+
+* ii. What else can you say about the difference between these two optimizers?
+
+SGD in default settings, does not use momentum. It also does not uses weight decay.
+
+**21.** With model parallelism, you might update your model weights using the gradients from each machine asynchronously or synchronously. What are the pros and cons of asynchronous SGD vs. synchronous SGD?
+
+**22.** Why shouldn’t we have two consecutive linear layers in a neural network?
+
+Consider two linear layers
+
+z1 = <w,x>
+
+z2 = <w,z1>
+
+If |w| > 1 then z2 becomes large. This results in instability.
+
+On the other hand, if we use ReLU nonlinearity some of the neurons will close, resulting in  a lot smaller z2.
+
+**23.** Can a neural network with only RELU (non-linearity) act as a linear classifier?
+
+If we are creative enough, we can build a linear threshold classifier using ReLU nonlinearity. The last layer should contain ReLU and threshold function f:
+
+Class 1 if z>0
+
+Class -1 otherwise
+
+**24.** Design the smallest neural network that can function as an XOR gate.
+
+![XOR](Images/XOR.png)
+
+**25.** Why don’t we just initialize all weights in a neural network to zero?
+
+If we use zero-initialization, the gradients of all wi will be the same resulting in poor learning.
+
+**26.** Stochasticity.
+
+* i. What are some sources of randomness in a neural network?
+
+-> Random initialization
+
+-> Dropout
+
+-> Stochastic Gradient Descent
+
+-> Zero-meaned Gaussian Noise
+
+* ii. Sometimes stochasticity is desirable when training neural networks. Why is that?
+
+All the randomness decrease the risk of overfitting or neuron dependence.
+
+**27.** Dead neuron.
+
+* i. What’s a dead neuron?
+
+When all the graidents related to a neuron become zero, the neuron won't be updated during the training process. This is called the dead neuron problem.
+
+* ii.  How do we detect them in our neural network?
+
+* iii. How to prevent them?
+
+Dead neuron problem occurs mostly due to the negative part of the ReLU. We can use another varient of ReLU (like leaky one) or completely another nonlinearity (like Swish)
+
+**28.** Pruning.
+
+* i. Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
+
+* ii. How do you choose what to prune from a neural network?
+
+**29.**Pruning.
+
+* i. Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
+
+* ii. How do you choose what to prune from a neural network?
