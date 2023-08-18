@@ -733,4 +733,17 @@ Dead neuron problem occurs mostly due to the negative part of the ReLU. We can u
 
 * i. Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
 
+The goal of this process is to maintain accuracy of the network while increasing its efficiency. This can be done to reduce the computational resources required to run the neural network.
+
+ref: https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)#:~:text=In%20the%20context%20of%20artificial,network%20while%20increasing%20its%20efficiency.
+
 * ii. How do you choose what to prune from a neural network?
+
+A basic algorithm for pruning is as follows:
+
+1. Evaluate the importance of each neuron.
+2. Rank the neurons according to their importance (assuming there is a clearly defined measure for "importance").
+3. Remove the least important neuron.
+4. Check a termination condition (to be determined by the user) to see whether to continue pruning.
+
+ref: https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)#:~:text=In%20the%20context%20of%20artificial,network%20while%20increasing%20its%20efficiency.
