@@ -416,6 +416,8 @@ Explained above.
 
 **11.** How can a fully-connected layer be converted to a convolutional layer?
 
+It seems that using tf.reshape() can be used for reshaping but since I have no experience on that topic I won't answer this question.
+
 **12.** Pros and cons of FFT-based convolution and Winograd-based convolution.
 
 ......
