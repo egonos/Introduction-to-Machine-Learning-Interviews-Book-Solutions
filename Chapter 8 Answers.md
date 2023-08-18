@@ -359,7 +359,7 @@ Empirically. It is always a good idea to start small.
 
 **3.** Convolutional layers are also known as “locally connected.” Explain what it means.
 
-Convolutional layers are different from the FFN layers. In FFN layers as the name suggests all the nodes are connected to each other among two subsequent layers. In CNN architecture the connected nodes are responsible from a local region. (If they are not processing the same part of an image then they are not connected)
+Convolutional layers are different from the Fully Connected Neural Network (FFN) layers. In FFN layers as the name suggests all the nodes are connected to each other among two subsequent layers. In CNN architecture the connected nodes are responsible from a local region. (If they are not processing the same part of an image then they are not connected)
 
 **4.** When we use CNNs for text data, what would the number of channels be for the first conv layer?
 
@@ -369,7 +369,11 @@ The filter size is constant. When we use strides with the filters the outer most
 
 **6.** Why do we need upsampling? How to do it?
 
-Upsampling is needed both in AutoEncoders. We capture the most important information (or reduce the dimension) of an image, then to revert it back to its original size, we need to upsample.
+Upsampling is needed in AutoEncoders. We capture the most important information (or reduce the dimension) of an image, then to revert it back to its original size, we need to upsample.
+
+-> Nearest Neighbour upsampling
+
+-> Bilinear Interpolation
 
 **7.** What does a 1x1 convolutional layer do?
 
