@@ -623,6 +623,24 @@ Learning rate should be decreased when a smaller batch size is used. In this way
 
 **19.** Why is Adagrad sometimes favored in problems with sparse gradients?
 
+Now, first look at the update rule of AdaGrad:
+
+w_t+1,i = w_t,i - eta/sqrt(alpha_t + epsilon)
+
+where 
+
+alpha_1 =  (∂L/∂w1)**2
+
+alpha_2 = (∂L/∂w1)^2 + (∂L/∂w2)^2
+
+alpha_3 = (∂L/∂w1)^2 + (∂L/∂w2)^2 + (∂L/∂w3)^2  {keeps getting bigger, decreases eta more and more}
+
+when given w is sparse, then the update will be occur on a higher eta allowing the model utilize sparse variables more effectively. On the other hand, if the reverse happens, eta keeps getting smaller so more fine tuned approach is adopted. 
+
+Note that AdaGrad could stop learning before reaching global optima.
+
+
+
 **20.** Adam vs. SGD.
  
 * i. What can you say about the ability to converge and generalize of Adam vs. SGD?
@@ -697,7 +715,7 @@ Dead neuron problem occurs mostly due to the negative part of the ReLU. We can u
 
 * ii. How do you choose what to prune from a neural network?
 
-**29.**Pruning.
+**29.** Pruning.
 
 * i. Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
 
