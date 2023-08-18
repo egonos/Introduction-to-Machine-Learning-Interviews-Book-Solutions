@@ -721,15 +721,9 @@ When all the graidents related to a neuron become zero, the neuron won't be upda
 
 * iii. How to prevent them?
 
-Dead neuron problem occurs mostly due to the negative part of the ReLU. We can use another varient of ReLU (like leaky one) or completely another nonlinearity (like Swish)
+Dead neuron problem occurs mostly due to the negative part of the ReLU. We can use another varient of ReLU (like leaky one) or completely another nonlinearity (like Swish).
 
 **28.** Pruning.
-
-* i. Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
-
-* ii. How do you choose what to prune from a neural network?
-
-**29.** Pruning.
 
 * i. Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
 
@@ -747,3 +741,14 @@ A basic algorithm for pruning is as follows:
 4. Check a termination condition (to be determined by the user) to see whether to continue pruning.
 
 ref: https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)#:~:text=In%20the%20context%20of%20artificial,network%20while%20increasing%20its%20efficiency.
+
+
+**29.** Under what conditions would it be possible to recover training data from the weight checkpoints?
+
+If the model overfitted, by reverting the learning we can recover most of the training data. For example if w is square and we have no activations and the model memorized the training data, then 
+
+changing y = w.x to x = w^-1.y helps us to recover the training data. 
+
+**30.** Why do we try to reduce the size of a big trained model through techniques such as knowledge distillation instead of just training a small model from the beginning?
+
+Some of the times small models are not suitable becuase they underfit a lot. Instead of risking this especially if we have enough memory and computational resources, we can use more complex models and try to simplify their learning process.
