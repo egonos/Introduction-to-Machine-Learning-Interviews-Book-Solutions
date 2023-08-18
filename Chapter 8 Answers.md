@@ -408,8 +408,19 @@ The commputational requirements increases since conv layer does matrix multipica
 
 The model might not capture the most important pattern(s) in given local region.
 
-9. When we replace a normal convolutional layer with a depthwise separable convolutional layer, the number of parameters can go down. How does this happen? Give an example to illustrate this.
+**9.** When we replace a normal convolutional layer with a depthwise separable convolutional layer, the number of parameters can go down. How does this happen? Give an example to illustrate this.
 
+Explained above.
+
+**10.** Can you use a base model trained on ImageNet (image size 256 x 256) for an object classification task on images of size 320 x 360? How?
+
+**11.** How can a fully-connected layer be converted to a convolutional layer?
+
+**12.** Pros and cons of FFT-based convolution and Winograd-based convolution.
+
+......
+
+For a base model i
 # 8.3 Training neural networks
 
 **1.** When building a neural network, should you overfit or underfit it first?
