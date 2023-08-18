@@ -321,7 +321,41 @@ Since TF increases it's rank also increases. Although the intention is good, the
 
 I would prefer n-grams because the Neural Language Models require lots of words to perform thier best. Moreover, starting with a simple model is always a good choice due to its low memory and computational requirements.
 
+# 8.2.2 Computer vision
 
+**1.** For neural networks that work with images like VGG-19, InceptionNet, you often see a visualization of what type of features each filter captures. How are these visualizations created?
+
+Hint: check out this Distill post on Feature Visualization.
+
+
+**2.** Filter size.
+
+* i. How are your model’s accuracy and computational efficiency affected when you decrease or increase its filter size?
+
+If we increase the filter size, the models ability to capture more complex patterns increases. Therefore, I expect an increase in accuracy. On the other hand, since the marginal increase in accuracy has a cost of higher computational requirements, I expect a decrease in computational efficiency.
+
+
+* ii. How do you choose the ideal filter size?
+
+Empirically.
+
+**3.** Convolutional layers are also known as “locally connected.” Explain what it means.
+**4.** When we use CNNs for text data, what would the number of channels be for the first conv layer?
+**5.** What is the role of zero padding?
+**6.** Why do we need upsampling? How to do it?
+
+Upsampling is needed bıth in CV classifiers and AutoEncoders.
+
+CV classifiers: As the CNN layers 
+**7.** What does a 1x1 convolutional layer do?
+
+1x1 convolution (pointwise convolution) is used for changing the 3rd dimension (# of filters) of a CNN architeture. Together with the depthwise convolution, researchers created the model called MobileNet. Thanks to these two properties, MobileNet works really efficiently (small to no loss in accuracy while saving lots of computational resources).
+
+Here are the visual explanation and mathematics (my notes from Andrew NG's CNN Class):
+
+![Depthwise](Images/Depthwise%20Convolution.jpg)
+![Pointwise](Images/Pointwise%20Convolution.jpg)
+![Comparison](Images/Comparison.png)
 
 
 # 8.3 Training neural networks
