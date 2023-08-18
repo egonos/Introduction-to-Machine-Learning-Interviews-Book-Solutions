@@ -653,6 +653,20 @@ SGD in default settings, does not use momentum. It also does not uses weight dec
 
 **21.** With model parallelism, you might update your model weights using the gradients from each machine asynchronously or synchronously. What are the pros and cons of asynchronous SGD vs. synchronous SGD?
 
+ASGD
+
+**Pros:** Fast computing
+
+**Cons:** The asynchron nature results in old and new gradients to occur. Since not all the updates are based on the most recent one this can make model to stale.
+
+SSGD
+
+**Pros:** Slower computing. Each worker has to wait until all of them become ready.
+
+**Cons** More stable gradient update
+
+
+
 **22.** Why shouldn’t we have two consecutive linear layers in a neural network?
 
 Consider two linear layers
@@ -663,7 +677,7 @@ z2 = <w,z1>
 
 If |w| > 1 then z2 becomes large. This results in instability.
 
-On the other hand, if we use ReLU nonlinearity some of the neurons will close, resulting in  a lot smaller z2.
+On the other hand, if we use ReLU nonlinearity some of the neurons will close, resulting in  a lot smaller z2. Therefore the model can capture more complex patterns.
 
 **23.** Can a neural network with only RELU (non-linearity) act as a linear classifier?
 
