@@ -386,6 +386,30 @@ Here are the visual explanation and mathematics (my notes from Andrew NG's CNN C
 ![Comparison](Images/Comparison.png)
 
 
+**8.** Pooling.
+
+* i. What happens when you use max-pooling instead of average pooling?
+
+Given the window size nxn when we apply max-pooling the output becomes max(values in nxn matrix). If we use average pooling then we get avg(values in nxn matrix)
+
+* ii. When should we use one instead of the other?
+
+Except the exceptional cases, the max-pooling gives allows us to get more accurate results.
+
+* iii. What happens when pooling is removed completely?
+
+Pooling is a downsampling method so if we remove it then the downsampling process won't be accomplished
+
+* iv. What happens if we replace a 2 x 2 max pool layer with a conv layer of stride 2?
+
+The commputational requirements increases since conv layer does matrix multipications and contains learnable parameters (max-pooling does not).
+
+`Output dim = (F-N+2P)/S + 1` formula still applies so output dimension remains the same.
+
+The model might not capture the most important pattern(s) in given local region.
+
+9. When we replace a normal convolutional layer with a depthwise separable convolutional layer, the number of parameters can go down. How does this happen? Give an example to illustrate this.
+
 # 8.3 Training neural networks
 
 **1.** When building a neural network, should you overfit or underfit it first?
