@@ -325,7 +325,7 @@ I would prefer n-grams because the Neural Language Models require lots of words 
 
 **1.** For neural networks that work with images like VGG-19, InceptionNet, you often see a visualization of what type of features each filter captures. How are these visualizations created?
 
-Hint: check out this Distill post on Feature Visualization.
+.........
 
 
 **2.** Filter size.
