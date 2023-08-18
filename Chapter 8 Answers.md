@@ -332,21 +332,45 @@ Hint: check out this Distill post on Feature Visualization.
 
 * i. How are your model’s accuracy and computational efficiency affected when you decrease or increase its filter size?
 
-If we increase the filter size, the models ability to capture more complex patterns increases. Therefore, I expect an increase in accuracy. On the other hand, since the marginal increase in accuracy has a cost of higher computational requirements, I expect a decrease in computational efficiency.
+Increased filter size:
+
+->The models ability to capture more complex patterns increases. 
+
+->Becomes more prone to overfitting.
+
+-> If the model has not overfitted then accuracy increases. The opposite happens otherwise.
+
+-> The computational requirements increases.
+
+Decreased filter size:
+
+->The models ability to capture more complex patterns decreases. 
+
+->Becomes more prone to underfitting.
+
+-> If the model has overfitted then accuracy increases. The opposite happens otherwise.
+
+-> The computational requirements decreases.
 
 
 * ii. How do you choose the ideal filter size?
 
-Empirically.
+Empirically. It is always a good idea to start small.
 
 **3.** Convolutional layers are also known as “locally connected.” Explain what it means.
+
+Convolutional layers are different from the FFN layers. In FFN layers as the name suggests all the nodes are connected to each other among two subsequent layers. In CNN architecture the connected nodes are responsible from a local region. (If they are not processing the same part of an image then they are not connected)
+
 **4.** When we use CNNs for text data, what would the number of channels be for the first conv layer?
+
 **5.** What is the role of zero padding?
+
+The filter size is constant. When we use strides with the filters the outer most pixels will be processed lot less compared to the ones in the middle. Thats why we're using zero paading. This way we attempt to solve this problem.
+
 **6.** Why do we need upsampling? How to do it?
 
-Upsampling is needed bıth in CV classifiers and AutoEncoders.
+Upsampling is needed both in AutoEncoders. We capture the most important information (or reduce the dimension) of an image, then to revert it back to its original size, we need to upsample.
 
-CV classifiers: As the CNN layers 
 **7.** What does a 1x1 convolutional layer do?
 
 1x1 convolution (pointwise convolution) is used for changing the 3rd dimension (# of filters) of a CNN architeture. Together with the depthwise convolution, researchers created the model called MobileNet. Thanks to these two properties, MobileNet works really efficiently (small to no loss in accuracy while saving lots of computational resources).
