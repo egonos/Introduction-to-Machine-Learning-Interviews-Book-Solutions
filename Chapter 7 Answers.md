@@ -249,3 +249,14 @@ We can employ a handful of statsitical tests to determine whether two set of sam
 The best way to see the answer of this question is to plot learning curves of training and validation data. If training and cross validation loss are similar given data, increasing the number of instances won't improve the perforance. Conversely, if there is a gap between those two, the model would probably benefit from increased data size:
 
 ! [CV](Images/Cross%20Validation%20Loss.png)
+
+
+**10.** How to determine outliers in your data samples? What to do with them?
+
+1. If the data is somewhat normal then IQR based approaches work really well. Similarly we can use box plots or violin plots for the same purpose.
+
+2. If the data is not normal, scatter plots can be really handy. To visualize the data we can preprocess the data using dimension reduction techniques such as PCA as well.
+
+3. We can also use AutoEncoders to detect outliers. The compression and expansion processes show us the outliers in our data if there any.
+
+4. Clustering algorithms such as KMeans (if the data is spherical) or DBSCAN (if the data is not spherical) can be useful.
