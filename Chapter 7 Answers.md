@@ -272,3 +272,14 @@ Sometimes duplicates occur naturally in the data. For example, when working with
 1. If it won't cause a problem, I would drop the duplicates.
 
 2. Alternatively, I can take the row form of the data and apply the same procedures until the recent error is resolved.
+
+**12.** Missing data
+
+* i.  In your dataset, two out of 20 variables have more than 30% missing values. What would you do?
+
+1. If the feature is not important, I would drop it.
+2. If it's important, then I'll try to fill the missing values depending on the case. Sometimes the sample statistics are sufficient. In other cases, we may need to use more advanced missing value handling techniques. In my experience, `XGBImputer` works really well.
+
+* ii. How might techniques that handle missing data make selection bias worse? How do you handle this bias?
+
+Using simpler approaches can be helpful. As we employ more advanced techniques, the model selectively picks the samples and uses them to fill the missing values. This may cause overfitting to occur. On the other hand, simpler approaches such as using sample statistics do not have this problem.
