@@ -321,6 +321,12 @@ Since TF increases it's rank also increases. Although the intention is good, the
 
 I would prefer n-grams because the Neural Language Models require lots of words to perform thier best. Moreover, starting with a simple model is always a good choice due to its low memory and computational requirements.
 
+**7.** For n-gram language models, does increasing the context length (n) improve the model’s performance? Why or why not?
+
+Increasinf context length n may contribute the model performance especially the model is too simple for the given dataset. When we increase the size n, the context of the given word is detemined based on more nearby words. This allows the model to capture more complex meanings. However, if the model is already appropriate for the given task, increasing n may decrease the model performance (besides increasing the computational requirements). If the text data is not too complex, then model tends to overfit i.e. includes more words then necessary.
+
+
+
 # 8.2.2 Computer vision
 
 **1.** For neural networks that work with images like VGG-19, InceptionNet, you often see a visualization of what type of features each filter captures. How are these visualizations created?
