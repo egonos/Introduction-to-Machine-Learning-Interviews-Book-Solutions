@@ -283,3 +283,5 @@ Sometimes duplicates occur naturally in the data. For example, when working with
 * ii. How might techniques that handle missing data make selection bias worse? How do you handle this bias?
 
 Using simpler approaches can be helpful. As we employ more advanced techniques, the model selectively picks the samples and uses them to fill the missing values. This may cause overfitting to occur. On the other hand, simpler approaches such as using sample statistics do not have this problem.
+
+**13.** Why is randomization important when designing experiments (experimental design)?
