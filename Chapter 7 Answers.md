@@ -225,3 +225,22 @@ Another alternative could be Quota Sampling. Let's say I want 50K for both class
 * ii.  Suppose you get back 100K labeled comments from 20 annotators and you want to look at some labels to estimate the quality of the labels. How many labels would you look at? How would you sample them?
 
 I would pick at least 30 samples for each stratum because, for the Central Limit Theorem (CLT) to be valid (or to make healthy statistical inferences), we need at least 30 samples.
+
+**7.** Suppose you work for a news site that historically has translated only 1% of all its articles. Your coworker argues that we should translate more articles into Chinese because translations help with the readership. On average, your translated articles have twice as many views as your non-translated articles. What might be wrong with this argument?
+
+There is a mismatch between the concepts that have been talked. My friend talks about all the articles published. Conversely, I'm talking about the artickles that I have been translated. My selections are biased towards the publisher (me). That's why the facts are not alligning with each other.
+
+
+There is a mismatch between the concepts that have been talked about. My friend talks about all the articles published. Conversely, I'm talking about the articles that have been translated. My selections are biased towards the publisher (me). That's why the facts are not aligning with each other.
+
+How to determine whether two sets of samples (e.g. train and test splits) come from the same distribution?
+
+We can employ a handful of statsitical tests to determine whether two set of samples belng to the same distribution:
+
+* Mann-Whitney U Test: This is a non-parametric test used to determine whether two sample groups belong to the same distribution. To compute this test effectively the variables should be ordered because the calculations are made based on the order of the values. (ref: https://acikders.ankara.edu.tr/pluginfile.php/30763/mod_resource/content/0/10_Mann%20Whitney%20U%20Testi.pdf)
+
+* t-test: To see whether the difference of the mean belonging to two distinct statistical distributions. (ref: https://acikders.ankara.edu.tr/pluginfile.php/169671/mod_resource/content/0/12_T%20TEST%C4%B0.pdf)
+
+* Chi-Square Test: To work on the same topic but for categorical data.
+
+
