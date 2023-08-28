@@ -233,7 +233,7 @@ There is a mismatch between the concepts that have been talked. My friend talks 
 
 There is a mismatch between the concepts that have been talked about. My friend talks about all the articles published. Conversely, I'm talking about the articles that have been translated. My selections are biased towards the publisher (me). That's why the facts are not aligning with each other.
 
-How to determine whether two sets of samples (e.g. train and test splits) come from the same distribution?
+**8.** How to determine whether two sets of samples (e.g. train and test splits) come from the same distribution?
 
 We can employ a handful of statsitical tests to determine whether two set of samples belng to the same distribution:
 
@@ -244,3 +244,8 @@ We can employ a handful of statsitical tests to determine whether two set of sam
 * Chi-Square Test: This test is suitable for evaluating whether two sets of categorical data come from the same distribution.
 
 
+**9.** How do you know you’ve collected enough samples to train your ML model?
+
+The best way to see the answer of this question is to plot learning curves of training and validation data. If training and cross validation loss are similar given data, increasing the number of instances won't improve the perforance. Conversely, if there is a gap between those two, the model would probably benefit from increased data size:
+
+! [CV](Images/Cross%20Validation%20Loss.png)
