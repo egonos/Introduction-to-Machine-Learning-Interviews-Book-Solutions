@@ -152,3 +152,76 @@ On the other hand, L1 norm is a subgradient meaning all the values not being 0 t
 * i. What are your hypotheses about the causes?
 * ii. How do you validate whether your hypotheses are correct?
 [M] Imagine your hypotheses about the causes are correct. What would you do to address them?
+
+# 7.2 Sampling and creating training data
+
+1. If you have 6 shirts and 4 pairs of pants, how many ways are there to choose 2 shirts and 1 pair of pants?
+
+(6_2)*(4_1) = 60 ways
+
+2.  What is the difference between sampling with vs. without replacement? Name an example of when you would use one rather than the other?
+
+**Sampling with replacement:** On each trial the probability of each sample to be picked is 1/n. This means one sample caould be picked more than one time.
+
+**Sampling without replacement:** On each trial, the number of samples decreases. That's why the chance of a sample in the population to be picked increases (1/n, 1/(n-1)...).
+
+Lets say we have a large population which is hard to sample. Luckily we have a sample group. However since we have only one sample group, we can not apply Cental Limit Theorem directly. By bootstraping, we can multiply the sample groups we have and by using CLT, without collecting more samples we can gain some insights about the population.
+
+On the other hand, if the sampling is done fpr pther purposes, then adopting sampling without replacement would be a better choice. For example when deciding the winner of the lottery, if we use sampling with replacement then one lucky person could win more than one prize which is meaningless. 
+
+**3.** Recall Accept Reject Sampling:
+
+In Accept Reject sampling we are trying to sample from a probability distribution f(x) which is hard to sample from. We use a g(x) ~ N(μ,σ) for that purpose. Since it is Gaussian, we can easily pick samples from g(x). Then accept-reject part comes into play. Based on the probability f(x)/(M*g(x)); M ∈ N we accept or reject the samples that we have picked from g(x). Since M scales the distribution g(x), the scaled version covers f(x).
+
+The problem arises when f(x) is too complex. The M we need to use becomes too big resulting accepting probability f(x)/(M*g(x)) to be too small. Because of this problem we use MCMC. Different from Accept Reject sampling, in MCMC we utilize the last sample to get the next sample (Markov Chain Assumption: The next state is dependent on the last state). First we find the stationary distribution of Markov Chain. Then assume the accept reject probability as p(x'/x) where p(x'/x) is the transition probability from x' to x. By doing this we are not dependent of M anymore so small accept probabilities won't become an issue.
+
+**4.** If you need to sample from high-dimensional data, which sampling method would you choose?
+
+I would prefer Gibbs Sampling. Gibbs sampling is a MCMC method for multidimensional cases. To use Gibbs sampling, the following two conditions should be satisfied:
+
+* p(x1|x2,x3,x4...xn), p(x2|x1,x3,x4...xn) are easy to sample from.
+
+* p(x1,x2.....xn) is hard to sample from.
+
+The algorithm is pretty simple. Consider 2D p(x,y)
+
+1. Start with (x_0,y_0).
+2. x_1 ~ p(x_1|y_0); y_1 ~ p(y_1|x_1)
+3. We obtained ours second sample: (x_1,y_1)
+
+...
+
+**5.** Suppose we have a classification task with many classes. An example is when you have to predict the next word in a sentence -- the next word can be one of many, many possible words. If we have to calculate the probabilities for all classes, it’ll be prohibitively expensive. Instead, we can calculate the probabilities for a small set of candidate classes. This method is called candidate sampling. Name and explain some of the candidate sampling algorithms.
+
+Consider (xi,Ti) ∈ L where xi are the features, Ti are the labels and L is a large universe. F(x,y) is our compatibility function. By using F, our goal is to explain the pattern(s) behind all (xi,Ti) pairs. When L is too large, computing F(x,y) can be really compututationally expensive. When then happens, we try to pick a sample group called Candidates Ci ⊂ L and compute function F only in Ci domain. Generally Ci consists of the real targets Ti and randomly selected samples belonging to other classes Si
+
+Ci = Ti U Si
+
+An example:
+
+Word2Vec
+
+Ti => Word pairs within the window 
+
+Si => Randomly selected word pairs not in the window
+
+F(x,y) => log(P(y|x)/Q(y|x))
+
+
+
+**6.** Suppose you want to build a model to classify whether a Reddit comment violates the website’s rule. You have 10 million unlabeled comments from 10K users over the last 24 months and you want to label 100K of them.
+
+* i. How would you sample 100K comments to label?
+
+I would start with Random Sampling however since the data is likely to be imbalanced i.e. comments violating website's rule is significantly less than the rest, this approach may not be the best.
+
+If the results allign with my expectations, I would proceed with stratified sampling. In this way, I would be more confident about my sample group because I know that it contains both of the classes.
+
+Alternatively, I can play with the sampling probabilities of the samples. For example assigning a higher probabibility for the minority group can contribute significantly to our sampling process.
+
+Another alternative could be Quota Sampling. Let's say I want 50K for both classes. Until I reach the limit, I'll continue to sample.
+
+
+* ii.  Suppose you get back 100K labeled comments from 20 annotators and you want to look at some labels to estimate the quality of the labels. How many labels would you look at? How would you sample them?
+
+I would pick at least 30 samples for each stratum because, for the Central Limit Theorem (CLT) to be valid (or to make healthy statistical inferences), we need at least 30 samples.
