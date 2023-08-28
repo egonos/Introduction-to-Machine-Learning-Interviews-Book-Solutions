@@ -237,10 +237,10 @@ How to determine whether two sets of samples (e.g. train and test splits) come f
 
 We can employ a handful of statsitical tests to determine whether two set of samples belng to the same distribution:
 
-* Mann-Whitney U Test: This is a non-parametric test used to determine whether two sample groups belong to the same distribution. To compute this test effectively the variables should be ordered because the calculations are made based on the order of the values. (ref: https://acikders.ankara.edu.tr/pluginfile.php/30763/mod_resource/content/0/10_Mann%20Whitney%20U%20Testi.pdf)
+* Mann-Whitney U Test: This is a non-parametric test used to determine whether two sample groups belong to the same distribution. To compute this test effectively, the variables should be ordered because the calculations are made based on the order of the values.  (ref: https://acikders.ankara.edu.tr/pluginfile.php/30763/mod_resource/content/0/10_Mann%20Whitney%20U%20Testi.pdf)
 
-* t-test: To see whether the difference of the mean belonging to two distinct statistical distributions. (ref: https://acikders.ankara.edu.tr/pluginfile.php/169671/mod_resource/content/0/12_T%20TEST%C4%B0.pdf)
+*t-test: This test is used to determine whether the means of two different statistical distributions are significantly different. (ref: https://acikders.ankara.edu.tr/pluginfile.php/169671/mod_resource/content/0/12_T%20TEST%C4%B0.pdf)
 
-* Chi-Square Test: To work on the same topic but for categorical data.
+* Chi-Square Test: This test is suitable for evaluating whether two sets of categorical data come from the same distribution.
 
 
