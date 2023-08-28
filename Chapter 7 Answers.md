@@ -260,3 +260,15 @@ The best way to see the answer of this question is to plot learning curves of tr
 3. We can also use AutoEncoders to detect outliers. The compression and expansion processes show us the outliers in our data if there any.
 
 4. Clustering algorithms such as KMeans (if the data is spherical) or DBSCAN (if the data is not spherical) can be useful.
+
+**11.** Sample duplication
+
+* i. When should you remove duplicate training samples? When shouldn’t you?
+
+Sometimes duplicates occur naturally in the data. For example, when working with multiple tweets, "Fantastic!" would probably occur more than once. In these cases, we should never drop the duplicates. On the other hand, duplicates can occur because of an error during data collection, processing, or transfer. In these cases, we should get rid of these duplicates.
+
+* ii. What happens if we accidentally duplicate every data point in your train set or in your test set?
+
+1. If it won't cause a problem, I would drop the duplicates.
+
+2. Alternatively, I can take the row form of the data and apply the same procedures until the recent error is resolved.
