@@ -285,3 +285,57 @@ Sometimes duplicates occur naturally in the data. For example, when working with
 Using simpler approaches can be helpful. As we employ more advanced techniques, the model selectively picks the samples and uses them to fill the missing values. This may cause overfitting to occur. On the other hand, simpler approaches such as using sample statistics do not have this problem.
 
 **13.** Why is randomization important when designing experiments (experimental design)?
+
+Because of our limitations, we cannot conduct experiments on the entire population. To solve this problem, we use randomized samples. Fortunately, when we pick our samples randomly, we can gain insights about the entire population using the Central Limit Theorem (CLT).
+
+
+**14.** Class imbalance.
+
+* i. How would class imbalance affect your model?
+
+Class imbalance is a hard concept to deal with. The model trained on an imbalaced dataset expected to be biased towards majority set resulting poor generalizing performance of a data.
+
+* ii. Why is it hard for ML models to perform well on data with class imbalance?
+
+Since the model is baised, the predictions are expected to be towrds majority class. This works for the training data but not in the real case evaluations.
+
+* iii. Imagine you want to build a model to detect skin legions from images. In your training dataset, only 1% of your images shows signs of legions. After training, your model seems to make a lot more false negatives than false positives. What are some of the techniques you'd use to improve your model?
+
+I would decrease the decision threshold. By doing so the model will accept more instances (label them as positive). This move increases recall but decreases precision.
+
+
+**15.** Training data leakage.
+
+* i. Imagine you're working with a binary task where the positive class accounts for only 1% of your data. You decide to oversample the rare class then split your data into train and test splits. Your model performs well on the test split but poorly in production. What might have happened?
+
+Oversampling may provide more instances but it does not mean more training. In fact since the positive classes are mostly the same, the model memorizes the positive instances rather than the patterns. That's why iy performs worse in production.
+
+* ii. You want to build a model to classify whether a comment is spam or not spam. You have a dataset of a million comments over the period of 7 days. You decide to randomly split all your data into the train and test splits. Your co-worker points out that this can lead to data leakage. How?
+....
+
+**16.** How does data sparsity affect your models?
+
+Data sparsity increases the dimension of the data without serving further information. For the distance based models (like KNN, KMeans etc.) it results in *curse of dimensionality*. On the other hand, even my data is resilient for the curse of dimensionality (tree models), the increased dimensions take more computational power and time.
+
+**17.** Feature leakage
+
+* i. What are some causes of feature leakage?
+
+1. Ordinal features and ordered labels: If I have an id column and ordered labels, the model automatically develops a decision criteria as:
+
+y = 1 if id < 150 (let's say)
+
+y = 0 otherwise
+
+2. Mulitcolinearity: If any of two data is not **linearly independent**, this may cause the model to develop wrong learning patterns. Luckily we can monitor this via several methods. Personally I use pearson correlations (continuous data) and chi-square of independence test (categorical data)
+
+
+* ii. Why does normalization help prevent feature leakage?
+
+NO IDEA
+
+* iii. How do you detect feature leakage?
+
+Answered in (i.)
+
+**18.** Suppose you want to build a model to classify whether a tweet spreads misinformation. You have 100K labeled tweets over the last 24 months. You decide to randomly shuffle on your data and pick 80% to be the train split, 10% to be the valid split, and 10% to be the test split. What might be the problem with this way of partitioning?
