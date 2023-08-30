@@ -615,3 +615,5 @@ print(f'TP: {tp}, FP: {fp}, TN: {tn}, FN: {fn}')
 ![LogMSE](Images/Logreg%20vs%20MSE1.png)
 
 ![LogMSE](Images/Logreg%20vs%20MSE2.png)
+
+ŞUNUN doğruluğuna bak
