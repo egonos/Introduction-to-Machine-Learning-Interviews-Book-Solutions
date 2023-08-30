@@ -387,3 +387,67 @@ Xt+1 - Xt <= Ɛ for couple of subsequent t's then it means the model is converge
 **2.** Draw the loss curves for overfitting and underfitting.
 
 ![LossCurves](Images/Loss%20Curves.png)
+
+**3.** Bias-variance trade-off
+* i. What’s the bias-variance trade-off?
+
+Bias-variance tradeoff is a fundamental concept in machine learning. Let's start with bias. The term bias refers *error*. When do we have lots of error? If the decision pattern ml model created is too simple. Consider this example:
+
+Model: Decision Stump
+
+Decision criteria: Height
+
+If height < 1.80m then Gender is Female.
+
+Male otherwise
+
+The decision pattern is too simple meaning it makes lots of errors. However at least the model is consistent in it's decisions.
+
+Model: Unpruned Decision Tree
+
+Decision Criteria, Heigh, Weight, Grades, Pen Color, Pencil Color, Eraser Number
+
+If height is... Weight is... Grades are... Pen Color is... Pencil Color is... Eraser Number is... then Male
+
+Female Otherwise
+
+A model like this predicts differently even a small change in the inputs (possibly noise). The model has a large *variance* in its decisions. However, in the training data especially, it makes little to no error. 
+
+When we are creating models, we need to come up with one lying these two extremes. Increasing one automatically decreases the other. This phenomena is called bias-variance trade-off.
+
+* ii. How’s this tradeoff related to overfitting and underfitting?
+
+A model with high bias low variance has underfitted. If the opposite have happened then we say the model has overfitted.
+
+* iii. How do you know that your model is high variance, low bias? What would you do in this case?
+
+Adopting a simpler model is a choice but frequently not the solution we are looking for. Because simpler model not balances but rather creates an imbalance in opposite direction. On the other hand, regularization is a good idea. Optimizing multiple objectives can enhance the training process.
+
+* iv. How do you know that your model is low variance, high bias? What would you do in this case?
+
+1. Visualization: If my model is too simple, it is often suitable to visualize its decision criterias.
+
+2. Manuel label control: If model predictions and a predictor have a high correlation then i start to suspect.
+
+What to do?
+
+1. Increase model complexity: Weaken the regularization or increase max_depth (in tree models).
+2. Adopt more complex models: SVM instead of Linear Regression
+3. Use Kernels (for SVM)
+4. Increase number of nodes hidden layers etc (for NN) 
+
+**4.** Cross-validation.
+
+* i. Explain different methods for cross-validation.
+
+1. Basic Train-Test splits: Randomly assign the instances to train and test sets.
+
+2. K-Fold Cross Validation:
+
+Split the data into K Folds. Use ith fold for testing the model performance and the rest for model training. After using all folds for testing average the performance outcomes. This method is better than train test splits because we eliminate the noise occured due to random assignments.
+
+3. Stratified K Fold Cross Validation: Similar to K Fold Cross Validation but also uses stratums to assign the instances in a more balanced fashion.
+
+4. Leave One Out Cross Validation: It is a spesific type of K Fold Cross Validation. In this method, K = n (the number of instances).
+
+* ii. Why don’t we see more cross-validation in deep learning?
