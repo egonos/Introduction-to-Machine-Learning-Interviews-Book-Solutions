@@ -609,3 +609,9 @@ print(f'TP: {tp}, FP: {fp}, TN: {tn}, FN: {fn}')
 #Recall for Class 1: 1.0
 #TP: 1, FP: 49, TN: 50, FN: 0
 ```
+
+**10.** For logistic regression, why is log loss recommended over MSE (mean squared error)?
+
+![LogMSE](Images/Logreg%20vs%20MSE1.png)
+
+![LogMSE](Images/Logreg%20vs%20MSE2.png)
