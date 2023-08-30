@@ -310,7 +310,14 @@ To improve the model, I would lower the decision threshold, increasing recall at
 Oversampling may provide more instances but it doesn't mean better learning. In fact, since the positive classes are mostly the same, the model tends to memorize these duplicates rather than learning general patterns. That's why it performs worse in production.
 
 * ii. You want to build a model to classify whether a comment is spam or not spam. You have a dataset of a million comments over the period of 7 days. You decide to randomly split all your data into the train and test splits. Your co-worker points out that this can lead to data leakage. How?
-....
+
+ChatGPT:
+
+> Temporal Patterns: If the data has temporal patterns (e.g., more spam comments during weekends), then a random split would distribute these patterns across both the training and test sets. This could make the model artificially good at recognizing these patterns, as they would be present in the test set. A better approach would be to use a time-based split, where you train on older data and test on newer data.
+
+>Duplicate or Near-Duplicate Comments: If there are duplicate or near-duplicate spam comments, a random split could place some of these in the training set and others in the test set. The model would then easily recognize these in the test set, inflating its performance metrics.
+
+> User Behavior: If multiple comments from the same user are present, and that user tends to produce either mostly spam or mostly non-spam comments, then a random split could distribute comments from this user across both sets. This would make it easier for the model to classify comments from this user in the test set, again inflating performance metrics.
 
 **16.** How does data sparsity affect your models?
 
