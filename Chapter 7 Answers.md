@@ -474,5 +474,35 @@ What I'm seeing is the model has overfitted. In this case we expect a decrease i
 **6.** Your team is building a system to aid doctors in predicting whether a patient has cancer or not from their X-ray scan. Your colleague announces that the problem is solved now that they’ve built a system that can predict with 99.99% accuracy. How would you respond to that claim?
 
 
+Here is a heuristic: If the result is too great then something is wrong. The possible causes:
+
+1. Imbalanced data: For the biological cases, we often have an imbalanced data. The model we have created is biased towards majority class. Since our test data is also imbalanced, this level is accuracy is expected.
+
+2. Data Leakage: If training data contains some information about the test data, this level of an accuracy is normal.
+
+**7.** F1 score.
+* i. What’s the benefit of F1 over the accuracy?
+
+Recall what does accuracy tell: Out of all the samples in what percent my model predicts correctly. This is a fine way to use for balanced datasets. If otherwise is true then we need to use precision or recall. While both of them are useful, optimizing one automatically harms the other.
+
+1. To use only one evalution metric (for the simplicity)
+2. To find a balance between precision and recall, we use F1 Score.
+
+* ii. Can we still use F1 for a problem with more than two classes. How?
+
+Yes. We can adopt a *one vs. rest* approach. Here is the illustration:
+
+![F1](Images/F1%20Score%20Illustration.png)
+
+And here is the Python Code:
+
+
+```python
+from sklearn.metrics import f1_score
+y_true = [1,2,0,0,1,0,2,1,0,1]
+y_hat = [1,0,0,0,1,2,0,0,1,0]
+print(f'F1 Score for Class 1: {f1_score(y_true, y_hat, average= None)[1]}')
+```
+
 
  
