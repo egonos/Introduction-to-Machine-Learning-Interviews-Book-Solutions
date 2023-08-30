@@ -501,7 +501,7 @@ And here is the Python Code:
 from sklearn.metrics import f1_score
 y_true = [1,2,0,0,1,0,2,1,0,1]
 y_hat = [1,0,0,0,1,2,0,0,1,0]
-print(f'F1 Score for Class 1: {f1_score(y_true, y_hat, average= None)[1]}')
+print(f'F1 Score for Class 1: {f1_score(y_true, y_hat, average= None)[1]}') #0.570
 ```
 
 
