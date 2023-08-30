@@ -506,10 +506,6 @@ print(f'F1 Score for Class 1: {f1_score(y_true, y_hat, average= None)[1]}') #0.5
 
 **8.** Given a binary classifier that outputs the following confusion matrix.
 
-Predicted True	Predicted False
-Actual True	30	20
-Actual False	5	40
-
 * i. Calculate the model’s precision, recall, and F1.
 
 Similar to the illustration above,
@@ -533,4 +529,65 @@ F1 = 0.7
 The question is not complete. Therefore I couldn't answer? What is our main metric? Precision, Recall or F1. Unless somebody state this, I couln't answer...
 
 
- 
+**9.** Consider a classification where 99% of data belongs to class A and 1% of data belongs to class B.
+
+* i. If your model predicts A 100% of the time, what would the F1 score be? Hint: The F1 score when A is mapped to 0 and B to 1 is different from the F1 score when A is mapped to 1 and B to 0.
+
+Assume n = 100, class in consideration = A
+
+TP = 99
+
+TN = 0
+
+FP = 1
+
+FN = 0
+
+Precison = 0.99
+
+Recall =  1
+
+F1 ~ 1
+
+class in consideration = B
+
+TP = 0
+
+Precision = Recall = 0
+
+F1 = Undefined
+
+* ii. If we have a model that predicts A and B at a random (uniformly), what would the expected F1 be?
+
+For 100 data,
+
+E[y = A] = E[y = B] = 50
+
+Class in consideration: A
+
+TP = 50
+
+TN = 1
+
+FP = 0
+
+FN = 49
+
+Precision ~ 1; Recall ~ 0.5; F1 ~ 0.66 
+
+```python
+from sklearn.metrics import f1_score,precision_score,recall_score,confusion_matrix
+y_true = [1]*99 + [0]*1
+y_hat = 50*[1] + 50*[0]
+tn, fp, fn, tp = confusion_matrix(y_true, y_hat).ravel()
+print(f'F1 Score for Class 1: {f1_score(y_true, y_hat, pos_label=1)}')
+print(f'Precision for Class 1: {precision_score(y_true, y_hat, pos_label=1)}')
+print(f'Recall for Class 1: {recall_score(y_true, y_hat, pos_label=1)}')
+print(f'TP: {tp}, FP: {fp}, TN: {tn}, FN: {fn}')
+
+#F1 Score for Class 1: 0.6711409395973155
+#Precision for Class 1: 1.0
+#Recall for Class 1: 0.5050505050505051
+#TP: 50, FP: 0, TN: 1, FN: 49
+
+```
