@@ -369,3 +369,21 @@ I think both training and test error would increase if I use distance based mode
 
 
 Independent from this, increasing features may result in overfitting.
+
+# 7.3 Objective functions, metrics, and evaluation
+
+**1.** Convergence.
+
+* i. When we say an algorithm converges, what does convergence mean?
+
+Convergence means that the model if not learning (at least effectively) further.
+
+* ii. How do we know when a model has converged?
+
+Lets say we have loss or accuracy difference Ɛ. For the metric in consideration if:
+
+Xt+1 - Xt <= Ɛ for couple of subsequent t's then it means the model is converged.
+
+**2.** Draw the loss curves for overfitting and underfitting.
+
+![LossCurves](Images/Loss%20Curves.png)
