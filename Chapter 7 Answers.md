@@ -504,5 +504,33 @@ y_hat = [1,0,0,0,1,2,0,0,1,0]
 print(f'F1 Score for Class 1: {f1_score(y_true, y_hat, average= None)[1]}') #0.570
 ```
 
+**8.** Given a binary classifier that outputs the following confusion matrix.
+
+Predicted True	Predicted False
+Actual True	30	20
+Actual False	5	40
+
+* i. Calculate the model’s precision, recall, and F1.
+
+Similar to the illustration above,
+
+TP = 30
+
+FP = 5
+
+TN = 40
+
+FN = 20
+
+Precision = 0.85
+
+Recall = 0.6
+
+F1 = 0.7
+
+* ii. What can we do to improve the model’s performance?
+
+The question is not complete. Therefore I couldn't answer? What is our main metric? Precision, Recall or F1. Unless somebody state this, I couln't answer...
+
 
  
