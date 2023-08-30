@@ -293,22 +293,21 @@ Because of our limitations, we cannot conduct experiments on the entire populati
 
 * i. How would class imbalance affect your model?
 
-Class imbalance is a hard concept to deal with. The model trained on an imbalaced dataset expected to be biased towards majority set resulting poor generalizing performance of a data.
+Class imbalance is a difficult concept to deal with. A model trained on an imbalanced dataset is expected to be biased towards the majority class, resulting in poor generalization performance.
 
 * ii. Why is it hard for ML models to perform well on data with class imbalance?
 
-Since the model is baised, the predictions are expected to be towrds majority class. This works for the training data but not in the real case evaluations.
+Since the model is biased, its predictions are likely to lean towards the majority class. This works well for the training data but not for real-case evaluations.
 
 * iii. Imagine you want to build a model to detect skin legions from images. In your training dataset, only 1% of your images shows signs of legions. After training, your model seems to make a lot more false negatives than false positives. What are some of the techniques you'd use to improve your model?
 
-I would decrease the decision threshold. By doing so the model will accept more instances (label them as positive). This move increases recall but decreases precision.
-
+To improve the model, I would lower the decision threshold, increasing recall at the expense of precision.
 
 **15.** Training data leakage.
 
 * i. Imagine you're working with a binary task where the positive class accounts for only 1% of your data. You decide to oversample the rare class then split your data into train and test splits. Your model performs well on the test split but poorly in production. What might have happened?
 
-Oversampling may provide more instances but it does not mean more training. In fact since the positive classes are mostly the same, the model memorizes the positive instances rather than the patterns. That's why iy performs worse in production.
+Oversampling may provide more instances but it doesn't mean better learning. In fact, since the positive classes are mostly the same, the model tends to memorize these duplicates rather than learning general patterns. That's why it performs worse in production.
 
 * ii. You want to build a model to classify whether a comment is spam or not spam. You have a dataset of a million comments over the period of 7 days. You decide to randomly split all your data into the train and test splits. Your co-worker points out that this can lead to data leakage. How?
 ....
@@ -339,3 +338,23 @@ NO IDEA
 Answered in (i.)
 
 **18.** Suppose you want to build a model to classify whether a tweet spreads misinformation. You have 100K labeled tweets over the last 24 months. You decide to randomly shuffle on your data and pick 80% to be the train split, 10% to be the valid split, and 10% to be the test split. What might be the problem with this way of partitioning?
+
+In this case, the fact that validation and test data consists a minority part of the whole data, the model evaluation metrics might skew a lot. If somehow the distributions of these two differs even in a small scale this quickly reflects the performance scores. To solve this problem we can use cross validation.
+
+**19.** You’re building a neural network and you want to use both numerical and textual features. How would you process those different features?
+
+If the categorical features have low cardinality, I would directly encode them using OHE. However if the otherwise is true depending on the data type we can use other encoding methods. Here are my most frequently used ones:
+
+Categorical data (not text): Mean encoding
+
+Categorical data (text): Word embeddings
+
+**20.** Your model has been performing fairly well using just a subset of features available in your data. Your boss decided that you should use all the features available instead. What might happen to the training error? What might happen to the test error?
+
+I think both training and test error would increase if I use distance based model. As I have mentioned previously, the curse of dimensionality can overwhelm the ML models a lot. The distances grow exponentially while we are increasing dimensions. Here is an illustration:
+
+
+ ![Curse](Images/Curse%20of%20Dimensionality.png)
+
+
+Independent from this, increasing features may result in overfitting.
