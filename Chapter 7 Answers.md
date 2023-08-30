@@ -382,7 +382,7 @@ Convergence means that the model if not learning (at least effectively) further.
 
 Lets say we have loss or accuracy difference Ɛ. For the metric in consideration if:
 
-Xt+1 - Xt <= Ɛ for couple of subsequent t's then it means the model is converged.
+|Xt+1 - Xt| <= Ɛ for couple of subsequent t's then it means the model is converged.
 
 **2.** Draw the loss curves for overfitting and underfitting.
 
@@ -451,3 +451,28 @@ Split the data into K Folds. Use ith fold for testing the model performance and 
 4. Leave One Out Cross Validation: It is a spesific type of K Fold Cross Validation. In this method, K = n (the number of instances).
 
 * ii. Why don’t we see more cross-validation in deep learning?
+
+Assuming the question implies K-Fold Cross Validation, here is the answer:
+
+Cross validation is particularly useful if the data is limited. In most of the work we're using deep learning consists plenty of data. Due to this reason (1) and high computational requirements (2), we don't see cross validation often. 
+
+
+**5.** Train, valid, test splits.
+
+* i. What’s wrong with training and testing a model on the same data?
+
+In machine learning what we are actually looking for is generalization performance. In other words *"how does my model performs on unseen data?"* is the question in which we are trying to answer. If we train our data then test its performance, what we are observing is *"how my model memorized this data?"*. If you have noticed, these are not the same questions.
+
+* ii. Why do we need a validation set on top of a train set and a test set?
+
+Using validation set allows us to fine tune our model with out causing data leakage. Think what happens if we use test set for fine tuning. We are optimizing our model to predict the test set not the unseen data. On the other hand if we use a different set (validation set) for fine tuning, we can still evaluate the generalization performance of our model by using the test set.
+
+* iii. Your model’s loss curves on the train, valid, and test sets look like this. What might have been the cause of this? What would you do?
+
+What I'm seeing is the model has overfitted. In this case we expect a decrease in predictive performance in test set. However it seems like the opposite is happening. The first think came to my mind is data leakage. Training set contains something related to test data. That's why even though the model has overfitted, it's test set performance continuously increasing.
+
+**6.** Your team is building a system to aid doctors in predicting whether a patient has cancer or not from their X-ray scan. Your colleague announces that the problem is solved now that they’ve built a system that can predict with 99.99% accuracy. How would you respond to that claim?
+
+
+
+ 
