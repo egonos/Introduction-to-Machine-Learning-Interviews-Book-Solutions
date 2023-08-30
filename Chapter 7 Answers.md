@@ -591,3 +591,21 @@ print(f'TP: {tp}, FP: {fp}, TN: {tn}, FN: {fn}')
 #TP: 50, FP: 0, TN: 1, FN: 49
 
 ```
+Class in consideration: B
+
+```python
+
+from sklearn.metrics import f1_score,precision_score,recall_score,confusion_matrix
+y_true = [1]*99 + [0]*1
+y_hat = 50*[1] + 50*[0]
+tn, fp, fn, tp = confusion_matrix(y_true, y_hat,labels=[1,0]).ravel()
+print(f'F1 Score for Class 1: {f1_score(y_true, y_hat, pos_label=0)}')
+print(f'Precision for Class 1: {precision_score(y_true, y_hat, pos_label=0)}')
+print(f'Recall for Class 1: {recall_score(y_true, y_hat, pos_label=0)}')
+print(f'TP: {tp}, FP: {fp}, TN: {tn}, FN: {fn}')
+
+#F1 Score for Class 1: 0.0392156862745098
+#Precision for Class 1: 0.02
+#Recall for Class 1: 1.0
+#TP: 1, FP: 49, TN: 50, FN: 0
+```
