@@ -331,7 +331,11 @@ y = 0 otherwise
 
 * ii. Why does normalization help prevent feature leakage?
 
-NO IDEA
+NO IDEA. According to the ChatGPT:
+
+> Normalization helps prevent feature leakage by ensuring that the scale of the variables in your model is determined solely by the training set and not by the test set. When you normalize based on the entire dataset, the mean and variance used for scaling include information from the test set, thus leaking information into the training set. This is problematic because it can give an optimistic bias to the evaluation metrics of the model when tested on the same test set, making the model look better than it actually is. By normalizing using only the training data, you ensure that the model is completely ignorant of the future data in the test set, offering a more realistic evaluation of its performance.
+
+My opinion: This is not the answer we're looking for. I couln't find the answer of this question on the internet also.
 
 * iii. How do you detect feature leakage?
 
