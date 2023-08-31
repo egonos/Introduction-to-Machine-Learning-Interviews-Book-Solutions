@@ -665,5 +665,17 @@ Q: Reference Distributon
 **16.** MPE (Most Probable Explanation) vs. MAP (Maximum A Posteriori)
 
 * i. How do MPE and MAP differ?
+
+...
+
 * ii. Give an example of when they would produce different results.
+
+...
+
+**17.** Suppose you want to build a model to predict the price of a stock in the next 8 hours and that the predicted price should never be off more than 10% from the actual price. Which metric would you use?
+
+I was aware of MAPE but I haven't use before to be honest. Let's look at it's definition:
+
+The mean absolute percentage error (MAPE), also known as mean absolute percentage deviation (MAPD), is a measure of prediction accuracy of a forecasting method in statistics. It usually expresses the **accuracy as a ratio** defined by the formula...(ref: https://en.wikipedia.org/wiki/Mean_absolute_percentage_error). Since what we are interested in is also percentage(ratio), using MAPE is the best choice.
+
 
