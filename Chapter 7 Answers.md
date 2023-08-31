@@ -631,3 +631,15 @@ Mean Absolute Error (MAE) on the other hand, penalizes equally. This allows us t
 **12.** Show that the negative log-likelihood and cross-entropy are the same for binary classification tasks.
 
 ![LogLike](Images/LogLike%20and%20Cross.png)
+
+**13.** For classification tasks with more than two labels (e.g. MNIST with 10 labels), why is cross-entropy a better loss function than MSE?
+
+1. As we have seen in couple questions before MSE does not guarantee convexity.
+
+2. Secondly, lets look at the mathematics:
+
+![MSE](Images/MSE%20vs%20CrossEntropy.png)
+
+![MSE2](Images/MSE%20vs%20CrossEntropy2.png)
+
+As you can see the cross entropy gradient is lot simpler than MSE resulting in faster learning
