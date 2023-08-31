@@ -615,3 +615,19 @@ print(f'TP: {tp}, FP: {fp}, TN: {tn}, FN: {fn}')
 ![LogMSE](Images/MSE%20vs%20LogLoss.png)
 
 ![LogMSE2](Images/MSE%20vs%20LogLoss2.png)
+
+**11.** When should we use RMSE (Root Mean Squared Error) over MAE (Mean Absolute Error) and vice versa?
+
+All squared errors try to penalize exponentially more as the data skews further from the ground truth:
+
+3-2 = 1**2 = 1
+
+4-2 = 2**2 = 4
+
+As you can see, the first one unit of skewness causes 1 unit of error. Second one causes 3 and third one causes 5 etc.
+
+Mean Absolute Error (MAE) on the other hand, penalizes equally. This allows us to see the average error model makes. This is not possible in squared error measures since the metric is **heavily** influenced by outliers.
+
+**12.** Show that the negative log-likelihood and cross-entropy are the same for binary classification tasks.
+
+![LogLike](Images/LogLike%20and%20Cross.png)
