@@ -612,8 +612,6 @@ print(f'TP: {tp}, FP: {fp}, TN: {tn}, FN: {fn}')
 
 **10.** For logistic regression, why is log loss recommended over MSE (mean squared error)?
 
-![LogMSE](Images/Logreg%20vs%20MSE1.png)
+![LogMSE](Images/MSE%20vs%20LogLoss.png)
 
-![LogMSE](Images/Logreg%20vs%20MSE2.png)
-
-ŞUNUN doğruluğuna bak
+![LogMSE2](Images/MSE%20vs%20LogLoss2.png)
