@@ -642,4 +642,28 @@ Mean Absolute Error (MAE) on the other hand, penalizes equally. This allows us t
 
 ![MSE2](Images/MSE%20vs%20CrossEntropy2.png)
 
-As you can see the cross entropy gradient is lot simpler than MSE resulting in faster learning
+As you can see the cross entropy gradient is lot simpler than MSE resulting in faster learning.
+
+**14.** Consider a language with an alphabet of 27 characters. What would be the maximal entropy of this language?
+
+From the information theory we know that the entropy is maximized when all the probabilities are equally distributed. That's because, if something is equally distributed we are the most uncertain on our decision. 
+
+pi = 1/27 for i = 1,2,3....27
+
+H = Σpi*log2(pi)
+
+= 3log2(3)
+
+**15.** A lot of machine learning models aim to approximate probability distributions. Let’s say P is the distribution of the data and Q is the distribution learned by our model. How do measure how close Q is to P?
+
+KL Divergence
+
+ΣP(x)log(P(x)/Q(x)) 
+
+Q: Reference Distributon
+
+**16.** MPE (Most Probable Explanation) vs. MAP (Maximum A Posteriori)
+
+* i. How do MPE and MAP differ?
+* ii. Give an example of when they would produce different results.
+
