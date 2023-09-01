@@ -891,3 +891,12 @@ I got confused. If I could answer in the future I will share it...
 **6.** Given a policy, derive the reward function.
 
 ![Reward](Images/Deriving%20Reward.png)
+
+I've realized I havent mentioned τ in my handwritings. τ refers trajectory (action,state pairs).
+
+τ = (s0,a0,s1,a1...)
+
+**7.**Pros and cons of on-policy vs. off-policy.
+
+Lets start with definitions. In parametrized policies we try to optimize θ so J(πθ) will be optimal. Now we can optimize θ analytically or using gradient ascent. Each update uses the data coming from the latest version of our policy. This is called on-policy. On the other hand, we call an optimization style off-policy when each update is based on the data coming from arbitrarily selected step. Off-policy methods are generally less stable and more efficient whereas on-policy methods are generally more stable and less efficient.
+
