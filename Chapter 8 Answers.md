@@ -906,3 +906,61 @@ Lets start with definitions. In parametrized policies we try to optimize θ so J
 In RL design one of the most important thing is determining whether the RL has an access to another model or not. The model I'm mentioning is a function to predict action, state or transition. The main advantage of model-based RL is that in this type of learning RL can predict the possible outcomes of it's actions and select an action utiling this information. However, it is hard to obtain a model telling the ground truth all the time. Most of the time, the model includes some bias in itself and this bias exploits to the RL. Moreover, traiinng a model takes lots of computational resources so it is possible that after all the training efforts, we get an useless model.
 
 I think, if we have a perfect model, RL will be more data efficient because RL doesn't have to gather useless information via trial and error. Large fraction of this kind of data is eliminated thanks to the model we added.
+
+
+# 8.2.4 Other
+
+**1.** An autoencoder is a neural network that learns to copy its input to its output. When would this be useful?
+
+1. Nonlinear Dimension Reduction: To visualize the data or decrease the computational requirements, we use dimension reduction techniques. PCA is one of the most popular ones. However it has a downside. PCA applies dimension reduction linearly which may not be sufficient for some cases. In these cases, we can use Autoencoders.
+
+2. Outlier detection: Think about that. If we compress a data and expand it again would the output contain the outliers? No, because during the compression phase, the algoritm eliminates it since the density where the outlier point lies is exteremely low.
+
+
+**2.** Self-attention.
+
+* i.  What’s the motivation for self-attention?
+
+Instead of processing all the data in once, let's mask some part of the data so that the model can **focus** on the remaining part.
+
+Intuitive example: Instead of translating all the paragraph at once only focus one sentnece at a time. 
+
+* ii. Why would you choose a self-attention architecture over RNNs or CNNs?
+
+Consider an NLP task. We totally can use RNN however after a certain point, it will become inferior.
+
+-> Due vansihing gradients, it will forgot the first part of the text.
+
+-> It has to work in sequential meaning it can not be parallelized.
+
+On the other hand we don't have such problems in self-atention architecture.
+
+
+DEVAM EDİLECEK..
+
+* iii. Why would you need multi-headed attention instead of just one head for attention?
+
+Intuitively, the researchers accepted that we have a limited cognitive capabilities. That's why instead of using only single cognition for every task they implemented multiple attention layers. 
+
+* iv. How would changing the number of heads in multi-headed attention affect the model’s performance?
+
+**3.** Transfer learning
+
+
+* i. You want to build a classifier to predict sentiment in tweets but you have very little labeled data (say 1000). What do you do?
+* ii. What’s gradual unfreezing? How might it help with transfer learning?
+
+**4.** Bayesian methods.
+
+* i. How do Bayesian methods differ from the mainstream deep learning approach?
+* ii. How are the pros and cons of Bayesian neural networks compared to the mainstream neural networks?
+* iii. Why do we say that Bayesian neural networks are natural ensembles?
+
+**5.**
+
+* i. What do GANs converge to?
+* ii. Why are GANs so hard to train?
+
+
+
+
