@@ -900,3 +900,9 @@ I've realized I havent mentioned τ in my handwritings. τ refers trajectory (ac
 
 Lets start with definitions. In parametrized policies we try to optimize θ so J(πθ) will be optimal. Now we can optimize θ analytically or using gradient ascent. Each update uses the data coming from the latest version of our policy. This is called on-policy. On the other hand, we call an optimization style off-policy when each update is based on the data coming from arbitrarily selected step. Off-policy methods are generally less stable and more efficient whereas on-policy methods are generally more stable and less efficient.
 
+
+**8.** What’s the difference between model-based and model-free? Which one is more data-efficient?
+
+In RL design one of the most important thing is determining whether the RL has an access to another model or not. The model I'm mentioning is a function to predict action, state or transition. The main advantage of model-based RL is that in this type of learning RL can predict the possible outcomes of it's actions and select an action utiling this information. However, it is hard to obtain a model telling the ground truth all the time. Most of the time, the model includes some bias in itself and this bias exploits to the RL. Moreover, traiinng a model takes lots of computational resources so it is possible that after all the training efforts, we get an useless model.
+
+I think, if we have a perfect model, RL will be more data efficient because RL doesn't have to gather useless information via trial and error. Large fraction of this kind of data is eliminated thanks to the model we added.
