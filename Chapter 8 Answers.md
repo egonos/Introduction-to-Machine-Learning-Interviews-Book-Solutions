@@ -883,3 +883,11 @@ Two reasons:
 **4.** Fill in the empty circles using the minimax algorithm.
 
 ![Minimax](Images/Minimax.png)
+
+**5.** Fill in the alpha and beta values as you traverse the minimax tree from left to right.
+
+I got confused. If I could answer in the future I will share it...
+
+**6.** Given a policy, derive the reward function.
+
+![Reward](Images/Deriving%20Reward.png)
