@@ -857,3 +857,29 @@ changing y = w.x to x = w^-1.y helps us to recover the training data.
 **30.** Why do we try to reduce the size of a big trained model through techniques such as knowledge distillation instead of just training a small model from the beginning?
 
 Some of the times small models are not suitable becuase they underfit a lot. Instead of risking this especially if we have enough memory and computational resources, we can use more complex models and try to simplify their learning process.
+
+
+# 8.2.3 Reinforcement learning
+
+**1.** Explain the explore vs exploit tradeoff with examples.
+
+I remember that I've read a similar concept in risk management materials. The statememnt is pretty simple. We have two edges: Playing conservative all the time and the opposite. Let's think about what happens if we purely adopt each of this behaviour:
+
+If we play conservative all the time, we take little to not risk but we probably miss lots of opportunities. On the other hand, if we behave coureously all the time, we frequently experience bad outcomes. Therefore, we have to find a balance between those two. For example (huggingface example), we can continue going to the restaurant we used to all the time. In this way, we minimize the risk of having a bad meal. However, we also miss the opportunities the other restaurants offer.
+
+**2.** How would a finite or infinite horizon affect our algorithms?
+
+Finite and infinite horizon are two distinct ways to approach the calculation of culumlative reward (return). In finite horizon we calculate the accumulated reward among T steps; in infinite horizon we repeat this calculation with some changes: Increase time period to infinity (1), use a discount parameter gamma ∈ [0,1] to make infinity calculation possible. Here are the mathematics:
+
+![Reward](Images/Return%20Calculation.png)
+
+**3.** Why do we need the discount term for objective functions?
+
+Two reasons:
+
+1. Intuitively, earning a reward now is more beneficial than learning tomorrow.
+2. Mathematically, it allows a more convenient calculation.
+
+**4.** Fill in the empty circles using the minimax algorithm.
+
+![Minimax](Images/Minimax.png)
