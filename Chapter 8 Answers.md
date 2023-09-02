@@ -959,10 +959,21 @@ word -> token -> embedding vector -> weights -> context
 
 How could we determine this weight vectors? Well, similar words have similar word embeddings therefore their dot product will be large. Perfect!
 
-``` latex
 R_k,Q = <V_k,V_q>
 
-```
+After that if we normalize all R's to 1 then we obtain the weights.
+
+y_1 = Σ<W_1i,Vi>
+
+However this approach,
+
+1. Doesn't consider the order of the words
+2. Is shape independent
+3. Weights did not got into training.
+
+We call this self attention.
+
+Introduction of Queries,Values, Keys
 
 
 **3.** Transfer learning
