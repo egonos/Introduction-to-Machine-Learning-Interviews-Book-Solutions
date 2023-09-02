@@ -945,6 +945,10 @@ BERT offers several advantages over other deep learning approaches for sentiment
 (https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bert-other-deep-learning#:~:text=BERT%20offers%20several%20advantages%20over,term%20memory%20(LSTM)%20networks.)
 
 
+and ChatGPT:
+
+> For CNNs, while they are generally more suited for Computer Vision tasks, they can also be used in NLP. However, CNNs operate on local, fixed-size windows of the input, making it challenging for them to capture relationships between distant elements in a sequence. Self-attention, on the other hand, allows for a global view of the entire sequence.
+
 * iii. Why would you need multi-headed attention instead of just one head for attention?
 
 Intuitively, the researchers accepted that we have a limited cognitive capabilities. That's why instead of using only single cognition for every task they implemented multiple attention layers. 
@@ -974,6 +978,33 @@ However this approach,
 We call this self attention.
 
 Introduction of Queries,Values, Keys
+
+To overcome these problems, we introduce Query, Value and Keys.
+
+![Attention](Images/Attention.jpg)
+
+Query = <Embedding,Q>
+
+Key = <Embedding,K>
+
+Value = <Embeddings,V>
+
+Score = <Query,Key>
+
+Weight = Normalize(Score) (ΣWeight_ij = 1)
+
+Y = <Weight,Value>
+
+If we use multiple heads then we have multiple score and weight matricies. So in the end we concat all these:
+
+Y_final = Concat + Dense (Y(1), Y(2)....)
+
+
+In terms of performance, I expect an increase in accuracy since the final output is less dependent on any one attention layer. However I found this paper (https://arxiv.org/abs/1905.10650) indicating the increase may not be as important as we think. 
+
+
+
+
 
 
 **3.** Transfer learning
