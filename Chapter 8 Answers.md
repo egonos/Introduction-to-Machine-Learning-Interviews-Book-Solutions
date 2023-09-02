@@ -981,7 +981,7 @@ Introduction of Queries,Values, Keys
 
 To overcome these problems, we introduce Query, Value and Keys.
 
-<img src="Images/Attention.jpg" alt="Attention" width="200"/>
+<img src="Images/Attention.jpg" alt="Attention" width="500"/>
 
 Query = <Embedding,Q>
 
