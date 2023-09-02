@@ -933,16 +933,37 @@ Consider an NLP task. We totally can use RNN however after a certain point, it w
 
 -> It has to work in sequential meaning it can not be parallelized.
 
+-> The attention models are less prone to overfitting therefore generally benefit from training in longer durations and larger window sizes. This makes them conventient to use. RoBERTa (a BERT model) for example is a BERT model trained longer durations and larger window sizes. Researchers noted that longer training **never** resulted in overfitting. 
+
 On the other hand we don't have such problems in self-atention architecture.
 
+Since CNN is primarily used for CV tasks I couln't find an academic paper directly comparing these two and I've couln't intuitively answer this question either. But I've found this answer:
 
-DEVAM EDİLECEK..
+> What are the advantages of BERT?
+BERT offers several advantages over other deep learning approaches for sentiment analysis, such as recurrent neural networks (RNNs), convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. For example, BERT can leverage large amounts of unlabeled data to pre-train its model, thereby reducing the need for task-specific data and improving the generalization ability of the model. Additionally, BERT's bidirectional context enables it to handle ambiguous and complex expressions more effectively than unidirectional models. Furthermore, BERT can adapt to different tasks and domains by fine-tuning its model on specific data sets, thus increasing its flexibility and applicability.
+
+(https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bert-other-deep-learning#:~:text=BERT%20offers%20several%20advantages%20over,term%20memory%20(LSTM)%20networks.)
+
 
 * iii. Why would you need multi-headed attention instead of just one head for attention?
 
 Intuitively, the researchers accepted that we have a limited cognitive capabilities. That's why instead of using only single cognition for every task they implemented multiple attention layers. 
 
 * iv. How would changing the number of heads in multi-headed attention affect the model’s performance?
+
+Lets remember the basics first:
+
+Thinkl about a time series model. We can reweigh the importance of the data based on the distance. Since all the has no internal value this approach will work fine. However in NLP tasks we can't assign the importance of a word based on the distance of the word in consideration because unlike time series, words have internal meanings. Then we can follow this algorithm assigning the word importance automatically:
+
+word -> token -> embedding vector -> weights -> context
+
+How could we determine this weight vectors? Well, similar words have similar word embeddings therefore their dot product will be large. Perfect!
+
+``` latex
+R_k,Q = <V_k,V_q>
+
+```
+
 
 **3.** Transfer learning
 
