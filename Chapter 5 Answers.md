@@ -172,7 +172,11 @@ By using SVD, we can run PCA.
 
 **6.** How does t-SNE (T-distributed Stochastic Neighbor Embedding) work? Why do we need it?
 
-https://www.youtube.com/watch?v=NEaUSP4YerM
+We use t-SNE to dimension reduction purposes. It works like the following:
+
+<img src = Images/t-SNE1.jpg width = 500>
+<img src = Images/t-SNE2.jpg width = 500>
+<img src = Images/t-SNE3.jpg width = 500>
 
 # 5.1.4 Calculus and convex optimization
 
