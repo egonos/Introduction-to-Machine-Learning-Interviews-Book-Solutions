@@ -429,6 +429,193 @@ It seems that using tf.reshape() can be used for reshaping but since I have no e
 ......
 
 For a base model i
+
+
+# 8.2.3 Reinforcement learning
+
+**1.** Explain the explore vs exploit tradeoff with examples.
+
+I remember that I've read a similar concept in risk management materials. The statememnt is pretty simple. We have two edges: Playing conservative all the time and the opposite. Let's think about what happens if we purely adopt each of this behaviour:
+
+If we play conservative all the time, we take little to not risk but we probably miss lots of opportunities. On the other hand, if we behave coureously all the time, we frequently experience bad outcomes. Therefore, we have to find a balance between those two. For example (huggingface example), we can continue going to the restaurant we used to all the time. In this way, we minimize the risk of having a bad meal. However, we also miss the opportunities the other restaurants offer.
+
+**2.** How would a finite or infinite horizon affect our algorithms?
+
+Finite and infinite horizon are two distinct ways to approach the calculation of culumlative reward (return). In finite horizon we calculate the accumulated reward among T steps; in infinite horizon we repeat this calculation with some changes: Increase time period to infinity (1), use a discount parameter gamma ∈ [0,1] to make infinity calculation possible. Here are the mathematics:
+
+![Reward](Images/Return%20Calculation.png)
+
+**3.** Why do we need the discount term for objective functions?
+
+Two reasons:
+
+1. Intuitively, earning a reward now is more beneficial than learning tomorrow.
+2. Mathematically, it allows a more convenient calculation.
+
+**4.** Fill in the empty circles using the minimax algorithm.
+
+![Minimax](Images/Minimax.png)
+
+**5.** Fill in the alpha and beta values as you traverse the minimax tree from left to right.
+
+I got confused. If I could answer in the future I will share it...
+
+**6.** Given a policy, derive the reward function.
+
+![Reward](Images/Deriving%20Reward.png)
+
+I've realized I havent mentioned τ in my handwritings. τ refers trajectory (action,state pairs).
+
+τ = (s0,a0,s1,a1...)
+
+**7.**Pros and cons of on-policy vs. off-policy.
+
+Lets start with definitions. In parametrized policies we try to optimize θ so J(πθ) will be optimal. Now we can optimize θ analytically or using gradient ascent. Each update uses the data coming from the latest version of our policy. This is called on-policy. On the other hand, we call an optimization style off-policy when each update is based on the data coming from arbitrarily selected step. Off-policy methods are generally less stable and more efficient whereas on-policy methods are generally more stable and less efficient.
+
+
+**8.** What’s the difference between model-based and model-free? Which one is more data-efficient?
+
+In RL design one of the most important thing is determining whether the RL has an access to another model or not. The model I'm mentioning is a function to predict action, state or transition. The main advantage of model-based RL is that in this type of learning RL can predict the possible outcomes of it's actions and select an action utiling this information. However, it is hard to obtain a model telling the ground truth all the time. Most of the time, the model includes some bias in itself and this bias exploits to the RL. Moreover, traiinng a model takes lots of computational resources so it is possible that after all the training efforts, we get an useless model.
+
+I think, if we have a perfect model, RL will be more data efficient because RL doesn't have to gather useless information via trial and error. Large fraction of this kind of data is eliminated thanks to the model we added.
+
+
+# 8.2.4 Other
+
+**1.** An autoencoder is a neural network that learns to copy its input to its output. When would this be useful?
+
+1. Nonlinear Dimension Reduction: To visualize the data or decrease the computational requirements, we use dimension reduction techniques. PCA is one of the most popular ones. However it has a downside. PCA applies dimension reduction linearly which may not be sufficient for some cases. In these cases, we can use Autoencoders.
+
+2. Outlier detection: Think about that. If we compress a data and expand it again would the output contain the outliers? No, because during the compression phase, the algoritm eliminates it since the density where the outlier point lies is exteremely low.
+
+
+**2.** Self-attention.
+
+* i.  What’s the motivation for self-attention?
+
+Instead of processing all the data in once, let's mask some part of the data so that the model can **focus** on the remaining part.
+
+Intuitive example: Instead of translating all the paragraph at once only focus one sentnece at a time. 
+
+* ii. Why would you choose a self-attention architecture over RNNs or CNNs?
+
+Consider an NLP task. We totally can use RNN however after a certain point, it will become inferior.
+
+-> Due vansihing gradients, it will forgot the first part of the text.
+
+-> It has to work in sequential meaning it can not be parallelized.
+
+-> The attention models are less prone to overfitting therefore generally benefit from training in longer durations and larger window sizes. This makes them conventient to use. RoBERTa (a BERT model) for example is a BERT model trained longer durations and larger window sizes. Researchers noted that longer training **never** resulted in overfitting. 
+
+On the other hand we don't have such problems in self-atention architecture.
+
+Since CNN is primarily used for CV tasks I couln't find an academic paper directly comparing these two and I've couln't intuitively answer this question either. But I've found this answer:
+
+> What are the advantages of BERT?
+BERT offers several advantages over other deep learning approaches for sentiment analysis, such as recurrent neural networks (RNNs), convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. For example, BERT can leverage large amounts of unlabeled data to pre-train its model, thereby reducing the need for task-specific data and improving the generalization ability of the model. Additionally, BERT's bidirectional context enables it to handle ambiguous and complex expressions more effectively than unidirectional models. Furthermore, BERT can adapt to different tasks and domains by fine-tuning its model on specific data sets, thus increasing its flexibility and applicability.
+
+(https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bert-other-deep-learning#:~:text=BERT%20offers%20several%20advantages%20over,term%20memory%20(LSTM)%20networks.)
+
+
+and ChatGPT:
+
+> For CNNs, while they are generally more suited for Computer Vision tasks, they can also be used in NLP. However, CNNs operate on local, fixed-size windows of the input, making it challenging for them to capture relationships between distant elements in a sequence. Self-attention, on the other hand, allows for a global view of the entire sequence.
+
+* iii. Why would you need multi-headed attention instead of just one head for attention?
+
+Intuitively, the researchers accepted that we have a limited cognitive capabilities. That's why instead of using only single cognition for every task they implemented multiple attention layers. 
+
+* iv. How would changing the number of heads in multi-headed attention affect the model’s performance?
+
+Lets remember the basics first:
+
+Think about a time series model. We can reweigh the importance of the data based on the distance. Since all the has no internal value this approach will work fine. However in NLP tasks we can't assign the importance of a word based on the distance of the word in consideration because unlike time series, words have internal meanings. Then we can follow this algorithm assigning the word importance automatically:
+
+word -> token -> embedding vector -> weights -> context
+
+How could we determine this weight vectors? Well, similar words have similar word embeddings therefore their dot product will be large. Perfect!
+
+R_k,Q = <V_k,V_q>
+
+After that if we normalize all R's to 1 then we obtain the weights.
+
+y_1 = Σ<W_1i,Vi>
+
+However this approach,
+
+1. Doesn't consider the order of the words
+2. Is shape independent
+3. Weights did not got into training.
+
+We call this self attention.
+
+Introduction of Queries,Values, Keys
+
+To overcome these problems, we introduce Query, Value and Keys.
+
+<img src="Images/Attention.jpg" alt="Attention" width="500"/>
+
+Query = <Embedding,Q>
+
+Key = <Embedding,K>
+
+Value = <Embeddings,V>
+
+Score = <Query,Key>
+
+Weight = Normalize(Score) (ΣWeight_ij = 1)
+
+Y = <Weight,Value>
+
+If we use multiple heads then we have multiple score and weight matricies. So in the end we concat all these:
+
+Y_final = Concat + Dense (Y(1), Y(2)....)
+
+
+In terms of performance, I expect an increase in accuracy since the final output is less dependent on any one attention layer. However I found this paper (https://arxiv.org/abs/1905.10650) indicating the increase may not be as important as we think. 
+
+
+**3.** Transfer learning
+
+
+* i. You want to build a classifier to predict sentiment in tweets but you have very little labeled data (say 1000). What do you do?
+
+The first thing came to my mind is utilizing semi-supervised learning.
+
+* ii. What’s gradual unfreezing? How might it help with transfer learning?
+
+Lets define **catastrophic forgetting** first. Catastrophic forgetting is the *tendency of models to lose previous learnt knowledge abruptly while it may incorporate information relevant to target tasks, leading to overfitting.* (https://papers.nips.cc/paper_files/paper/2019/hash/c6bff625bdb0393992c9d4db0c6bbe45-Abstract.html). Basically when we try to adapt our transfer learning model for a particular task, sometimes we risk what it has learned. previously. To avoid this, we use gradual unfreezing. It helps us to avoid from catastrophic freezing. How it is done? Instead of fine tuning all the layers together, start with the outermost one. After, tuning finishes (learning curves become stable), proceed with the previous one and so on. (Howard, J., & Ruder, S. (2018). Universal language model fine-tuning for text classification. arXiv preprint arXiv:1801.06146.
+)
+
+**4.** Bayesian methods.
+
+* i. How do Bayesian methods differ from the mainstream deep learning approach?
+
+Deep Learning Approach:
+
+-> Main assumption: Test and training data are coming from the same distribution.
+
+-> Approach: Train a big model on training data to predict the test data.
+
+Bayesian Approach:
+
+-> Use priors, and Bayes Theorem
+* ii. How are the pros and cons of Bayesian neural networks compared to the mainstream neural networks?
+* iii. Why do we say that Bayesian neural networks are natural ensembles?
+
+........
+
+
+**5.**
+
+* i. What do GANs converge to?
+* ii. Why are GANs so hard to train?
+
+
+.......
+
+
+
 # 8.3 Training neural networks
 
 **1.** When building a neural network, should you overfit or underfit it first?
@@ -857,173 +1044,3 @@ changing y = w.x to x = w^-1.y helps us to recover the training data.
 **30.** Why do we try to reduce the size of a big trained model through techniques such as knowledge distillation instead of just training a small model from the beginning?
 
 Some of the times small models are not suitable becuase they underfit a lot. Instead of risking this especially if we have enough memory and computational resources, we can use more complex models and try to simplify their learning process.
-
-
-# 8.2.3 Reinforcement learning
-
-**1.** Explain the explore vs exploit tradeoff with examples.
-
-I remember that I've read a similar concept in risk management materials. The statememnt is pretty simple. We have two edges: Playing conservative all the time and the opposite. Let's think about what happens if we purely adopt each of this behaviour:
-
-If we play conservative all the time, we take little to not risk but we probably miss lots of opportunities. On the other hand, if we behave coureously all the time, we frequently experience bad outcomes. Therefore, we have to find a balance between those two. For example (huggingface example), we can continue going to the restaurant we used to all the time. In this way, we minimize the risk of having a bad meal. However, we also miss the opportunities the other restaurants offer.
-
-**2.** How would a finite or infinite horizon affect our algorithms?
-
-Finite and infinite horizon are two distinct ways to approach the calculation of culumlative reward (return). In finite horizon we calculate the accumulated reward among T steps; in infinite horizon we repeat this calculation with some changes: Increase time period to infinity (1), use a discount parameter gamma ∈ [0,1] to make infinity calculation possible. Here are the mathematics:
-
-![Reward](Images/Return%20Calculation.png)
-
-**3.** Why do we need the discount term for objective functions?
-
-Two reasons:
-
-1. Intuitively, earning a reward now is more beneficial than learning tomorrow.
-2. Mathematically, it allows a more convenient calculation.
-
-**4.** Fill in the empty circles using the minimax algorithm.
-
-![Minimax](Images/Minimax.png)
-
-**5.** Fill in the alpha and beta values as you traverse the minimax tree from left to right.
-
-I got confused. If I could answer in the future I will share it...
-
-**6.** Given a policy, derive the reward function.
-
-![Reward](Images/Deriving%20Reward.png)
-
-I've realized I havent mentioned τ in my handwritings. τ refers trajectory (action,state pairs).
-
-τ = (s0,a0,s1,a1...)
-
-**7.**Pros and cons of on-policy vs. off-policy.
-
-Lets start with definitions. In parametrized policies we try to optimize θ so J(πθ) will be optimal. Now we can optimize θ analytically or using gradient ascent. Each update uses the data coming from the latest version of our policy. This is called on-policy. On the other hand, we call an optimization style off-policy when each update is based on the data coming from arbitrarily selected step. Off-policy methods are generally less stable and more efficient whereas on-policy methods are generally more stable and less efficient.
-
-
-**8.** What’s the difference between model-based and model-free? Which one is more data-efficient?
-
-In RL design one of the most important thing is determining whether the RL has an access to another model or not. The model I'm mentioning is a function to predict action, state or transition. The main advantage of model-based RL is that in this type of learning RL can predict the possible outcomes of it's actions and select an action utiling this information. However, it is hard to obtain a model telling the ground truth all the time. Most of the time, the model includes some bias in itself and this bias exploits to the RL. Moreover, traiinng a model takes lots of computational resources so it is possible that after all the training efforts, we get an useless model.
-
-I think, if we have a perfect model, RL will be more data efficient because RL doesn't have to gather useless information via trial and error. Large fraction of this kind of data is eliminated thanks to the model we added.
-
-
-# 8.2.4 Other
-
-**1.** An autoencoder is a neural network that learns to copy its input to its output. When would this be useful?
-
-1. Nonlinear Dimension Reduction: To visualize the data or decrease the computational requirements, we use dimension reduction techniques. PCA is one of the most popular ones. However it has a downside. PCA applies dimension reduction linearly which may not be sufficient for some cases. In these cases, we can use Autoencoders.
-
-2. Outlier detection: Think about that. If we compress a data and expand it again would the output contain the outliers? No, because during the compression phase, the algoritm eliminates it since the density where the outlier point lies is exteremely low.
-
-
-**2.** Self-attention.
-
-* i.  What’s the motivation for self-attention?
-
-Instead of processing all the data in once, let's mask some part of the data so that the model can **focus** on the remaining part.
-
-Intuitive example: Instead of translating all the paragraph at once only focus one sentnece at a time. 
-
-* ii. Why would you choose a self-attention architecture over RNNs or CNNs?
-
-Consider an NLP task. We totally can use RNN however after a certain point, it will become inferior.
-
--> Due vansihing gradients, it will forgot the first part of the text.
-
--> It has to work in sequential meaning it can not be parallelized.
-
--> The attention models are less prone to overfitting therefore generally benefit from training in longer durations and larger window sizes. This makes them conventient to use. RoBERTa (a BERT model) for example is a BERT model trained longer durations and larger window sizes. Researchers noted that longer training **never** resulted in overfitting. 
-
-On the other hand we don't have such problems in self-atention architecture.
-
-Since CNN is primarily used for CV tasks I couln't find an academic paper directly comparing these two and I've couln't intuitively answer this question either. But I've found this answer:
-
-> What are the advantages of BERT?
-BERT offers several advantages over other deep learning approaches for sentiment analysis, such as recurrent neural networks (RNNs), convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. For example, BERT can leverage large amounts of unlabeled data to pre-train its model, thereby reducing the need for task-specific data and improving the generalization ability of the model. Additionally, BERT's bidirectional context enables it to handle ambiguous and complex expressions more effectively than unidirectional models. Furthermore, BERT can adapt to different tasks and domains by fine-tuning its model on specific data sets, thus increasing its flexibility and applicability.
-
-(https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bert-other-deep-learning#:~:text=BERT%20offers%20several%20advantages%20over,term%20memory%20(LSTM)%20networks.)
-
-
-and ChatGPT:
-
-> For CNNs, while they are generally more suited for Computer Vision tasks, they can also be used in NLP. However, CNNs operate on local, fixed-size windows of the input, making it challenging for them to capture relationships between distant elements in a sequence. Self-attention, on the other hand, allows for a global view of the entire sequence.
-
-* iii. Why would you need multi-headed attention instead of just one head for attention?
-
-Intuitively, the researchers accepted that we have a limited cognitive capabilities. That's why instead of using only single cognition for every task they implemented multiple attention layers. 
-
-* iv. How would changing the number of heads in multi-headed attention affect the model’s performance?
-
-Lets remember the basics first:
-
-Thinkl about a time series model. We can reweigh the importance of the data based on the distance. Since all the has no internal value this approach will work fine. However in NLP tasks we can't assign the importance of a word based on the distance of the word in consideration because unlike time series, words have internal meanings. Then we can follow this algorithm assigning the word importance automatically:
-
-word -> token -> embedding vector -> weights -> context
-
-How could we determine this weight vectors? Well, similar words have similar word embeddings therefore their dot product will be large. Perfect!
-
-R_k,Q = <V_k,V_q>
-
-After that if we normalize all R's to 1 then we obtain the weights.
-
-y_1 = Σ<W_1i,Vi>
-
-However this approach,
-
-1. Doesn't consider the order of the words
-2. Is shape independent
-3. Weights did not got into training.
-
-We call this self attention.
-
-Introduction of Queries,Values, Keys
-
-To overcome these problems, we introduce Query, Value and Keys.
-
-<img src="Images/Attention.jpg" alt="Attention" width="500"/>
-
-Query = <Embedding,Q>
-
-Key = <Embedding,K>
-
-Value = <Embeddings,V>
-
-Score = <Query,Key>
-
-Weight = Normalize(Score) (ΣWeight_ij = 1)
-
-Y = <Weight,Value>
-
-If we use multiple heads then we have multiple score and weight matricies. So in the end we concat all these:
-
-Y_final = Concat + Dense (Y(1), Y(2)....)
-
-
-In terms of performance, I expect an increase in accuracy since the final output is less dependent on any one attention layer. However I found this paper (https://arxiv.org/abs/1905.10650) indicating the increase may not be as important as we think. 
-
-
-
-
-
-
-**3.** Transfer learning
-
-
-* i. You want to build a classifier to predict sentiment in tweets but you have very little labeled data (say 1000). What do you do?
-* ii. What’s gradual unfreezing? How might it help with transfer learning?
-
-**4.** Bayesian methods.
-
-* i. How do Bayesian methods differ from the mainstream deep learning approach?
-* ii. How are the pros and cons of Bayesian neural networks compared to the mainstream neural networks?
-* iii. Why do we say that Bayesian neural networks are natural ensembles?
-
-**5.**
-
-* i. What do GANs converge to?
-* ii. Why are GANs so hard to train?
-
-
-
-
