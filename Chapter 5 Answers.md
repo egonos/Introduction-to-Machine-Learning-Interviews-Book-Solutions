@@ -216,12 +216,21 @@ Matrix M is diagonizable if it can be represented as M = UDU^-1
 
 Let's start with matrix inverse. We know that a matrix M has an inverse if it is square and full ranked (linearly independent columns or rows).
 
-Assume that we have a square full ranked matrix M ∈Rnxn. Then we need to find at leat n number of linearly independent eigenvectors. If we could also provide this then we can confidently say matrix M is diagonizable hence we can apply eigendecomposition on it. The SVD part was explained below.
+Assume that we have a square full ranked matrix M ∈Rnxn. Then we need to find at least n number of linearly independent eigenvectors. If we could also provide this, then we can confidently say matrix M is diagonizable hence we can apply eigendecomposition on it. 
+
+(UDU^-1)(UDU^-1)...
+
+and we know that <U^-1,U> = I ....(1)
+
+Because of (1), we can calcualte M^p lot faster.
+
 
 
 * i. What is the relationship between SVD and eigendecomposition?
 
 SVD is the generalized form of eigendecomposition i.e. SVD can be applied to any matrix, whether it's square or not. 
+
+M = σ1v1u1 + σ2v2u2...
 
 * What’s the relationship between PCA and SVD?
 
