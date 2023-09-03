@@ -197,18 +197,22 @@ No it is not. Consider these eigenvalue-eigenvector pairs:
 
 **3.** Name some applications of eigenvalues and eigenvectors.
 
-While taking matrix power.
-As a centrality measure in Network Science (Eigenvector Centrality)
+->While taking matrix power.
+
+->As a centrality measure in Network Science (Eigenvector Centrality)
 
 **4.** We want to do PCA on a dataset of multiple features in different ranges. For example, one is in the range 0-1 and one is in the range 10 - 1000. Will PCA work on this dataset?
 
-No beacuse PCA algorithm uses distance metrics while converging. If we have predictors having different scales the algorithm won't work properly.
+No beacuse PCA algorithm uses distance metrics while converging. If we have predictors having different scales, the algorithm won't work properly.
 
 ![PCA](Images/PCA.png)
 
 **5.** Under what conditions can one apply eigendecomposition? What about SVD?
 
-We can only apply eigendecomposition if the matrix A is diagonizable.
+
+We can only apply eigendecomposition if the matrix A is diagonizable:
+
+Matrix M is diagonizable if it can be represented as $M = UDU^-1$ 
 
 * i. What is the relationship between SVD and eigendecomposition?
 
