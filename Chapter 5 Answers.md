@@ -154,7 +154,19 @@ If all the coluımns and rows of A (full rank) is a linearly independent square 
 **9.** Derivative is the backbone of gradient descent.
 
 * i. What does derivative represent?
+
+Derivative the the slope a curve at a given point of the curve or more formally:
+
+>In mathematics, the derivative shows the sensitivity of change of a function's output with respect to the input. (ref: https://en.wikipedia.org/wiki/Derivative)
+
+If the behaviour of the curve is dependent on more than one variable (multivariable calculus), we can calculate the sensitivity of that curve with respect to only one variable by using partial derivatives.
+
 * ii. What’s the difference between derivative, gradient, and Jacobian?
+
+
+The gradient refers to the change in the behavior of a curve with respect to differential changes in all the variables (first partial derivatives for all variables) it depends on. 
+
+The Jacobian is a special kind of matrix that consists of the gradients of multiple functions.
 
 **10.** Say we have the weights  w∈Rd×m and a mini-batch  x of  n elements, each element is of the shape  1×d so that  x∈Rn×d. We have the output  y=f(x;w)=xw. What’s the dimension of the Jacobian  δyδx?
 
