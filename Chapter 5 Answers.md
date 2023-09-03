@@ -132,6 +132,35 @@ Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 <img src = Images/Covariance%20Matrix.jpg width = 500>
 <img src = Images/Covariance%20Matrix2.jpg width = 500>
 
+**8.** Given  A∈Rn×m and  b∈Rn
+ 
+* i. Find  x such that:  Ax=b.
+
+x = Inverse(A)b
+
+* ii. When does this have a unique solution?
+
+If all the coluımns and rows of A (full rank) is a linearly independent square matrix then x is unique.
+
+* iii. Why is it when A has more columns than rows,  Ax=b has multiple solutions?
+
+ Mathematically, more columns than rows means that there are less constraints then variables and we know that if x is a unique m-vector and then A has to have m columns (otwerwise dot product is not possible) and m rows (contraints = variables).
+
+* iv. Given a matrix A with no inverse. How would you solve the equation  Ax=b? What is the pseudoinverse and how to calculate it?
+
+<img src = Images/PseudoInverse.jpg width = 500>
+
+
+**9.** Derivative is the backbone of gradient descent.
+
+* i. What does derivative represent?
+* ii. What’s the difference between derivative, gradient, and Jacobian?
+
+**10.** Say we have the weights  w∈Rd×m and a mini-batch  x of  n elements, each element is of the shape  1×d so that  x∈Rn×d. We have the output  y=f(x;w)=xw. What’s the dimension of the Jacobian  δyδx?
+
+**11.** Given a very large symmetric matrix A that doesn’t fit in memory, say  A∈R1M×1M and a function  f that can quickly compute  f(x)=Ax for  x∈R1M. Find the unit vector  x so that  xTAx is minimal.
+
+Hint: Can you frame it as an optimization problem and use gradient descent to find an approximate solution?
 # 5.1.3 Dimensionality reduction
 
 **1.** Why do we need dimensionality reduction?
