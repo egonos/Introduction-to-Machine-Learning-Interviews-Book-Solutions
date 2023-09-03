@@ -264,9 +264,30 @@ ReLU & any form of subgradients. We have to choose a really small step size so t
 **2.** Convexity
 * i. What does it mean for a function to be convex or concave? Draw it.
 * ii. Why is convexity desirable in an optimization problem?
-* iii. Show that the cross-entropy loss function is convex.
+
 
 ![Convex](Images/Convex.png)
+
+* iii. Show that the cross-entropy loss function is convex.
+
+Rather than explaining it mathematically using hessian, I will try to explain like Andrew Ng:
+
+Let's look at the function -logx:
+
+<img src = Images/Log1.png width = 500>
+
+and -log(1-x)
+
+<img src = Images/Log2.png width = 500>
+
+consider binary cross entropy:
+
+L = -{ylog(h(x)) + (1-y)log(1-h(x))}
+
+y ∈ [0,1]
+
+**Şurası GPTye göre düzenlenecek**
+
 
 3. Given a logistic discriminant classifier:
 
