@@ -129,7 +129,7 @@ Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 
 **7.** What’s the difference between the covariance matrix  ATA and the Gram matrix  AAT?
 
-<img src = Images/Covariance%20Matrix,jpg width = 500>
+<img src = Images/Covariance%20Matrix.jpg width = 500>
 <img src = Images/Covariance%20Matrix2.jpg width = 500>
 
 # 5.1.3 Dimensionality reduction
