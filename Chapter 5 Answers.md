@@ -212,7 +212,7 @@ No beacuse PCA algorithm uses distance metrics while converging. If we have pred
 
 We can only apply eigendecomposition if the matrix A is diagonizable:
 
-Matrix M is diagonizable if it can be represented as $M = UDU^-1$ 
+Matrix M is diagonizable if it can be represented as $M = UDU^(-1)$ 
 
 * i. What is the relationship between SVD and eigendecomposition?
 
