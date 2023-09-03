@@ -177,7 +177,9 @@ I worked a lot on this question but I couldn't figure a relation. I'll just past
 
 **11.** Given a very large symmetric matrix A that doesn’t fit in memory, say  A∈R1M×1M and a function  f that can quickly compute  f(x)=Ax for  x∈R1M. Find the unit vector  x so that  xTAx is minimal.
 
-Hint: Can you frame it as an optimization problem and use gradient descent to find an approximate solution?
+...
+
+
 # 5.1.3 Dimensionality reduction
 
 **1.** Why do we need dimensionality reduction?
