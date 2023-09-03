@@ -170,6 +170,11 @@ The Jacobian is a special kind of matrix that consists of the gradients of multi
 
 **10.** Say we have the weights  w∈Rd×m and a mini-batch  x of  n elements, each element is of the shape  1×d so that  x∈Rn×d. We have the output  y=f(x;w)=xw. What’s the dimension of the Jacobian  δyδx?
 
+I worked on this question but I couln't figure a relation. I'll just paste my calculations here.
+
+<img src = Images/Jacobian1.jpg width = 500>
+<img src = Images/Jacobian2.jpg width = 500>
+
 **11.** Given a very large symmetric matrix A that doesn’t fit in memory, say  A∈R1M×1M and a function  f that can quickly compute  f(x)=Ax for  x∈R1M. Find the unit vector  x so that  xTAx is minimal.
 
 Hint: Can you frame it as an optimization problem and use gradient descent to find an approximate solution?
