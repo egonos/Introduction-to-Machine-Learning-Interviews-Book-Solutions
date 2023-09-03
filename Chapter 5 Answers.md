@@ -109,7 +109,18 @@ Also multiplied with the same scaler. Consider these examples:
 
  **5.** A  4×4 matrix has four eigenvalues  3,3,2,−1. What can we say about the trace and the determinant of this matrix?
 
- ****
+Trace of a matrix = sum of diagonal elements of a matrix = sum of eigenvalues of a matrix
+
+Trace(M) = 3 + 3 + 2 + -1 = 7
+
+det(M) = multipication of eigenvalues
+
+det(M) = 3 * 3 * 2 * -1 = -18
+
+Check out the formulas:
+
+1. https://en.wikipedia.org/wiki/Trace_(linear_algebra)
+2. https://en.wikipedia.org/wiki/Determinant
 
 
 **6.** Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
@@ -118,7 +129,8 @@ Col1 = Col3*(-0.5); ;No linear independency. Det(A) = 0
 
 **7.** What’s the difference between the covariance matrix  ATA and the Gram matrix  AAT?
 
-****
+<img src = Images/Covariance%20Matrix width = 500>
+<img src = Images/Covariance%20Matrix2 width = 500>
 
 # 5.1.3 Dimensionality reduction
 
