@@ -349,24 +349,26 @@ ChatGPT:
 
 **16.** How does data sparsity affect your models?
 
-Data sparsity increases the dimension of the data without serving further information. For the distance based models (like KNN, KMeans etc.) it results in *curse of dimensionality*. On the other hand, even my data is resilient for the curse of dimensionality (tree models), the increased dimensions take more computational power and time.
+Data sparsity increases the dimension of the data without serving further information. For the distance based models (like KNN, KMeans etc.) it results in *curse of dimensionality*. On the other hand, even if my data is resilient for the curse of dimensionality (tree models), the increased dimensions require computational power and time.
 
 **17.** Feature leakage
 
 * i. What are some causes of feature leakage?
 
-1. Ordinal features and ordered labels: If I have an id column and ordered labels, the model automatically develops a decision criteria as:
+1. Ordinal features and ordered labels: there is an *id* column and ordered labels, the model automatically develops decision criteria as:
 
 y = 1 if id < 150 (let's say)
 
 y = 0 otherwise
 
-2. Mulitcolinearity: If any of two data is not **linearly independent**, this may cause the model to develop wrong learning patterns. Luckily we can monitor this via several methods. Personally I use pearson correlations (continuous data) and chi-square of independence test (categorical data)
+2. Multicollinearity: If any of two predictors is not **linearly independent**, this may cause the model to develop wrong learning patterns. Luckily we can monitor this via several methods. Personally, I use Pearson correlations (continuous data) and chi-square of independence test (categorical data)
 
 
 * ii. Why does normalization help prevent feature leakage?
 
-NO IDEA. According to the ChatGPT:
+...
+
+ According to the ChatGPT:
 
 > Normalization helps prevent feature leakage by ensuring that the scale of the variables in your model is determined solely by the training set and not by the test set. When you normalize based on the entire dataset, the mean and variance used for scaling include information from the test set, thus leaking information into the training set. This is problematic because it can give an optimistic bias to the evaluation metrics of the model when tested on the same test set, making the model look better than it actually is. By normalizing using only the training data, you ensure that the model is completely ignorant of the future data in the test set, offering a more realistic evaluation of its performance.
 
@@ -378,11 +380,11 @@ Answered in (i.)
 
 **18.** Suppose you want to build a model to classify whether a tweet spreads misinformation. You have 100K labeled tweets over the last 24 months. You decide to randomly shuffle on your data and pick 80% to be the train split, 10% to be the valid split, and 10% to be the test split. What might be the problem with this way of partitioning?
 
-In this case, the fact that validation and test data consists a minority part of the whole data, the model evaluation metrics might skew a lot. If somehow the distributions of these two differs even in a small scale this quickly reflects the performance scores. To solve this problem we can use cross validation.
+In this case, the fact that validation and test data consist a minority part of the whole data, the model evaluation metrics might skew a lot. If somehow the distributions of these two differs even in a small scale this quickly reflects the performance scores. To solve this problem we can use cross validation.
 
 **19.** You’re building a neural network and you want to use both numerical and textual features. How would you process those different features?
 
-If the categorical features have low cardinality, I would directly encode them using OHE. However if the otherwise is true depending on the data type we can use other encoding methods. Here are my most frequently used ones:
+If the categorical features have low cardinality, I would directly encode them using  One Hot Encoding. However if the opposite is true, depending on the data type, we can use other encoding methods. Here are my most frequently used ones:
 
 Categorical data (not text): Mean encoding
 
@@ -404,11 +406,11 @@ Independent from this, increasing features may result in overfitting.
 
 * i. When we say an algorithm converges, what does convergence mean?
 
-Convergence means that the model if not learning (at least effectively) further.
+Convergence means that the model is no longer learning effectively.
 
 * ii. How do we know when a model has converged?
 
-Lets say we have loss or accuracy difference Ɛ. For the metric in consideration if:
+Let's say we have loss or accuracy difference Ɛ. For the metric in consideration if:
 
 |Xt+1 - Xt| <= Ɛ for couple of subsequent t's then it means the model is converged.
 
