@@ -84,7 +84,7 @@ If we think the loss function as a path in the parameter space, local minima rep
 
 In the saddle point the gradient of f is 0 Saddle points seem to be worse. (ref: https://or.stackexchange.com/questions/7778/quality-of-solutions-from-saddle-points-vs-local-minimums)
 
-**8.**uilds 
+**8.** 
 
 * i. What are the differences between parameters and hyperparameters?
 
@@ -177,7 +177,7 @@ If the problem is related with distributions,
 
 ->If the generation of data is frequent, I would adopt an online learning model.
 
-->If the generation of the data is not frequent, I would train the model again and use it until it loses its validity. THis validity check can be determined based on assigning an accuracy threshold or something similar.
+->If the generation of the data is not frequent, I would train the model again and use it until it loses its validity. This validity check can be determined based on assigning an accuracy threshold or something similar.
 
 ## 7.2 Sampling and creating training data <a name = "2"></a>
 
@@ -267,7 +267,7 @@ We can employ a handful of statistical tests to determine whether two sets of sa
 
 * Mann-Whitney U Test: This is a non-parametric test used to determine whether two sample groups belong to the same distribution. To compute this test effectively, the variables should be ordered because the calculations are made based on the order of the values.  (ref: https://acikders.ankara.edu.tr/pluginfile.php/30763/mod_resource/content/0/10_Mann%20Whitney%20U%20Testi.pdf)
 
-*t-test: This test is used to determine whether the means of two different statistical distributions are significantly different. (ref: https://acikders.ankara.edu.tr/pluginfile.php/169671/mod_resource/content/0/12_T%20TEST%C4%B0.pdf)
+* t-test: This test is used to determine whether the means of two different statistical distributions are significantly different. (ref: https://acikders.ankara.edu.tr/pluginfile.php/169671/mod_resource/content/0/12_T%20TEST%C4%B0.pdf)
 
 * Chi-Square Test: This test is suitable for evaluating whether two sets of categorical data come from the same distribution.
 
@@ -372,15 +372,15 @@ y = 0 otherwise
 
 > Normalization helps prevent feature leakage by ensuring that the scale of the variables in your model is determined solely by the training set and not by the test set. When you normalize based on the entire dataset, the mean and variance used for scaling include information from the test set, thus leaking information into the training set. This is problematic because it can give an optimistic bias to the evaluation metrics of the model when tested on the same test set, making the model look better than it actually is. By normalizing using only the training data, you ensure that the model is completely ignorant of the future data in the test set, offering a more realistic evaluation of its performance.
 
-My opinion: This is not the answer we're looking for. I couln't find the answer of this question on the internet also.
+My opinion: This is not the answer we're looking for. I couldn't find the answer of this question on the internet also.
 
 * iii. How do you detect feature leakage?
 
-Answered in (i.)
+Answered in i.
 
 **18.** Suppose you want to build a model to classify whether a tweet spreads misinformation. You have 100K labeled tweets over the last 24 months. You decide to randomly shuffle on your data and pick 80% to be the train split, 10% to be the valid split, and 10% to be the test split. What might be the problem with this way of partitioning?
 
-In this case, the fact that validation and test data consist a minority part of the whole data, the model evaluation metrics might skew a lot. If somehow the distributions of these two differs even in a small scale this quickly reflects the performance scores. To solve this problem we can use cross validation.
+In this case, the fact that validation and test data consist a minority part of the whole data, the model evaluation metrics might skew a lot. If somehow the distributions of these two differs even in a small scale, this quickly reflects the performance scores. To solve this problem, we can use cross validation.
 
 **19.** You’re building a neural network and you want to use both numerical and textual features. How would you process those different features?
 
@@ -431,7 +431,7 @@ If height < 1.80m then Gender is Female.
 
 Male otherwise
 
-The decision pattern is too simple meaning it makes lots of errors. However at least the model is consistent in it's decisions.
+The decision pattern is too simple meaning it makes lots of errors. However at least the model is consistent on it's decisions.
 
 Model: Unpruned Decision Tree
 
@@ -440,6 +440,8 @@ Decision Criteria: Heigh, Weight, Grades, Pen Color, Pencil Color, Eraser Number
 If height is... Weight is... Grades are... Pen Color is... Pencil Color is... Eraser Number is... then Male
 
 Female Otherwise
+
+(A real model is lot more complex and contains lot more decision criterion. Stating one condition and assigning female if the condition is not met can be misleading. I wanted to inform the reader about that.)
 
 A model like this predicts differently even a small change in the inputs (possibly noise). The model has a high *variance* in its decisions. However, in the training data especially, it makes little to no error. 
 
@@ -556,8 +558,7 @@ F1 = 0.7
 
 * ii. What can we do to improve the model’s performance?
 
-The question is not complete. Therefore I couldn't answer? What is our main metric? Precision, Recall or F1. Unless somebody state this, I couln't answer...
-
+The question is not complete due to the impresence of performance metric we want to improve. Therefore I couldn't answer. 
 
 **9.** Consider a classification where 99% of data belongs to class A and 1% of data belongs to class B.
 
