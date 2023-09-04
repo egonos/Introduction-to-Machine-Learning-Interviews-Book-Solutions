@@ -360,7 +360,7 @@ plt.xlabel("X")
 plt.ylabel("Density")
 plt.show()
 ```
-<img src = Images/Noraml%20Distribution.png width = 500>
+<img src = Images/Normal%20Distribution.png width = 500>
 
 **3.** What’s the difference between multivariate distribution and multimodal distribution?
 
