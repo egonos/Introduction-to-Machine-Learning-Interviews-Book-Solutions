@@ -469,7 +469,7 @@ Bayesians claim that events are about beliefs. Given the data, how does model va
 
 When the distribution is skewed, the mean losses it's interpretability. Consider power law distributions. Mean means almost nothing in that case. Median is a lot better metric.
 
-The median losses its interpretability when the data is not ordered or the gap between the values are too much. In these kind of scenarios, the median is a better choice.
+The median losses its interpretability when the data is not ordered or the gap between the values are too much. In these kind of scenarios, the mean is a better choice.
 
 
 **4.** What is a moment of function? Explain the meanings of the zeroth to fourth moments.
