@@ -331,13 +331,13 @@ Yes it could be. We should differentiate PDF from Probability Mass Function (PMF
 
 -> P(x) >= 0 ∀x ∈ X
 
--> PMF is used for *continuous* random variables and shows the probability of x.
+-> PDF is used for *continuous* random variables and shows the probability of x.
 
 -> Normal distribution is an example of PDF.
 
 -> P(x) >= 0 ∀x ∈ X
 
-Now, consider a PDF having a really small sigma value. In that case, the Probability densities will be really high. Here is an example:
+Now, consider a PDF having a really small sigma value. In that case, the Probability densities will be really high (Has to sum up to 1 in all cases). Here is an example:
 
 ```python
 import numpy as np
