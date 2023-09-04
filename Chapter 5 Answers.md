@@ -6,6 +6,7 @@
 - [5.1.3 Dimensionality reduction](#3)
 - [5.1.4 Calculus and convex optimization](#4)
 - [5.1.5 Probability](#5)
+- [5.2.2 Stats](#6)
 ## 5.1.1 Vectors <a name="1"></a>
 
 **1. Dot product** 
@@ -453,7 +454,7 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 <img src = Images/MaleFemale.jpg width = 500>
 
 
-# 5.2.2 Stats
+## 5.2.2 Stats <a name="6"></a>
 
 **1.** Explain frequentist vs. Bayesian statistics.
 
