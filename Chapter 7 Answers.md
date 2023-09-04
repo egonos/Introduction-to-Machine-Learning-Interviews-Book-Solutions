@@ -1,4 +1,9 @@
-# 7.1 Basics
+# Chapter 7
+
+- [7.1 Basics](#1)
+- [7.2 Sampling and creating training data](#2)
+- [7.3 Objective functions, metrics, and evaluation](#3)
+## 7.1 Basics <a name="1"></a>
 
 **1.** Explain supervised, unsupervised, weakly supervised semi-supervised, and active learning.
 
@@ -153,7 +158,7 @@ On the other hand, L1 norm is a subgradient meaning all the values not being 0 t
 * ii. How do you validate whether your hypotheses are correct?
 [M] Imagine your hypotheses about the causes are correct. What would you do to address them?
 
-# 7.2 Sampling and creating training data
+## 7.2 Sampling and creating training data <a name = "2"></a>
 
 1. If you have 6 shirts and 4 pairs of pants, how many ways are there to choose 2 shirts and 1 pair of pants?
 
@@ -370,7 +375,7 @@ I think both training and test error would increase if I use distance based mode
 
 Independent from this, increasing features may result in overfitting.
 
-# 7.3 Objective functions, metrics, and evaluation
+## 7.3 Objective functions, metrics, and evaluation <a name = "3"></a>
 
 **1.** Convergence.
 
