@@ -289,7 +289,7 @@ y ∈ [0,1]
 When we combine these two in [0,1] range, we get a convex bowl.
 
 
-3. Given a logistic discriminant classifier:
+**3.** Given a logistic discriminant classifier:
 
 p(y=1|x)=σ(wTx)
  
@@ -297,17 +297,15 @@ where the sigmoid function is given by:
 
 σ(z)=(1+exp(−z))−1
  
-The logistic loss for a training sample  xi
-  with class label  yi
-  is given by:
+The logistic loss for a training sample  xi with class label  yi is given by:
 
 L(yi,xi;w)=−logp(yi|xi)
  
-Show that  p(y=−1|x)=σ(−wTx)
+* i. Show that  p(y=−1|x)=σ(−wTx)
  
-Show that  ΔwL(yi,xi;w)=−yi(1−p(yi|xi))xi
+* ii. Show that  ΔwL(yi,xi;w)=−yi(1−p(yi|xi))xi
  
-Show that  ΔwL(yi,xi;w) is convex.
+* iii. Show that  ΔwL(yi,xi;w) is convex.
 
 ![Proof1](Images/Proof1.png)
 
@@ -319,11 +317,50 @@ iii. I've already showed the convexity of loss function.
 
 **1.** Given a uniform random variable in the range of inclusively. What’s the probability that ?
 
-Say the random vairable m found in range n then the probability of m is 1/n.
+Say the random variable m found in range n, then the probability of m is 1/n.
 
 **2.** Can the values of PDF be greater than 1? If so, how do we interpret PDF?
 
-Yes it could be.
+Yes it could be. We should differentiate PDF from Probability Mass Function (PMF). For the reminder:
+
+-> PMF is used for *discreate* random variables and shows the probability of x.
+
+-> Binomial distribution, Poisson Distribution are the examples of PMF.
+
+-> Sum of probabilities has to be 1.
+
+-> P(x) >= 0 ∀x ∈ X
+
+-> PMF is used for *continuous* random variables and shows the probability of x.
+
+-> Normal distribution is an example of PDF.
+
+-> P(x) >= 0 ∀x ∈ X
+
+Now, consider a PDF having a really small sigma value. In that case, the Probability densities will be really high. Here is an example:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+
+X = np.linspace(-1, 1, 100)  
+
+mu = 0
+sigma = 0.1
+
+#normal distribution function calculation
+y = [norm.pdf(x, loc=mu, scale=sigma) for x in X]
+
+
+plt.plot(X, y)
+plt.title("Normal Distribution")
+plt.xlabel("X")
+plt.ylabel("Density")
+plt.show()
+```
+<img src = Images/Noraml%20Distribution.png width = 500>
 
 **3.** What’s the difference between multivariate distribution and multimodal distribution?
 
