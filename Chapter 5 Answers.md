@@ -397,7 +397,7 @@ P(crash|month) = 5/12
 
 * ii. What's the probability that it will crash at any given moment?
 
-p(crash|sec) = 5/(12*30*24*60)
+p(crash|sec) = 5/(12x30x24x60)
 
 **10.** Say you built a classifier to predict the outcome of football matches. In the past, it's made 10 wrong predictions out of 100. Assume all predictions are made independently., what's the probability that the next 20 predictions are all correct?,
 
@@ -444,7 +444,7 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 
 **16.** Consider a person A whose sex we don’t know. We know that for the general human height, there are two distributions: the height of males follows  hm=N(μm,σ2m)and the height of females follows  hj=N(μj,σ2j). Derive a probability density function to describe A’s height.
 
-*****
+<img src = MaleFemale.jpg width = 500>
 
 
 # 5.2.2 Stats
