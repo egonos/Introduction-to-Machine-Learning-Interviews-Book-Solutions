@@ -2,7 +2,10 @@
 
 **Contents**
 - [5.1.1 Vectors](#1)
-
+- [5.1.2 Matrices](#2)
+- [5.1.3 Dimensionality reduction](#3)
+- [5.1.4 Calculus and convex optimization](#4)
+- [5.1.5 Probability](#5)
 ## 5.1.1 Vectors <a name="1"></a>
 
 **1. Dot product** 
@@ -74,7 +77,7 @@ More informally, the metric induced by a norm "plays nicely" with the vector spa
 (ref: https://math.stackexchange.com/questions/38634/difference-between-metric-and-norm-made-concrete-the-case-of-euclid)
 
 
-# 5.1.2 Matrices
+## 5.1.2 Matrices <a name="2"></a>
 
 **1.** Why do we say that matrices are linear transformations?
 
@@ -183,7 +186,7 @@ I worked a lot on this question but I couldn't figure a relation. I'll just past
 ...
 
 
-# 5.1.3 Dimensionality reduction
+## 5.1.3 Dimensionality reduction <a name="3"></a>
 
 **1.** Why do we need dimensionality reduction?
 
@@ -247,7 +250,7 @@ We use t-SNE to dimension reduction purposes. It works like the following:
 <img src = Images/t-SNE2.jpg width = 500>
 <img src = Images/t-SNE3.jpg width = 500>
 
-# 5.1.4 Calculus and convex optimization
+## 5.1.4 Calculus and convex optimization <a name="4"></a>
 
 **1.** Differentiable functions
 
@@ -316,7 +319,7 @@ L(yi,xi;w)=−logp(yi|xi)
 
 iii. I've already showed the convexity of loss function.
 
-# 5.1.4 Probability
+## 5.1.5 Probability <a name="5"></a>
 
 **1.** Given a uniform random variable in the range of inclusively. What’s the probability that ?
 
