@@ -276,7 +276,7 @@ We can employ a handful of statistical tests to determine whether two sets of sa
 
 The best way to see the answer to this question is to plot learning curves of training and validation data. If training and cross validation loss are similar given data, increasing the number of instances won't improve the performance. Conversely, if there is a gap between those two, the model would probably benefit from increased data size:
 
-! [CV](Images/Cross%20Validation%20Loss.png)
+![CV](Images/Cross%20Validation%20Loss.png)
 
 
 **10.** How to determine outliers in your data samples? What to do with them?
