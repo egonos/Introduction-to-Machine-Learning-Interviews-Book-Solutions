@@ -444,7 +444,7 @@ P = 0.5 * 0.3 + 0.5 * 0.7 = 0.5
 
 **16.** Consider a person A whose sex we don’t know. We know that for the general human height, there are two distributions: the height of males follows  hm=N(μm,σ2m)and the height of females follows  hj=N(μj,σ2j). Derive a probability density function to describe A’s height.
 
-<img src = MaleFemale.jpg width = 500>
+<img src = Images/MaleFemale.jpg width = 500>
 
 
 # 5.2.2 Stats
