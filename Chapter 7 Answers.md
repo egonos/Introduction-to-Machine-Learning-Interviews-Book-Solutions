@@ -435,36 +435,36 @@ The decision pattern is too simple meaning it makes lots of errors. However at l
 
 Model: Unpruned Decision Tree
 
-Decision Criteria, Heigh, Weight, Grades, Pen Color, Pencil Color, Eraser Number
+Decision Criteria: Heigh, Weight, Grades, Pen Color, Pencil Color, Eraser Number
 
 If height is... Weight is... Grades are... Pen Color is... Pencil Color is... Eraser Number is... then Male
 
 Female Otherwise
 
-A model like this predicts differently even a small change in the inputs (possibly noise). The model has a large *variance* in its decisions. However, in the training data especially, it makes little to no error. 
+A model like this predicts differently even a small change in the inputs (possibly noise). The model has a high *variance* in its decisions. However, in the training data especially, it makes little to no error. 
 
-When we are creating models, we need to come up with one lying these two extremes. Increasing one automatically decreases the other. This phenomena is called bias-variance trade-off.
+When we are creating models, we need to come up with one lying these two extremes. Increasing one automatically decreases the other. This phenomenon is called bias-variance trade-off.
 
 * ii. How’s this tradeoff related to overfitting and underfitting?
 
-A model with high bias low variance has underfitted. If the opposite have happened then we say the model has overfitted.
+A model with high bias and low variance is underfitting. If the opposite is true, then we say the model is overfitting.
 
 * iii. How do you know that your model is high variance, low bias? What would you do in this case?
 
-Adopting a simpler model is a choice but frequently not the solution we are looking for. Because simpler model not balances but rather creates an imbalance in opposite direction. On the other hand, regularization is a good idea. Optimizing multiple objectives can enhance the training process.
+Adopting a simpler model is an option but often not the solution we're looking for, as it may create an imbalance in the opposite direction. Regularization is often a better approach. Optimizing multiple objectives can also improve the training process.
 
 * iv. How do you know that your model is low variance, high bias? What would you do in this case?
 
-1. Visualization: If my model is too simple, it is often suitable to visualize its decision criterias.
+1. Visualization: If my model is too simple, it is often helpful to visualize its decision criteria.
 
-2. Manuel label control: If model predictions and a predictor have a high correlation then i start to suspect.
+2. Manual label control: If the model's predictions and a predictor have a high correlation, then I start to suspect.
 
 What to do?
 
-1. Increase model complexity: Weaken the regularization or increase max_depth (in tree models).
-2. Adopt more complex models: SVM instead of Linear Regression
-3. Use Kernels (for SVM)
-4. Increase number of nodes hidden layers etc (for NN) 
+1. Increase model complexity: Weaken the regularization or increase max_depth in tree models.
+2. Adopt more complex models: Use SVM instead of Linear Regression.
+3. Use Kernels (for SVM).
+4. Increase the number of nodes, hidden layers, etc., for neural networks.
 
 **4.** Cross-validation.
 
@@ -474,11 +474,11 @@ What to do?
 
 2. K-Fold Cross Validation:
 
-Split the data into K Folds. Use ith fold for testing the model performance and the rest for model training. After using all folds for testing average the performance outcomes. This method is better than train test splits because we eliminate the noise occured due to random assignments.
+K-Fold Cross Validation: Split the data into K folds. Use the ith fold for testing the model's performance and the rest for training. This method is better than simple train-test splits because it eliminates noise that can occur due to random assignments.
 
-3. Stratified K Fold Cross Validation: Similar to K Fold Cross Validation but also uses stratums to assign the instances in a more balanced fashion.
+3. Stratified K-Fold Cross Validation: Similar to K-Fold Cross Validation, but it also uses strata to assign the instances in a more balanced manner.
 
-4. Leave One Out Cross Validation: It is a spesific type of K Fold Cross Validation. In this method, K = n (the number of instances).
+4. Leave One Out Cross Validation: This is a specific type of K-Fold Cross Validation where K equals the number of instances.
 
 * ii. Why don’t we see more cross-validation in deep learning?
 
@@ -491,36 +491,36 @@ Cross validation is particularly useful if the data is limited. In most of the w
 
 * i. What’s wrong with training and testing a model on the same data?
 
-In machine learning what we are actually looking for is generalization performance. In other words *"how does my model performs on unseen data?"* is the question in which we are trying to answer. If we train our data then test its performance, what we are observing is *"how my model memorized this data?"*. If you have noticed, these are not the same questions.
+In machine learning, what we're actually looking for is generalization performance. In other words, the question we're trying to answer is, "How does my model perform on unseen data?" If we train and test on the same data, what we're observing is, "How well has my model memorized this data?" These are not the same questions.
 
 * ii. Why do we need a validation set on top of a train set and a test set?
 
-Using validation set allows us to fine tune our model with out causing data leakage. Think what happens if we use test set for fine tuning. We are optimizing our model to predict the test set not the unseen data. On the other hand if we use a different set (validation set) for fine tuning, we can still evaluate the generalization performance of our model by using the test set.
+Using a validation set allows us to fine-tune our model without causing data leakage. If we use the test set for fine-tuning, we are optimizing our model to predict the test set, not unseen data. On the other hand, if we use a different set (the validation set) for fine-tuning, we can still evaluate the generalization performance of our model using the test set.
 
 * iii. Your model’s loss curves on the train, valid, and test sets look like this. What might have been the cause of this? What would you do?
 
-What I'm seeing is the model has overfitted. In this case we expect a decrease in predictive performance in test set. However it seems like the opposite is happening. The first think came to my mind is data leakage. Training set contains something related to test data. That's why even though the model has overfitted, it's test set performance continuously increasing.
+What I'm seeing suggests that the model has overfitted. In this case, we would expect a decrease in predictive performance on the test set. However, it seems like the opposite is happening. The first thing that comes to mind is data leakage. The training set may contain information related to the test data, explaining why the test set performance is continuously increasing despite overfitting.
 
 **6.** Your team is building a system to aid doctors in predicting whether a patient has cancer or not from their X-ray scan. Your colleague announces that the problem is solved now that they’ve built a system that can predict with 99.99% accuracy. How would you respond to that claim?
 
 
-Here is a heuristic: If the result is too great then something is wrong. The possible causes:
+Here's a heuristic: If the result is too good, something is likely wrong. Possible causes include:
 
-1. Imbalanced data: For the biological cases, we often have an imbalanced data. The model we have created is biased towards majority class. Since our test data is also imbalanced, this level is accuracy is expected.
+1. Imbalanced data: Medical cases often involve imbalanced data. The model might be biased towards the majority class. Given that the test data is also likely imbalanced, high accuracy isn't surprising.
 
-2. Data Leakage: If training data contains some information about the test data, this level of an accuracy is normal.
+2. Data Leakage: If the training data contains information about the test data, high accuracy levels can be expected.
 
 **7.** F1 score.
 * i. What’s the benefit of F1 over the accuracy?
 
-Recall what does accuracy tell: Out of all the samples in what percent my model predicts correctly. This is a fine way to use for balanced datasets. If otherwise is true then we need to use precision or recall. While both of them are useful, optimizing one automatically harms the other.
+Accuracy tells us the proportion of all samples that the model predicts correctly. This is suitable for balanced datasets. For imbalanced datasets, precision or recall are often better indicators. However, optimizing one usually comes at the cost of the other. F1 score provides a single metric that balances both precision and recall, making it a more comprehensive evaluation metric.
 
 1. To use only one evalution metric (for the simplicity)
 2. To find a balance between precision and recall, we use F1 Score.
 
 * ii. Can we still use F1 for a problem with more than two classes. How?
 
-Yes. We can adopt a *one vs. rest* approach. Here is the illustration:
+Yes. We can adopt a *one vs. rest* approach. Here is an illustration:
 
 ![F1](Images/F1%20Score%20Illustration.png)
 
