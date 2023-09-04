@@ -500,7 +500,7 @@ A small reminder: 95% confidence interval (0.975 quartile) has a z score of 1.96
 
 **8.** Suppose we have a random variable supported on from which we can draw samples. How can we come up with an unbiased estimate of the median of ?
 
-*****
+If I have no limit, I continuosly draw samples from the population such at at some point the sample size become large enough to assign its median as unbiased. 
 
 **9.** Can correlation be greater than 1? Why or why not? How to interpret a correlation value of 0.3?
 
@@ -532,11 +532,11 @@ By utilizing p-value
 
 * ii. What’s the distribution of p-values?
 
-*****
+***
 
 * iii. Recently, a lot of scientists started a war against statistical significance. What do we need to keep in mind when using p-value and statistical significance?
 
-****
+***
 
 **13.** 
 
@@ -550,7 +550,9 @@ Chi-squared Test
 
 * iii. How do we test for independence between two continuous variables?
 
-Checking whether the correlation is close to zero or not
+We can check correlation coefficient for checking the presence of *linear* relationship.
+
+Visualization can be really handy since we have only two variables.
 
 **14.** A/B testing is a method of comparing two versions of a solution against each other to determine which one performs better. What are some of the pros and cons of A/B testing?
 
