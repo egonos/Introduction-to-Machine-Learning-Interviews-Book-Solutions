@@ -161,7 +161,7 @@ One of the biggest assumption of ML is training and test data is coming from the
 **15.** Your model performs really well on the test set but poorly in production.
 * i. What are your hypotheses about the causes?
 
-A. I think the training and test sets was sampled in the same time. The model is powerful and trained appropriately so it can predict the test set pretty well. However, by the time the model is ready the related distributions about the production changed hence the model lost its interpretability.
+A. I think the training and test sets were sampled in the same time. The model is powerful and trained appropriately so it can predict the test set pretty well. However, by the time the model is ready the related distributions about the production changed hence the model lost its interpretability.
 
 B. There is a data leakage in training set resulting wonderful performance on test set. However this leverage does not hold for data coming from the production sao the model fails.
 
@@ -221,7 +221,7 @@ The algorithm is pretty simple. Consider 2D p(x,y)
 
 **5.** Suppose we have a classification task with many classes. An example is when you have to predict the next word in a sentence -- the next word can be one of many, many possible words. If we have to calculate the probabilities for all classes, it’ll be prohibitively expensive. Instead, we can calculate the probabilities for a small set of candidate classes. This method is called candidate sampling. Name and explain some of the candidate sampling algorithms.
 
-Consider (xi,Ti) ∈ L where xi are the features, Ti are the labels and L is a large universe. F(x,y) is our compatibility function. By using F, our goal is to explain the pattern(s) behind all (xi,Ti) pairs. When L is too large, computing F(x,y) can be really compututationally expensive. When then happens, we try to pick a sample group called Candidates Ci ⊂ L and compute function F only in Ci domain. Generally Ci consists of the real targets Ti and randomly selected samples belonging to other classes Si
+Consider (xi,Ti) ∈ L where xi are the features, Ti are the labels and L is a large universe. F(x,y) is our compatibility function. By using F, our goal is to explain the pattern(s) behind all (xi,Ti) pairs. When L is too large, computing F(x,y) can be really computationally expensive. When that happens, we try to pick a sample group called Candidates Ci ⊂ L and compute function F only in Ci domain. Generally Ci consists of the real targets Ti and randomly selected samples belonging to other classes Si
 
 Ci = Ti U Si
 
@@ -243,7 +243,7 @@ F(x,y) => log(P(y|x)/Q(y|x))
 
 I would start with Random Sampling however since the data is likely to be imbalanced i.e. comments violating website's rule is significantly less than the rest, this approach may not be the best.
 
-If the results allign with my expectations, I would proceed with stratified sampling. In this way, I would be more confident about my sample group because I know that it contains both of the classes.
+If the results align with my expectations, I would proceed with stratified sampling. In this way, I would be more confident about my sample group because I know that it contains both of the classes.
 
 Alternatively, I can play with the sampling probabilities of the samples. For example assigning a higher probabibility for the minority group can contribute significantly to our sampling process.
 
@@ -256,14 +256,14 @@ I would pick at least 30 samples for each stratum because, for the Central Limit
 
 **7.** Suppose you work for a news site that historically has translated only 1% of all its articles. Your coworker argues that we should translate more articles into Chinese because translations help with the readership. On average, your translated articles have twice as many views as your non-translated articles. What might be wrong with this argument?
 
-There is a mismatch between the concepts that have been talked. My friend talks about all the articles published. Conversely, I'm talking about the artickles that I have been translated. My selections are biased towards the publisher (me). That's why the facts are not alligning with each other.
+There is a mismatch between the concepts that have been talked. My friend talks about all the articles published. Conversely, I'm talking about the articles that I have been translated. My selections are biased towards the publisher (me). That's why the facts are not aligning with each other.
 
 
 There is a mismatch between the concepts that have been talked about. My friend talks about all the articles published. Conversely, I'm talking about the articles that have been translated. My selections are biased towards the publisher (me). That's why the facts are not aligning with each other.
 
 **8.** How to determine whether two sets of samples (e.g. train and test splits) come from the same distribution?
 
-We can employ a handful of statsitical tests to determine whether two set of samples belng to the same distribution:
+We can employ a handful of statistical tests to determine whether two sets of samples belng to the same distribution:
 
 * Mann-Whitney U Test: This is a non-parametric test used to determine whether two sample groups belong to the same distribution. To compute this test effectively, the variables should be ordered because the calculations are made based on the order of the values.  (ref: https://acikders.ankara.edu.tr/pluginfile.php/30763/mod_resource/content/0/10_Mann%20Whitney%20U%20Testi.pdf)
 
@@ -274,14 +274,14 @@ We can employ a handful of statsitical tests to determine whether two set of sam
 
 **9.** How do you know you’ve collected enough samples to train your ML model?
 
-The best way to see the answer of this question is to plot learning curves of training and validation data. If training and cross validation loss are similar given data, increasing the number of instances won't improve the perforance. Conversely, if there is a gap between those two, the model would probably benefit from increased data size:
+The best way to see the answer to this question is to plot learning curves of training and validation data. If training and cross validation loss are similar given data, increasing the number of instances won't improve the performance. Conversely, if there is a gap between those two, the model would probably benefit from increased data size:
 
 ! [CV](Images/Cross%20Validation%20Loss.png)
 
 
 **10.** How to determine outliers in your data samples? What to do with them?
 
-1. If the data is somewhat normal then IQR based approaches work really well. Similarly we can use box plots or violin plots for the same purpose.
+1. If the data is somewhat normal, then IQR-based approaches work really well. Similarly we can use box plots or violin plots for the same purpose.
 
 2. If the data is not normal, scatter plots can be really handy. To visualize the data we can preprocess the data using dimension reduction techniques such as PCA as well.
 
@@ -299,7 +299,7 @@ Sometimes duplicates occur naturally in the data. For example, when working with
 
 1. If it won't cause a problem, I would drop the duplicates.
 
-2. Alternatively, I can take the row form of the data and apply the same procedures until the recent error is resolved.
+2. Alternatively, I can take the raw format of the data and apply the same procedures until the recent error is resolved.
 
 **12.** Missing data
 
