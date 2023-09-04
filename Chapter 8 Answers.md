@@ -17,15 +17,15 @@ First my answer (since it is incomplete, I have also put the full answer as well
 -> Predictors are not correlated.
 -> Each data point is equally significant.
 
->Mainly there are 7 assumptions taken while using Linear Regression: (ref: https://www.geeksforgeeks.org/assumptions-of-linear-regression/)
-
->Linear Model
-> No Multicolinearlity in the data
-> Homoscedasticity of Residuals or Equal Variances
-> No Autocorrelation in residuals
-> Number of observations Greater than the number of predictors
-> Each observation is unique
-> Predictors are distributed Normally
+> "Mainly there are 7 assumptions taken while using Linear Regression([source](https://www.geeksforgeeks.org/assumptions-of-linear-regression/)):"
+>
+> - Linear Model
+> - No Multicollinearity in the data
+> - Homoscedasticity of Residuals or Equal Variances
+> - No Autocorrelation in residuals
+> - Number of observations greater than the number of predictors
+> - Each observation is unique
+> - Predictors are distributed normally
 
 **2.** What happens if we don’t apply feature scaling to logistic regression?
 
@@ -92,29 +92,29 @@ Empirically. We have to find a balance between overfitting (small k) and underfi
 
 * ii. What happens when you increase or decrease the value of k?
 
-**Decreasing k:** Model becomes more sensitive to any neighbor of the data point in consideration. This is a good thing up to a point. We wan't to prioritize the nearest neighbors while assigning the labels. However, this can quickly lead to overfitting. Considering more neighbors can make the model more robust.
+**Decreasing k:** The model becomes more sensitive to any neighbor of the data point in consideration. This is a good thing up to a point. We want to prioritize the nearest neighbors while assigning the labels. However, this can quickly lead to overfitting. Considering more neighbors can make the model more robust.
 
-**Increasing k:** Model considers more neighbors while assigning the label of the data in consideration. This make the mdoel more resiliant to noises (little changes with no importance)
+**Increasing k:** The model considers more neighbors while assigning the label of the data in consideration. This makes the model more resilient to noise (little changes with no importance).
 
 * iii. How does the value of k impact the bias and variance?
 
-Increasing k increases bias (more error) but decreases variance (less sensitive). Decreasing k has an opposite impact on the model.
+Increasing k increases bias (more error) but decreases variance (less sensitive). Decreasing k has the opposite impact on the model.
 
-**7.**
+**7.** k-means and GMM are both powerful clustering algorithms
 
 * i. Compare the two.
 
--> Gaussian Mixture Model (GMM) utilizes Gaussian Distribution to cluster (probablilistic) the data points whereas K-Means utilizes distance metrics (deterministic).
+-> Gaussian Mixture Model (GMM) utilizes Gaussian Distribution to cluster (probabilistic) the data points, whereas K-Means utilizes distance metrics (deterministic).
 
 -> GMM assumes the data is normally distributed. K-Means assumes the data is spherical.
 
--> GMM support covariances for vairety of geometrical shapes (spherical,diagonal,tied and full covariance).
+-> GMM supports covariances for a variety of geometrical shapes (spherical, diagonal, tied, and full covariance).
 
--> GMM needs sufficient amount of data to form clusters whereas K-Means can work even in very small data.
+-> GMM needs a sufficient amount of data to form clusters, whereas K-Means can work even with very small data.
 
 * ii. When would you choose one over another?
 
--> If the data distibution is close (overlapping clusters), K-Means can be inferior to detect the boundaries. GMM is a better choice in this case. 
+-> If the data distribution is close (overlapping clusters), K-Means can be inferior at detecting the boundaries. GMM is a better choice in this case.
 
 -> If computational resouces are limited or the clusters have well defined boundaries, use K-Means.
 
@@ -140,10 +140,10 @@ Increasing k increases bias (more error) but decreases variance (less sensitive)
 
 * ii. How are they used in deep learning?
 
--> Tensorflow supports tree algorithm - NN connection. We can use Gradient Boosted trees or Random Forest as the head of our NN structure.
+-> TensorFlow supports tree algorithm - NN connection. We can use Gradient Boosted Trees or Random Forest as the head of our NN structure.
 
--> Creatively we can build some bagging and boosting structures with multiple NN models (This could be computationally heavy).
- 
+-> Creatively, we can build some bagging and boosting structures with multiple NN models (This could be computationally heavy).
+
 **9.**
 
 * i. Construct its adjacency matrix.
@@ -156,14 +156,13 @@ Increasing k increases bias (more error) but decreases variance (less sensitive)
 
 * iii. What can you say about the adjacency matrices of two isomorphic graphs?
 
-Since the number of verticies, edges and connectivities are the same among these two the adjency matricies could be transformed to each other by reordering the rows or the columns.
-
+Since the number of vertices, edges, and connectivities are the same among these two, the adjacency matrices could be transformed into each other by reordering the rows or the columns.
 
 **10** Imagine we build a user-item collaborative filtering system to recommend to each user items similar to the items they’ve bought before.
 
 * i. You can build either a user-item matrix or an item-item matrix. What are the pros and cons of each approach?
 
-User-item matrix is more powerful in recommendation but the memory requirement of this matrix is also can be really big especially if there are lots of customers. Item-item matrix on the othr hand is lot more memory friendly, however it is not customer spesific i.e. treats all the customers the same and this may not be optimal.
+User-item matrix is more powerful for personalized recommendations but can require significant memory, especially with a large customer base. The item-item matrix, on the other hand, is more memory-efficient but is not customer-specific. It treats all customers the same, which may not be optimal.
 
 * ii. How would you handle a new user who hasn’t made any purchases in the past?
 
@@ -208,19 +207,19 @@ According to your classifier, what's sentiment of the sentence `The hamster is u
 
 Graident boosting is a sequential learning technique in which each weak learner learns and possible corrects the errors made by the previous tree. The equation,
 
-F_n+1(x) = F_n(x) - eta * yhat_n(x)
+F_n+1(x) = F_n(x) - eta * y_hat_n(x)
 
 The biggest difference of Gradient Boosting from AdaBoost is that weak learners of a GB model is more advanced (not decision stumps).
 
 * ii. What problems is gradient boosting good for?
 
-In my experience GB outperforms most of the other ml algorithms when data is tabular and the data is not too big. Luckily novadays, both tree algorithms support GPU usage and parallel computing. (I found **Dask** to be more user friendly)
+In my experience, gradient boosting outperforms most other machine learning algorithms when the data is tabular and not overly large. Both LightGBM and XGBoost support GPU usage and parallel computing. I find Dask to be more user friendly for these tasks.
 
 **14.** SVM
 
 * i. What’s linear separation? Why is it desirable when we use SVM?
 
-It means the decision boundary is a line (2D) or a hyperplane (+2D). It is desirable because linear decision boundaries are more straightforward to compute and useful when there is not a sufficient amount of data (KNN lies on the opposite side, the more data the better, slower computation)
+It means the decision boundary is a line (in 2D) or a hyperplane (if more dimension). It is desirable because linear decision boundaries are more straightforward to compute and useful when there is not a sufficient amount of data (KNN lies on the opposite side, the more data the better, slower computation)
 
 * ii. How well would vanilla SVM work on this dataset?
 
