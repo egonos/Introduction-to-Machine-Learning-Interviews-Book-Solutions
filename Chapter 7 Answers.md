@@ -28,8 +28,6 @@
 
 This cycle continues until the training ends.
 
-
-
 **2.** 
 
 * i. What’s the risk in empirical risk minimization?
@@ -67,65 +65,65 @@ Adopting simpler models if possible
 
 -> Increased data size
 
--> Ability to record sensory data (hearth rate for instance)
+-> Ability to record sensory data (heart rate for instance)
 
 -> Increased computational resources
 
 **5.** If we have a wide NN and a deep NN with the same number of parameters, which one is more expressive and why?
 
-Deep NN's are more expressive because it processes the data more firmly therefore the final predictors become the essence of the data.
+Deep NN's are more expressive because they process the data more firmly therefore the final predictors become the essence of the data.
 
 
 **6.** The Universal Approximation Theorem states that a neural network with 1 hidden layer can approximate any continuous function for inputs within a specific range. Then why can’t a simple neural network reach an arbitrarily small positive error?
 
-********
+...
 
 **7.** What are saddle points and local minima? Which are thought to cause more problems for training large NNs?
 
 If we think the loss function as a path in the parameter space, local minima represents a minimum point relative to its nearby points. However this point is not the global minimum.
 
-In the saddle point the gradinet of f is 0 Saddle points seem to be worse. (ref: https://or.stackexchange.com/questions/7778/quality-of-solutions-from-saddle-points-vs-local-minimums)
+In the saddle point the gradient of f is 0 Saddle points seem to be worse. (ref: https://or.stackexchange.com/questions/7778/quality-of-solutions-from-saddle-points-vs-local-minimums)
 
-**8.**
+**8.**uilds 
 
 * i. What are the differences between parameters and hyperparameters?
 
-Parameters are the coefficients of the model. Consider: WTX = y_hat. W is the parameters of the model to estimate the outcome.
+Parameters are the coefficients of the model. Consider: WTX = y_hat. W are the parameters of the model to estimate the outcome.
 
 Hyperparameters on the other hand the *settings* of the model. They are determined previous to training and based on these values, the style of training changes. Ex: Solver: liblinear
 
 * ii. Why is hyperparameter tuning important?
 
-The best settings for each case changes. Therefore, to get most out of a model it should be tuned.
+The best settings for each case change. Therefore, to get most out of a model it should be tuned.
 
 * iii. Explain algorithm for tuning hyperparameters.
 
-Let me explain the GridSearch because it is the most straightforward tuning mechanism on ML world. In GridSearch we iteratively try the parameter comibnations on the model. In the end we select the best hyperparameter set and arrange the settings accordingly.
+Let me explain GridSearch, as it is the most straightforward tuning mechanism in the ML world. In GridSearch we iteratively try the parameter comibnations on the model. In the end we select the best hyperparameter set and arrange the settings accordingly.
 
 **9.** 
 
 * i. What makes a classification problem different from a regression problem?
 
-A classificaiton problem can be handled based on monitoring the probabilities and expected values whereas a regression problem is more straightforward. The model determines the coefficients and computes the outcome. Based on the error, it updates its parameters in every iteration.
+A classification problem can be handled based on monitoring the probabilities and expected values whereas a regression problem is more straightforward. The model determines the coefficients and computes the outcome. Based on the error, it updates its parameters in every iteration.
 
 * ii. Can a classification problem be turned into a regression problem and vice versa?
 
 Actually by using probabilities and changing the loss function, we turn a classification problem into a regression problem. 
 
-Converting regression problem to a classification probelm is also possible. Instead of trying to estimate a number the model can estimate whether estimated number is in group 1, 2, 3 etc.
+Converting regression problem to a classification problem is also possible. Instead of trying to estimate a number the model can estimate whether estimated number is in group 1, 2, 3 etc.
 
 **10.**
 
 * i. What’s the difference between parametric methods and non-parametric methods? Give an example of each method.
 
-Parametric methods builds the model on top of assumptions. (Possibly the base assumption is data is normally distributed.)
+Parametric methods build the model on top of assumptions. (Possibly the base assumption is data is normally distributed.)
 After making these assumptions it finds parameters like mean and standard deviation to explain the patterns lie in the data. Ex: Linear Regression
 
 Nonparametric method makes no assumption on data. Due to this reason, it requires more computational power and data. Ex: KNN
 
 * ii. When should we use one and when should we use the other? 
 
-If we have less time, data or computational resources or we are confident enough that the data is alligned with our assumptions, we should use parametric methods.
+If we have limited time, data, or computational resources, or if we are confident that the data aligns with our assumptions, we should use parametric methods.
 
 
 **11.** Why does ensembling independently trained models generally improve performance?
@@ -140,7 +138,7 @@ Expected_value(X) = 1 - (5_3)(0.3)(0.3)(0.3)(0.7)(0.7) - (5_4)(0.3)(0.3)(0.3)(0.
 
 **12.** Why does L1 regularization tend to lead to sparsity while L2 regularization pushes weights closer to 0?
 
-Consider gradient descent. When we use L2 norm for regularization, change in gradient will be exponential therefore the final value won't be 0. The graident vanishes before that happens.
+Consider gradient descent. When we use L2 norm for regularization, change in gradient will be exponential therefore the final value won't be 0. The gradient vanishes before that happens.
 
 On the other hand, L1 norm is a subgradient meaning all the values not being 0 treated as the same (same gradient) Eventually the final value becomes zero.
 
@@ -149,32 +147,57 @@ On the other hand, L1 norm is a subgradient meaning all the values not being 0 t
 
 **13.** Why does an ML model’s performance degrade in production?
 
+One of the biggest assumption of ML is training and test data is coming from the same distribution. While it is applicable and make our lives lot easier, its accuracy decreases significantly. For example, production is a continuous process which means the distribution of the data changes slightly all the time even if we did not make any change in production schema. Machines work less and less efficient, temperature and pressure changes etc. That's why the interpretability of a trained model constantly decreases. Online learning can be helpful to deal with this problem. However we have to factor the convergence speed and computational resources while we are using an online learning model.
 
 
 **14.** What problems might we run into when deploying large machine learning models?
 
+-> There is an inverse correlation between model complexity and interpretability. This can cause some problems.
+
+-> Large Machine Learning models tend to be slower. The lack of speed can cost a lot in production.
+
+-> Large ML models require high computational power. If there is no such resource, the company may need to pay a lot only for this model.
+
 **15.** Your model performs really well on the test set but poorly in production.
 * i. What are your hypotheses about the causes?
+
+A. I think the training and test sets was sampled in the same time. The model is powerful and trained appropriately so it can predict the test set pretty well. However, by the time the model is ready the related distributions about the production changed hence the model lost its interpretability.
+
+B. There is a data leakage in training set resulting wonderful performance on test set. However this leverage does not hold for data coming from the production sao the model fails.
+
 * ii. How do you validate whether your hypotheses are correct?
-[M] Imagine your hypotheses about the causes are correct. What would you do to address them?
+
+I would check the historical data and give the model for prediction. If the performance is still low then I would be sure that there is a data leakage. If otherwise is true, then I would conclude that the distribution of production data has changed.
+
+* iii. Imagine your hypotheses about the causes are correct. What would you do to address them?
+
+If the problem is data leakage, then the solution is easy. Find the erroneous part, remove it and train the model from scratch.
+
+If the problem is related with distributions,
+
+->If the generation of data is frequent, I would adopt an online learning model.
+
+->If the generation of the data is not frequent, I would train the model again and use it until it loses its validity. THis validity check can be determined based on assigning an accuracy threshold or something similar.
 
 ## 7.2 Sampling and creating training data <a name = "2"></a>
 
-1. If you have 6 shirts and 4 pairs of pants, how many ways are there to choose 2 shirts and 1 pair of pants?
+**1.** If you have 6 shirts and 4 pairs of pants, how many ways are there to choose 2 shirts and 1 pair of pants?
 
 (6_2)*(4_1) = 60 ways
 
-2.  What is the difference between sampling with vs. without replacement? Name an example of when you would use one rather than the other?
+**2.**  What is the difference between sampling with vs. without replacement? Name an example of when you would use one rather than the other?
 
-**Sampling with replacement:** On each trial the probability of each sample to be picked is 1/n. This means one sample caould be picked more than one time.
+**Sampling with replacement:** On each trial the probability of each sample to be picked is 1/n. This means one sample could be picked more than one time.
 
 **Sampling without replacement:** On each trial, the number of samples decreases. That's why the chance of a sample in the population to be picked increases (1/n, 1/(n-1)...).
 
-Lets say we have a large population which is hard to sample. Luckily we have a sample group. However since we have only one sample group, we can not apply Cental Limit Theorem directly. By bootstraping, we can multiply the sample groups we have and by using CLT, without collecting more samples we can gain some insights about the population.
+Lets say we have a large population which is hard to sample. Luckily we have a sample group. However since we have only one sample group, we can not apply Central Limit Theorem directly. By bootstrapping, we can multiply the sample groups we have and by using CLT, without collecting more samples we can gain some insights about the population.
 
-On the other hand, if the sampling is done fpr pther purposes, then adopting sampling without replacement would be a better choice. For example when deciding the winner of the lottery, if we use sampling with replacement then one lucky person could win more than one prize which is meaningless. 
+On the other hand, if the sampling is done for other purposes, then adopting sampling without replacement would be a better choice. For example when deciding the winner of the lottery, if we use sampling with replacement then one lucky person could win more than one prize which is meaningless. 
 
-**3.** Recall Accept Reject Sampling:
+**3.** Explain Markov chain Monte Carlo sampling.
+
+Recall Accept Reject Sampling:
 
 In Accept Reject sampling we are trying to sample from a probability distribution f(x) which is hard to sample from. We use a g(x) ~ N(μ,σ) for that purpose. Since it is Gaussian, we can easily pick samples from g(x). Then accept-reject part comes into play. Based on the probability f(x)/(M*g(x)); M ∈ N we accept or reject the samples that we have picked from g(x). Since M scales the distribution g(x), the scaled version covers f(x).
 
