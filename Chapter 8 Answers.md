@@ -246,11 +246,11 @@ Recurrent Neural Networks are degined to learn the sequential data like time ser
 
 * ii. What’s the motivation for LSTM?
 
-LSTM is designed for dealing with the vanishing gradient problem occuring in RNN. The math of VGB in RNN is:
+LSTM is designed for dealing with the Vanishing Gradient Problem (VGB) occuring in RNN. The math of VGB in RNN is:
 
 ![Derivative](Images/Derivative.png)
 
-Vanihing gradient problem occurs as the model continues to learn due to stack of tanh'.
+Vanishing gradient problem occurs as the model continues to learn due to stack of tanh's.
 
 * iii. How would you do dropouts in an RNN?
 
@@ -263,7 +263,7 @@ WE can apply dropouts to input and output layer of RNN. However applying dropout
 
 Density estimation is an attempt for estimating a distribution using a parametric or non parametric methods.
 
-**Parametric method:** We use a function to capture the patterns data points form. This is fast, but requires a prior geometric shape assumption (like sperical). 
+**Parametric method:** We use a function to capture the patterns data points form. This is fast, but requires a prior geometric shape assumption (like spherical). 
 
 -> Assume a shape
 
@@ -285,6 +285,7 @@ I -> am
   -> do
 
 I am 
+
     -> happy
 
     -> tired
