@@ -274,11 +274,11 @@ Rather than explaining it mathematically using hessian, I will try to explain li
 
 Let's look at the function -logx:
 
-<img src = Images/Log1.png width = 500>
+<img src = Images/Log1.png width = 300>
 
 and -log(1-x)
 
-<img src = Images/Log2.png width = 500>
+<img src = Images/Log2.png width = 300>
 
 consider binary cross entropy:
 
@@ -286,7 +286,7 @@ L = -{ylog(h(x)) + (1-y)log(1-h(x))}
 
 y ∈ [0,1]
 
-**Şurası GPTye göre düzenlenecek**
+When we combine these two in [0,1] range, we get a convex bowl.
 
 
 3. Given a logistic discriminant classifier:
