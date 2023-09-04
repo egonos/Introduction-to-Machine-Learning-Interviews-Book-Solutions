@@ -373,11 +373,13 @@ It means a change in one is irrelevant for the other.
 
 **5.** It’s a common practice to assume an unknown variable to be of the normal distribution. Why is that?
 
-Gaussian Distribution is easy to interpret and applicable for many cases.
+-> Gaussian Distribution has a really high interpretability mainly due to Central Limit Theorem.
+
+-> In natural occurances, the *simple* events are pretty compatible with Normal Distribution.
 
 **6.** How would you turn a probabilistic model into a deterministic model?
 
-Select a probability threshold and group the probabilities based on the magnitude comparison between threshold(s) and p_hat. 
+Select a probability threshold and label the probabilities based on the magnitude comparison between threshold(s) and p_hat. 
 
 **7.** Is it possible to transform non-normal variables into normal variables? How?
 
@@ -395,7 +397,7 @@ P(crash|month) = 5/12
 
 * ii. What's the probability that it will crash at any given moment?
 
-p(crash|sec) = 5/(12*30*24*3600)
+p(crash|sec) = 5/(12*30*24*60)
 
 **10.** Say you built a classifier to predict the outcome of football matches. In the past, it's made 10 wrong predictions out of 100. Assume all predictions are made independently., what's the probability that the next 20 predictions are all correct?,
 
