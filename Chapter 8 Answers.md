@@ -11,23 +11,32 @@
 
 **1.** What are the basic assumptions to be made for linear regression?
 
-* The data is normally distibuted.
+First my answer (since it is incomplete, I have also put the full answer as well)
 
-Ideally,
+-> The data is normally distibuted.
+-> Predictors are not correlated.
+-> Each data point is equally significant.
 
-* Predictors are not correlated.
-* Each data point is equally significant.
+>Mainly there are 7 assumptions taken while using Linear Regression: (ref: https://www.geeksforgeeks.org/assumptions-of-linear-regression/)
+
+>Linear Model
+> No Multicolinearlity in the data
+> Homoscedasticity of Residuals or Equal Variances
+> No Autocorrelation in residuals
+> Number of observations Greater than the number of predictors
+> Each observation is unique
+> Predictors are distributed Normally
 
 **2.** What happens if we don’t apply feature scaling to logistic regression?
 
 If we use gradient descent,
 
-Assume the vector space is in 2-D. If we does not scale thew predictors and there is a scale difference between those two, the contours looks like an amplified ellipse. The direction of the movement (opposite direction to the steepest descent) won't be towards the minima. That's why we observe some zig-zags. On the other hand, if we scale the features, the contour lines look like a circle. In that case, the direction of the movement always show the global minima.
+Assume the vector space is in 2-D. If we do not scale the predictors and there is a scale difference between them, the contours will look like an elongated ellipse. The direction of the movement (opposite direction to the steepest descent) won't be toward the minimum. That's why we observe some zig-zags. On the other hand, if we scale the features, the contour lines look like a circle, and the direction of the movement will always show the global minimum.
 
 
 If we use analytical methods,
 
-The coefficients assigned to each predictor become too different from each other. Therefore, the interpretability decreases. Independent from this, the model won't be trained optimally when the scales are not matching (remember regularizers use distances).
+The coefficients assigned to each predictor become too different from each other. Therefore, interpretability decreases. Independent of this, the model won't be trained optimally when the scales are not matching (remember, regularizers use distances).
 
 **3.** What are the algorithms you’d use when developing the prototype of a fraud detection model?
 
@@ -37,27 +46,27 @@ Autoencoders, clustering algorithms, isolation forests
 
 * i. Why do we use feature selection?
 
--> Reduced required memory (due to eliminating unnecesary predictors)
+-> Reduced required memory (due to eliminating unnecessary predictors)
 
 -> Increased training speed (less computational requirement)
 
--> Increased model performance (ml models utilize only relevant features during training)
+-> Improved model performance (ML models utilize only relevant features during training)
 
--> Reduced overfitting (Irrelevant features might causes th ml model to overfit)
+-> Reduced overfitting (irrelevant features might cause the ML model to overfit)
 
 * ii. What are some of the algorithms for feature selection? Pros and cons of each.
 
--> Tree algorithms: Resistant to scale differences. Able to capture **non-linear** realtionships. Prone to overfitting.
+-> Tree algorithms: Resistant to scale differences, able to capture non-linear relationships, prone to overfitting.
 
--> Linear models: Simple. Prone to underfitting. LASSO can be used for feature selection (makes the coefficients of the irrelevant features 0)
+-> Linear models: Simple, prone to underfitting. LASSO can be used for feature selection (makes the coefficients of irrelevant features zero).
 
--> Variance inflation factor (to decrease predictor relevancies). Only considers linear relationships.
+-> Variance inflation factor (to decrease predictor relevance): Only considers linear relationships.
 
 **5.** 
 
 * i. How would you choose the value of k?
 
--> **Elbow method:** We have to get get the most bang for our buck i.e. when distortion descrease becomes marginal then we need to stop to increase k.
+-> **Elbow method:** We want to get the most "bang for our buck," i.e., stop increasing k when the decrease in distortion becomes marginal.
 
 -> **Sector requirements:** Production availability, customer response etc.
 
@@ -67,13 +76,13 @@ By comparing the clustering results with true labels.
 
 * iii. How would you do it if the labels aren’t known?
 
--> Dimension reduction (if necessary) and visualization. In this way I also can decide which clustering algorithm is appropriate for this spesific case.
+-> Dimension reduction (if necessary) and visualization. This way, I can also decide which clustering algorithm is appropriate for this specific case.
 
--> Look at the distortion measure (we can use silhouette score as well). If increasing k still has a potential to deduce the distortion **significantly**, then I increase it. The opposite is true while decreasing the number of k.
+-> Look at the distortion measure (we can use silhouette score as well). If increasing k still has the potential to reduce the distortion significantly, then I will increase it. The opposite is true for decreasing the number of k.
 
 * iv. Given the following dataset, can you predict how K-means clustering works on it? Explain.
 
-No it's not going to work. DBSCAN would perform lot better. K-means will not perform the best in cyclic datasets. The distance between data points is minimized when the data has a spherical shape. Therefore in a non-sperical geometry, K-means can not perform well.
+No, it's not going to work. DBSCAN would perform a lot better. K-means will not perform well in non-spherical datasets. The distance between data points is minimized when the data has a spherical shape; therefore, in a non-spherical geometry, K-means cannot perform well.
 
 **6.**
 
