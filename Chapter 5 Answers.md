@@ -1,8 +1,11 @@
 # Chapter 5
 
-## 5.1.1 Vectors
+**Contents**
+- [5.1.1 Vectors](#1)
 
-**1. Dot product**
+## 5.1.1 Vectors <a name="1"></a>
+
+**1. Dot product** 
 
 * i.  What’s the geometric interpretation of the dot product of two vectors?
 
