@@ -539,11 +539,11 @@ By utilizing p-value
 
 * ii. What’s the distribution of p-values?
 
-***
+**
 
 * iii. Recently, a lot of scientists started a war against statistical significance. What do we need to keep in mind when using p-value and statistical significance?
 
-***
+**
 
 **13.** 
 
