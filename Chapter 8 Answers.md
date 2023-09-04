@@ -1,4 +1,13 @@
-# 8.1.2 Questions
+# Chapter 8
+
+- [8.1.2 Questions](#1)
+- [8.2.1 Natural language processing](#2)
+- [8.2.2 Computer vision](#3)
+- [8.2.3 Reinforcement learning](#4)
+- [8.2.4 Other](#5)
+- [8.3 Training neural networks](#6)
+
+## 8.1.2 Questions <a name = "1"></a>
 
 **1.** What are the basic assumptions to be made for linear regression?
 
@@ -215,7 +224,7 @@ It means the decision boundary is a line (2D) or a hyperplane (+2D). It is desir
 
 
 
-# 8.2.1 Natural language processing
+## 8.2.1 Natural language processing <a name = "2"></a>
 
 
 **1.** RNNs
@@ -327,7 +336,7 @@ Increasinf context length n may contribute the model performance especially the 
 
 
 
-# 8.2.2 Computer vision
+## 8.2.2 Computer vision <a name = "3"></a>
 
 **1.** For neural networks that work with images like VGG-19, InceptionNet, you often see a visualization of what type of features each filter captures. How are these visualizations created?
 
@@ -431,7 +440,7 @@ It seems that using tf.reshape() can be used for reshaping but since I have no e
 For a base model i
 
 
-# 8.2.3 Reinforcement learning
+## 8.2.3 Reinforcement learning <a name = "4"></a>
 
 **1.** Explain the explore vs exploit tradeoff with examples.
 
@@ -480,7 +489,7 @@ In RL design one of the most important thing is determining whether the RL has a
 I think, if we have a perfect model, RL will be more data efficient because RL doesn't have to gather useless information via trial and error. Large fraction of this kind of data is eliminated thanks to the model we added.
 
 
-# 8.2.4 Other
+## 8.2.4 Other <a name = "5"></a>
 
 **1.** An autoencoder is a neural network that learns to copy its input to its output. When would this be useful?
 
@@ -616,7 +625,7 @@ Bayesian Approach:
 
 
 
-# 8.3 Training neural networks
+## 8.3 Training neural networks <a name = "6"></a>
 
 **1.** When building a neural network, should you overfit or underfit it first?
 
