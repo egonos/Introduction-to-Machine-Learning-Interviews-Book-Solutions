@@ -707,6 +707,6 @@ Q: Reference Distributon
 
 I was aware of MAPE but I haven't use before to be honest. Let's look at it's definition:
 
-The mean absolute percentage error (MAPE), also known as mean absolute percentage deviation (MAPD), is a measure of prediction accuracy of a forecasting method in statistics. It usually expresses the **accuracy as a ratio** defined by the formula...([source](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)). Since what we are interested in is also percentage(ratio), using MAPE is the best choice.
+The mean absolute percentage error (MAPE), also known as mean absolute percentage deviation (MAPD), is a measure of prediction accuracy of a forecasting method in statistics. It usually expresses the **accuracy as a ratio** ([source](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)). Since what we are interested in is also percentage(ratio), using MAPE is the best choice.
 
 
