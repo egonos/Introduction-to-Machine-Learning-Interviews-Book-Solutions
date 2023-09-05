@@ -391,7 +391,7 @@ Convolutional layers are different from the Fully Connected Neural Network (FFN)
 
 **5.** What is the role of zero padding?
 
-The filter size is constant. When we use strides with the filters the outer most pixels will be processed lot less compared to the ones in the middle. Thats why we're using zero paading. This way we attempt to solve this problem.
+The filter size is constant. When we use strides with the filters the outer most pixels will be processed lot less compared to the ones in the middle. That's why we're using zero paading. This way we attempt to solve this problem.
 
 **6.** Why do we need upsampling? How to do it?
 
@@ -915,7 +915,7 @@ We want to get the benefits of two. Thats why we're implementing changing learni
 
 * ii. What might be the exceptions?
 
-If eta is already optimal applying this procedure is not beneficial.
+If eta is already optimal, applying this procedure is not beneficial.
 
 **18.** Batch size.
 
@@ -925,7 +925,7 @@ If eta is already optimal applying this procedure is not beneficial.
 
 -> The learning path could include much more zig-zags.
 
--> The memory requirements of this process decrerases.
+-> The memory requirements of this process decrease.
 
 * ii. What happens when you use the entire training data in a batch?
 
@@ -954,7 +954,7 @@ alpha_2 = (∂L/∂w1)^2 + (∂L/∂w2)^2
 
 alpha_3 = (∂L/∂w1)^2 + (∂L/∂w2)^2 + (∂L/∂w3)^2  {keeps getting bigger, decreases eta more and more}
 
-when given w is sparse, then the update will be occur on a higher eta allowing the model utilize sparse variables more effectively. On the other hand, if the reverse happens, eta keeps getting smaller so more fine tuned approach is adopted. 
+when given w is sparse, then the update will be occur on a higher eta allowing the model utilizes sparse variables more effectively. On the other hand, if the reverse happens, eta keeps getting smaller so more fine tuned approach is adopted. 
 
 Note that AdaGrad could stop learning before reaching global optima.
 
@@ -964,11 +964,11 @@ Note that AdaGrad could stop learning before reaching global optima.
  
 * i. What can you say about the ability to converge and generalize of Adam vs. SGD?
 
-ADAM optimizer is a really successfull optimization algorithm compared to its relatives. Therefore, I'll use my vote for ADAM optimizer. More technically, ADAM uses weight decay and momentum at the same time. The added properties of ADAM makes it robust to hard paths i.e. the convergence probability is higher.
+ADAM optimizer is a really successful optimization algorithm compared to its relatives. Therefore, I'll use my vote for ADAM optimizer. More technically, ADAM uses weight decay and momentum at the same time. The added properties of ADAM makes it robust to hard paths i.e. the convergence probability is higher.
 
 * ii. What else can you say about the difference between these two optimizers?
 
-SGD in default settings, does not use momentum. It also does not uses weight decay.
+SGD in default settings, does not use momentum. It also does not use weight decay.
 
 **21.** With model parallelism, you might update your model weights using the gradients from each machine asynchronously or synchronously. What are the pros and cons of asynchronous SGD vs. synchronous SGD?
 
@@ -976,13 +976,13 @@ ASGD
 
 **Pros:** Fast computing
 
-**Cons:** The asynchron nature results in old and new gradients to occur. Since not all the updates are based on the most recent one this can make model to stale.
+**Cons:** The asynchronous nature results in old and new gradients to occur. Since not all the updates are based on the most recent one this can make model to stale.
 
 SSGD
 
-**Pros:** Slower computing. Each worker has to wait until all of them become ready.
+**Pros:** More stable gradient update
 
-**Cons** More stable gradient update
+**Cons:** Slower computing. Each worker has to wait until all of them become ready.
 
 
 
@@ -1070,4 +1070,4 @@ changing y = w.x to x = w^-1.y helps us to recover the training data.
 
 **30.** Why do we try to reduce the size of a big trained model through techniques such as knowledge distillation instead of just training a small model from the beginning?
 
-Some of the times small models are not suitable becuase they underfit a lot. Instead of risking this especially if we have enough memory and computational resources, we can use more complex models and try to simplify their learning process.
+Some of the times small models are not suitable becauase they underfit a lot. Instead of risking this, especially if we have enough memory and computational resources, we can use more complex models and try to simplify their learning process.
