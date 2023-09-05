@@ -82,9 +82,7 @@ More informally, the metric induced by a norm "plays nicely" with the vector spa
 
 Definition. A linear transformation is a transformation T : R n → R m satisfying. T ( u + v )= T ( u )+ T ( v ) T ( cu )= cT ( u ) for all vectors u , v in R n and all scalars c .
 
-T(x)=the counter clockwise rotation of x by 90◦.
-
-([source](https://textbooks.math.gatech.edu/ila/linear-transformations.html#:~:text=come%20from%20matrices.-,Definition,n%20and%20all%20scalars%20c%20))
+T(x)=the counter clockwise rotation of x by 90◦. ([source](https://textbooks.math.gatech.edu/ila/linear-transformations.html#:~:text=come%20from%20matrices.-,Definition,n%20and%20all%20scalars%20c%20))
 
 Formally to prove a claim is true, we have to use x and y's but for the sake of understanding I will use numerical examples.
 
@@ -94,7 +92,7 @@ v = [[1,1,1],[1,1,1],[1,1,1]]  ; c = 3
 
 u = [2,2,2]
 
-j = [1,1,1]
+j = [1,1,1]Sources
 
 u+j = [3,3,3] {T ( u + v )= T ( u )+ T ( v ), the result is the same if we sum up the values elementwise}
 
@@ -122,10 +120,8 @@ det(M) = multipication of eigenvalues
 
 det(M) = 3 * 3 * 2 * -1 = -18
 
-Check out the formulas:
+Sources for formulas:[source](https://en.wikipedia.org/wiki/Trace_(linear_algebra), [source](https://en.wikipedia.org/wiki/Determinant))
 
-1. https://en.wikipedia.org/wiki/Trace_(linear_algebra)
-2. https://en.wikipedia.org/wiki/Determinant
 
 
 **6.** Without explicitly using the equation for calculating determinants, what can we say about this matrix’s determinant?
@@ -571,9 +567,7 @@ Visualization can be really handy since we have only two variables.
 
 * Takes lots of resources and time
 
-* Works only when we are testing a *spesific* goal.
-
-([source](https://www.experienceux.co.uk/ux-blog/the-pros-and-cons-of-ab-testing/))
+* Works only when we are testing a *spesific* goal. ([source](https://www.experienceux.co.uk/ux-blog/the-pros-and-cons-of-ab-testing/))
 
 
 **17.** Imagine that you have the prices of 10,000 stocks over the last 24 month period and you only have the price at the end of each month, which means you have 24 price points for each stock. After calculating the correlations of 10,000 * 9,9992 pairs of stock, you found a pair that has the correlation to be above 0.8.
