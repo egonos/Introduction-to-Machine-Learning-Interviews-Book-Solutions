@@ -239,14 +239,14 @@ It means the decision boundary is a line (in 2D) or a hyperplane (if more dimens
 
 * i. What’s the motivation for RNN?
 
-Recurrent Neural Networks are degined to learn the sequential data like time series, text data etc. The math is:
+Recurrent Neural Networks are designed to learn the sequential data like time series, text data etc. The math is:
 
 ![RNN](Images/RNN.png)
 
 
 * ii. What’s the motivation for LSTM?
 
-LSTM is designed for dealing with the Vanishing Gradient Problem (VGB) occuring in RNN. The math of VGB in RNN is:
+LSTM is designed for dealing with the Vanishing Gradient Problem (VGB) occurring in RNN. The math of VGB in RNN is:
 
 ![Derivative](Images/Derivative.png)
 
@@ -254,7 +254,7 @@ Vanishing gradient problem occurs as the model continues to learn due to stack o
 
 * iii. How would you do dropouts in an RNN?
 
-WE can apply dropouts to input and output layer of RNN. However applying dropout to a hidden state is a bit tricky. Lets look at mathematically:
+We can apply dropouts to input and output layer of RNN. However applying dropout to a hidden state is a bit tricky. Let's look at mathematically:
 
 ![DropoutRNN](Images/DropoutRNN.png)
 
@@ -269,16 +269,17 @@ Density estimation is an attempt for estimating a distribution using a parametri
 
 -> Find the best parameter combination to represent the data (like mean and variance)
 
-**Nonparametric method:** We use data points themselves to create the density estimation (like in the KNN Classification). We don't have to have a geometric shape assumption but since we use data points themselves, we need sufficient amount of data. Moreover this process is slower and not as efficient.
+**Nonparametric method:** We use data points themselves to create the density estimation (like in the KNN Classification). We don't have to have a geometric shape assumption but since we use data points themselves, we need sufficient amount of data. Moreover this process is slower and less efficient.
 
 -> Separate the data into small bins.
 
 -> Combine the bins.
 
 
-A language model prdicts the the outcome word probability distribution based on the data it gets.
+A language model predicts the the outcome word probability distribution based on the data it gets.
 
 I 
+
     -> am
 
     -> belive
@@ -306,7 +307,7 @@ Alternatively, we can use OHE for tokenization. The problem of this approach is 
 
 * ii. What’s the difference between count-based and prediction-based word embeddings?
 
-Prediction-based word embeddings include **context** (like Word2Vec) whereas count-based embeddings only considers the counts of a word (like TF-IDF).
+Prediction-based word embeddings include **context** (like Word2Vec) whereas count-based embeddings only consider the counts of a word (like TF-IDF).
 
 * iii. Most word embedding algorithms are based on the assumption that words that appear in similar contexts have similar meanings. What are some of the problems with context-based word embeddings?
 
@@ -334,11 +335,11 @@ D3 is the most relevant because it contains early,worm,get,bird. Similarly D2 ra
 
 * ii. Assume that document D5 goes on to tell more about the duck and the bird and mentions “bird” three times, instead of just once. What happens to the rank of D5? Is this change in the ranking of D5 a desirable property of TF/IDF? Why?
 
-Since TF increases it's rank also increases. Although the intention is good, the fact that an irrelevant addition of a word to a document increases it's ranking, this could be somewhat misleading.
+Since TF increases its rank also increases. Although the intention is good, the fact that an irrelevant addition of a word to a document increases it's ranking, this could be somewhat misleading.
 
 **6.** Your client wants you to train a language model on their dataset but their dataset is very small with only about 10,000 tokens. Would you use an n-gram or a neural language model?
 
-I would prefer n-grams because the Neural Language Models require lots of words to perform thier best. Moreover, starting with a simple model is always a good choice due to its low memory and computational requirements.
+I would prefer n-grams because the Neural Language Models require lots of words to perform their best. Moreover, starting with a simple model is always a good choice due to its low memory and computational requirements.
 
 **7.** For n-gram language models, does increasing the context length (n) improve the model’s performance? Why or why not?
 
@@ -427,7 +428,7 @@ Pooling is a downsampling method so if we remove it then the downsampling proces
 
 * iv. What happens if we replace a 2 x 2 max pool layer with a conv layer of stride 2?
 
-The commputational requirements increases since conv layer does matrix multipications and contains learnable parameters (max-pooling does not).
+The commputational requirements increases since conv layer does matrix multiplications and contains learnable parameters (max-pooling does not).
 
 `Output dim = (F-N+2P)/S + 1` formula still applies so output dimension remains the same.
 
@@ -439,24 +440,31 @@ Explained above.
 
 **10.** Can you use a base model trained on ImageNet (image size 256 x 256) for an object classification task on images of size 320 x 360? How?
 
+We can resize the input before giving it to a model. Since I'm a tensorflow user, I use `tf.image.resize()`.
+
 **11.** How can a fully-connected layer be converted to a convolutional layer?
 
-It seems that using tf.reshape() can be used for reshaping but since I have no experience on that topic I won't answer this question.
+It seems that using `tf.reshape()` can be used for reshaping but since I have no experience on that topic I won't answer this question.
 
 **12.** Pros and cons of FFT-based convolution and Winograd-based convolution.
 
-......
+FFT-based convolution: 
 
-For a base model i
+Reduced complexity
+
+Not good for large data since it needs an extremely long kernel. (source: The Scientist and Engineer's Guide to Digital Signal Processing FFT Convolution Chapter 18)
+
+...
+
 
 
 ## 8.2.3 Reinforcement learning <a name = "4"></a>
 
 **1.** Explain the explore vs exploit tradeoff with examples.
 
-I remember that I've read a similar concept in risk management materials. The statememnt is pretty simple. We have two edges: Playing conservative all the time and the opposite. Let's think about what happens if we purely adopt each of this behaviour:
+I remember that I've read a similar concept in risk management materials. The statememnt is pretty simple. We have two extremes: Playing conservative all the time and the opposite. Let's think about what happens if we purely adopt each of this behaviour:
 
-If we play conservative all the time, we take little to not risk but we probably miss lots of opportunities. On the other hand, if we behave coureously all the time, we frequently experience bad outcomes. Therefore, we have to find a balance between those two. For example (huggingface example), we can continue going to the restaurant we used to all the time. In this way, we minimize the risk of having a bad meal. However, we also miss the opportunities the other restaurants offer.
+If we play conservative all the time, we take little to not risk but we probably miss lots of opportunities. On the other hand, if we behave courageously all the time, we frequently experience bad outcomes. Therefore, we have to find a balance between those two. For example (huggingface example), we can continue going to the restaurant we used to all the time. In this way, we minimize the risk of having a bad meal. However, we also miss the opportunities the other restaurants offer.
 
 **2.** How would a finite or infinite horizon affect our algorithms?
 
@@ -489,51 +497,49 @@ I've realized I havent mentioned τ in my handwritings. τ refers trajectory (ac
 
 **7.**Pros and cons of on-policy vs. off-policy.
 
-Lets start with definitions. In parametrized policies we try to optimize θ so J(πθ) will be optimal. Now we can optimize θ analytically or using gradient ascent. Each update uses the data coming from the latest version of our policy. This is called on-policy. On the other hand, we call an optimization style off-policy when each update is based on the data coming from arbitrarily selected step. Off-policy methods are generally less stable and more efficient whereas on-policy methods are generally more stable and less efficient.
+Lets start with definitions. In parameterized policies we try to optimize θ so J(πθ) will be optimal. Now we can optimize θ analytically or using gradient ascent. Each update uses the data coming from the latest version of our policy. This is called on-policy. On the other hand, we call an optimization style off-policy when each update is based on the data coming from an arbitrarily selected step. Off-policy methods are generally less stable and more efficient whereas on-policy methods are generally more stable and less efficient.
 
 
 **8.** What’s the difference between model-based and model-free? Which one is more data-efficient?
 
-In RL design one of the most important thing is determining whether the RL has an access to another model or not. The model I'm mentioning is a function to predict action, state or transition. The main advantage of model-based RL is that in this type of learning RL can predict the possible outcomes of it's actions and select an action utiling this information. However, it is hard to obtain a model telling the ground truth all the time. Most of the time, the model includes some bias in itself and this bias exploits to the RL. Moreover, traiinng a model takes lots of computational resources so it is possible that after all the training efforts, we get an useless model.
+In RL design one of the most important thing is determining whether the RL has an access to another model or not. The model I'm mentioning is a function to predict action, state or transition. The main advantage of model-based RL is that in this type of learning RL can predict the possible outcomes of it's actions and select an action utiling this information. However, it is hard to obtain a model telling the ground truth all the time. Most of the time, the model includes some bias in itself and this bias exploits to the RL. Moreover, trainng a model takes lots of computational resources so it is possible that after all the training efforts, we get an useless model.
 
-I think, if we have a perfect model, RL will be more data efficient because RL doesn't have to gather useless information via trial and error. Large fraction of this kind of data is eliminated thanks to the model we added.
+I think, if we have a perfect model, RL will be more data efficient because RL doesn't have to gather useless information via trial and error. A large fraction of this kind of data is eliminated thanks to the model we added.
 
 
 ## 8.2.4 Other <a name = "5"></a>
 
 **1.** An autoencoder is a neural network that learns to copy its input to its output. When would this be useful?
 
-1. Nonlinear Dimension Reduction: To visualize the data or decrease the computational requirements, we use dimension reduction techniques. PCA is one of the most popular ones. However it has a downside. PCA applies dimension reduction linearly which may not be sufficient for some cases. In these cases, we can use Autoencoders.
+1. Nonlinear Dimension Reduction: To visualize the data or decrease the computational requirements, we use dimension reduction techniques. PCA is one of the most popular ones. However, it has a downside. PCA applies dimension reduction linearly which may not be sufficient for some cases. In these cases, we can use Autoencoders.
 
-2. Outlier detection: Think about that. If we compress a data and expand it again would the output contain the outliers? No, because during the compression phase, the algoritm eliminates it since the density where the outlier point lies is exteremely low.
+2. Outlier detection: Think about that. If we compress a data and expand it again would the output contain the outliers? No, because during the compression phase, the algorithm eliminates it since the density where the outlier point lies is extremely low.
 
 
 **2.** Self-attention.
 
 * i.  What’s the motivation for self-attention?
 
-Instead of processing all the data in once, let's mask some part of the data so that the model can **focus** on the remaining part.
+Instead of processing all the data at once, let's mask some part of the data so that the model can **focus** on the remaining part.
 
-Intuitive example: Instead of translating all the paragraph at once only focus one sentnece at a time. 
+Intuitive example: Instead of translating all the paragraph at once only focus one sentence at a time. 
 
 * ii. Why would you choose a self-attention architecture over RNNs or CNNs?
 
 Consider an NLP task. We totally can use RNN however after a certain point, it will become inferior.
 
--> Due vansihing gradients, it will forgot the first part of the text.
+-> Due vanisihing gradients, it will forget the first part of the text.
 
 -> It has to work in sequential meaning it can not be parallelized.
 
--> The attention models are less prone to overfitting therefore generally benefit from training in longer durations and larger window sizes. This makes them conventient to use. RoBERTa (a BERT model) for example is a BERT model trained longer durations and larger window sizes. Researchers noted that longer training **never** resulted in overfitting. 
+-> The attention models are less prone to overfitting, therefore generally benefit from training in longer durations and larger window sizes. This makes them conventient to use. For example, RoBERTa is a BERT model trained for longer durations and with larger window sizes. Researchers noted that longer training **never** resulted in overfitting. 
 
-On the other hand we don't have such problems in self-atention architecture.
+On the other hand we don't have such problems in self-attention architecture.
 
-Since CNN is primarily used for CV tasks I couln't find an academic paper directly comparing these two and I've couln't intuitively answer this question either. But I've found this answer:
+Since CNN is primarily used for CV tasks, I couldn't find an academic paper directly comparing these two and I've couldn't intuitively answer this question either. But I've found this answer:
 
 > What are the advantages of BERT?
-BERT offers several advantages over other deep learning approaches for sentiment analysis, such as recurrent neural networks (RNNs), convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. For example, BERT can leverage large amounts of unlabeled data to pre-train its model, thereby reducing the need for task-specific data and improving the generalization ability of the model. Additionally, BERT's bidirectional context enables it to handle ambiguous and complex expressions more effectively than unidirectional models. Furthermore, BERT can adapt to different tasks and domains by fine-tuning its model on specific data sets, thus increasing its flexibility and applicability.
-
-(https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bert-other-deep-learning#:~:text=BERT%20offers%20several%20advantages%20over,term%20memory%20(LSTM)%20networks.)
+BERT offers several advantages over other deep learning approaches for sentiment analysis, such as recurrent neural networks (RNNs), convolutional neural networks (CNNs), and long short-term memory (LSTM) networks. For example, BERT can leverage large amounts of unlabeled data to pre-train its model, thereby reducing the need for task-specific data and improving the generalization ability of the model. Additionally, BERT's bidirectional context enables it to handle ambiguous and complex expressions more effectively than unidirectional models. Furthermore, BERT can adapt to different tasks and domains by fine-tuning its model on specific data sets, thus increasing its flexibility and applicability.[source](https://www.linkedin.com/advice/0/how-do-you-compare-contrast-bert-other-deep-learning#:~:text=BERT%20offers%20several%20advantages%20over,term%20memory%20(LSTM)%20networks.)
 
 
 and ChatGPT:
@@ -566,7 +572,7 @@ However this approach,
 2. Is shape independent
 3. Weights did not got into training.
 
-We call this self attention.
+We call this self-Kind of but butattention.
 
 Introduction of Queries,Values, Keys
 
@@ -591,7 +597,7 @@ If we use multiple heads then we have multiple score and weight matricies. So in
 Y_final = Concat + Dense (Y(1), Y(2)....)
 
 
-In terms of performance, I expect an increase in accuracy since the final output is less dependent on any one attention layer. However I found this paper (https://arxiv.org/abs/1905.10650) indicating the increase may not be as important as we think. 
+In terms of performance, I expect an increase in accuracy, since there are multiple weight matrices  are used for differents parts of the text. However, like in the many ML algorithms, the more complex the model gets, the more risk for overfitting. Moreover, I found this [paper](https://arxiv.org/abs/1905.10650) indicating the increase may not be as important as we think. 
 
 
 **3.** Transfer learning
@@ -603,8 +609,9 @@ The first thing came to my mind is utilizing semi-supervised learning.
 
 * ii. What’s gradual unfreezing? How might it help with transfer learning?
 
-Lets define **catastrophic forgetting** first. Catastrophic forgetting is the *tendency of models to lose previous learnt knowledge abruptly while it may incorporate information relevant to target tasks, leading to overfitting.* (https://papers.nips.cc/paper_files/paper/2019/hash/c6bff625bdb0393992c9d4db0c6bbe45-Abstract.html). Basically when we try to adapt our transfer learning model for a particular task, sometimes we risk what it has learned. previously. To avoid this, we use gradual unfreezing. It helps us to avoid from catastrophic freezing. How it is done? Instead of fine tuning all the layers together, start with the outermost one. After, tuning finishes (learning curves become stable), proceed with the previous one and so on. (Howard, J., & Ruder, S. (2018). Universal language model fine-tuning for text classification. arXiv preprint arXiv:1801.06146.
-)
+LLet's first define catastrophic forgetting. Catastrophic forgetting is the tendency of neural networks to abruptly forget previously learned information while learning new tasks, potentially leading to overfitting [source](https://papers.nips.cc/paper_files/paper/2019/hash/c6bff625bdb0393992c9d4db0c6bbe45-Abstract.html). Gradual unfreezing is employed to mitigate this problem. Instead of fine-tuning all the layers simultaneously, start with the outermost layer. Once the learning curves for this layer have stabilized, proceed to fine-tune the next layer inward, and continue in this manner. This approach helps to preserve the generalizability of the pre-trained model while adapting it to a specific task [Howard, J., & Ruder, S. (2018). Universal language model fine-tuning for text classification. arXiv preprint arXiv:1801.06146].
+
+
 
 **4.** Bayesian methods.
 
@@ -639,13 +646,14 @@ Bayesian Approach:
 
 **1.** When building a neural network, should you overfit or underfit it first?
 
-I would underfit the first and increase the model complexity if necessary.
+I would underfit the first to get a baseline performance. If the baseline performance is sufficient enough, then I wouldn't bother to investigate further. On the other hand, if I have more computational resources and time I could increase the model complexity to see whether I can exceed the baseline performance.
 
 **2.** Write the vanilla gradient update.
 
 Xt+1 = Xt - eta * ∇f(Xt)
 
 **3.** Neural network in simple Numpy.
+
 * i. Write in plain NumPy the forward and backward pass for a two-layer feed-forward neural network with a ReLU layer in between.
 
 Forward Pass:
@@ -794,9 +802,9 @@ By using residual connections, we can prevent vanishing gradient problem to occu
 
 * i. How do we know that gradients are exploding? How do we prevent it?
 
-When the gradient are exploding generally the learning curve becomes significantly unstable. When we plot the learning curves and observe big zigzags then we can suspect that the exploding gradient problem takes in place.
+When the gradient are exploding generally the learning curve becomes significantly unstable. When we plot the learning curves and observe big zigzags then we can suspect that the exploding gradient problem takes place.
 
-Another way to detect exploding graident problem is observing lots of `NaN` during training process.
+Another way to detect exploding gradeent problem is observing lots of `NaN` during training process.
 
 Exploding gradients can be solved by  scaling the input data (min-max scaling an be a good choice because NN models does not accept negative inputs) or scaling the hidden layer outputs (Batch Normalization or Layer Normalization can be really useful in that case)
 
@@ -806,7 +814,7 @@ Exploding gradients can be solved by  scaling the input data (min-max scaling an
 
 **7.** Weight normalization separates a weight vector’s norm from its gradient. How would it help with training?
 
-If the weight vector is in check during the training process then exploding or vanishing gradient problems won't occur. Moreover, our graidents will be in a similar scle resulting in a lot more stable training.
+If the weight vector is in check during the training process then exploding or vanishing gradient problems won't occur. Moreover, our graidents will be in a similar scale resulting in a lot more stable training.
 
 
 **8.**When training a large neural network, say a language model with a billion parameters, you evaluate your model on a validation set at the end of every epoch. You realize that your validation loss is often lower than your train loss. What might be happening?
@@ -818,11 +826,11 @@ If the weight vector is in check during the training process then exploding or v
 
 **9.** What criteria would you use for early stopping?
 
-I would use validation loss because training loss will continusly drop due to overfitting as the training process continues. We have to monitor something else
+I would use validation loss because training loss will continuosly drop due to overfitting as the training process continues. We have to monitor something else
 
 **10.** Gradient descent vs SGD vs mini-batch SGD.
 
-Gradient descent is a method for optimizing functions that are hard to caluclate it's optima analytically. We can conduct this process in several ways. Full batch gradient descent,computes the gradients for each instance and updates the parameters based on the average value. SGD does the same thing but considering only one randomly selected sample. Finally mini-batch gradient descent applies GD somewhere in between. If we compare these;
+Gradient descent is a method for optimizing functions that are hard to calculate its optima analytically. We can conduct this process in several ways. Full batch gradient descent,computes the gradients for each instance and updates the parameters based on the average value. SGD does the same thing but considering only one randomly selected sample. Finally mini-batch gradient descent applies GD somewhere in between. If we compare these;
 
 **Full Batch GD:** Accurate, slow, computationally heavy
 
@@ -856,7 +864,7 @@ If |w|>1 then y will be too large therefore ∂L/∂y will be large. This big gr
 
 What to do?
 
-* Use regularization so that thwe weigths will always be in check.
+* Use regularization so that the weigths will always be in check.
 * Use an adaptive learning rate. Start fast and gradually slow down if necessary.
 
 **13.** Learning rate.
@@ -871,7 +879,7 @@ Consider gradient update:
 
 Wt+1 = Wt - eta * ∇f
 
-We started with random initialization so that our weights are not the same and they are small. If eta is big and the gradient is big enough then updated W quickly changes a lot. Therefore we need to decrease the learning rate unitl it becomes stable. To prevent this to happen besides the adaptive learning rate, we use learning rate warmup. In this way we make sure that any part of the training does not become unstable while using higher learning rates. In warmup phase we gradiually increase the learning rate. Then if necessary, we drop the learning rate until the model converges.
+We started with random initialization so that our weights are not the same and they are small. If eta is big and the gradient is big enough then updated W quickly changes a lot. Therefore we need to decrease the learning rate until it becomes stable. To prevent this to happen besides the adaptive learning rate, we use learning rate warmup. In this way we make sure that any part of the training does not become unstable while using higher learning rates. In warmup phase we gradually increase the learning rate. Then if necessary, we drop the learning rate until the model converges.
 
 
 **14.** Compare batch norm and layer norm.
