@@ -14,6 +14,12 @@ All about convex optimization: https://www.youtube.com/playlist?list=PLXsmhnDvpj
 
 Linear Algebra: https://www.youtube.com/playlist?list=PLoROMvodv4rMz-WbFQtNUsUElIh2cPmN9
 
+Machine Learning: https://www.youtube.com/watch?v=vStJoetOxJg&list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI
+
+Convolutional Neural Networks: https://www.youtube.com/watch?v=ArPaAX_PhIs&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF
+
+Deep Learning: https://www.youtube.com/watch?v=OVwEeSsSCHE&list=PLLssT5z_DsK_gyrQ_biidwvPYCRNGI3iv
+
 ChatGPT: For correcting grammar mistakes, typos and validating my answers.
 
 Thanks...
