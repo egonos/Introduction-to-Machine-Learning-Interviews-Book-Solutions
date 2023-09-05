@@ -41,7 +41,7 @@ a.T = [3,2,1]T
 
 * ii. Give an example of how the outer product can be useful in ML.
 
-To compute pairwise distance matrix in Simulated Annealing algorithm ([source](https://towardsdatascience.com/outer-products-a-love-letter-b29a2c2c818e))
+To compute pairwise distance matrix in Simulated Annealing algorithm ([source](https://towardsdatascience.com/outer-products-a-love-letter-b29a2c2c818e)).
 
 **3.** What does it mean for two vectors to be linearly independent?
 
@@ -73,9 +73,7 @@ The metric d(u,v)
 Conversely, if a metric has the above properties, then d(u,0)
  is a norm.
 
-More informally, the metric induced by a norm "plays nicely" with the vector space structure. The usual metric on Rn has the two properties mentioned above. But there are metrics on Rn that are topologically equivalent to the usual metric, but not translation invariant, and so are not induced by a norm.
-
-([source](https://math.stackexchange.com/questions/38634/difference-between-metric-and-norm-made-concrete-the-case-of-euclid))
+More informally, the metric induced by a norm "plays nicely" with the vector space structure. The usual metric on Rn has the two properties mentioned above. But there are metrics on Rn that are topologically equivalent to the usual metric, but not translation invariant, and so are not induced by a norm. ([source](https://math.stackexchange.com/questions/38634/difference-between-metric-and-norm-made-concrete-the-case-of-euclid))
 
 
 ## 5.1.2 Matrices <a name="2"></a>
@@ -106,7 +104,7 @@ Let A-1 be the inverse of matrix A. Then <A-1,A> = I. No all the matrix have an 
 
 **3.**  What does the determinant of a matrix represent?
 
-> *In mathematics, the determinant is a scalar value that is a function of the entries of a square matrix. It characterizes some properties of the matrix and the linear map > represented by the matrix. In particular, the determinant is nonzero if and only if the matrix is invertible and the linear map represented by the matrix is an isomorphism. The > determinant of a product of matrices is the product of their determinants (the preceding property is a corollary of this one). The determinant of a matrix A is denoted det(A), det A, > or |A|*. (https://en.wikipedia.org/wiki/Determinant)
+*In mathematics, the determinant is a scalar value that is a function of the entries of a square matrix. It characterizes some properties of the matrix and the linear map > represented by the matrix. In particular, the determinant is nonzero if and only if the matrix is invertible and the linear map represented by the matrix is an isomorphism. The > determinant of a product of matrices is the product of their determinants (the preceding property is a corollary of this one). The determinant of a matrix A is denoted det(A), det A, or |A|*. ([source](https://en.wikipedia.org/wiki/Determinant))
 
 **4.** What happens to the determinant of a matrix if we multiply one of its rows by a scalar ?
 
