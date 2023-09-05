@@ -120,7 +120,7 @@ det(M) = multipication of eigenvalues
 
 det(M) = 3 * 3 * 2 * -1 = -18
 
-Sources for formulas:[source](https://en.wikipedia.org/wiki/Trace_(linear_algebra), [source](https://en.wikipedia.org/wiki/Determinant))
+Sources of formulas:([source](https://en.wikipedia.org/wiki/Trace_(linear_algebra)), [source](https://en.wikipedia.org/wiki/Determinant))
 
 
 
