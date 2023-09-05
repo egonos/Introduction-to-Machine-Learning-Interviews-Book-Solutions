@@ -41,7 +41,7 @@ a.T = [3,2,1]T
 
 * ii. Give an example of how the outer product can be useful in ML.
 
-To compute pairwise distance matrix in Simulated Annealing algorithm (ref: https://towardsdatascience.com/outer-products-a-love-letter-b29a2c2c818e)
+To compute pairwise distance matrix in Simulated Annealing algorithm ([source](https://towardsdatascience.com/outer-products-a-love-letter-b29a2c2c818e))
 
 **3.** What does it mean for two vectors to be linearly independent?
 
@@ -75,7 +75,7 @@ Conversely, if a metric has the above properties, then d(u,0)
 
 More informally, the metric induced by a norm "plays nicely" with the vector space structure. The usual metric on Rn has the two properties mentioned above. But there are metrics on Rn that are topologically equivalent to the usual metric, but not translation invariant, and so are not induced by a norm.
 
-(ref: https://math.stackexchange.com/questions/38634/difference-between-metric-and-norm-made-concrete-the-case-of-euclid)
+([source](https://math.stackexchange.com/questions/38634/difference-between-metric-and-norm-made-concrete-the-case-of-euclid))
 
 
 ## 5.1.2 Matrices <a name="2"></a>
@@ -86,7 +86,7 @@ Definition. A linear transformation is a transformation T : R n → R m satisfyi
 
 T(x)=the counter clockwise rotation of x by 90◦.
 
-(ref: https://textbooks.math.gatech.edu/ila/linear-transformations.html#:~:text=come%20from%20matrices.-,Definition,n%20and%20all%20scalars%20c%20.)
+([source](https://textbooks.math.gatech.edu/ila/linear-transformations.html#:~:text=come%20from%20matrices.-,Definition,n%20and%20all%20scalars%20c%20))
 
 Formally to prove a claim is true, we have to use x and y's but for the sake of understanding I will use numerical examples.
 
@@ -164,7 +164,7 @@ If all the coluımns and rows of A (full rank) is a linearly independent square 
 
 Derivative the the slope a curve at a given point of the curve or more formally:
 
->In mathematics, the derivative shows the sensitivity of change of a function's output with respect to the input. (ref: https://en.wikipedia.org/wiki/Derivative)
+>In mathematics, the derivative shows the sensitivity of change of a function's output with respect to the input. ([source](https://en.wikipedia.org/wiki/Derivative))
 
 If the behaviour of the curve is dependent on more than one variable (multivariable calculus), we can calculate the sensitivity of that curve with respect to only one variable by using partial derivatives.
 
@@ -575,7 +575,7 @@ Visualization can be really handy since we have only two variables.
 
 * Works only when we are testing a *spesific* goal.
 
-(ref: https://www.experienceux.co.uk/ux-blog/the-pros-and-cons-of-ab-testing/)
+([source](https://www.experienceux.co.uk/ux-blog/the-pros-and-cons-of-ab-testing/))
 
 
 **17.** Imagine that you have the prices of 10,000 stocks over the last 24 month period and you only have the price at the end of each month, which means you have 24 price points for each stock. After calculating the correlations of 10,000 * 9,9992 pairs of stock, you found a pair that has the correlation to be above 0.8.
