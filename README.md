@@ -4,7 +4,7 @@ In this work, I aim to share the knowledge I've accumulated in the field of mach
 
 Main resources I have utilized:
 
-My notes from my previous research: Most of my answers are coming from here.
+My notes from my previous research: Most of my answers are coming from there.
 
 Excellent math channel: https://www.youtube.com/@ritvikmath
 
