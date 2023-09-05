@@ -14,7 +14,9 @@
 First my answer (since it is incomplete, I have also put the full answer as well)
 
 -> The data is normally distibuted.
+
 -> Predictors are not correlated.
+
 -> Each data point is equally significant.
 
 > "Mainly there are 7 assumptions taken while using Linear Regression([source](https://www.geeksforgeeks.org/assumptions-of-linear-regression/)):"
@@ -62,7 +64,7 @@ Autoencoders, clustering algorithms, isolation forests
 
 -> Variance inflation factor (to decrease predictor relevance): Only considers linear relationships.
 
-**5.** 
+**5.** k-means clustering.
 
 * i. How would you choose the value of k?
 
@@ -84,7 +86,7 @@ By comparing the clustering results with true labels.
 
 No, it's not going to work. DBSCAN would perform a lot better. K-means will not perform well in non-spherical datasets. The distance between data points is minimized when the data has a spherical shape; therefore, in a non-spherical geometry, K-means cannot perform well.
 
-**6.**
+**6.** k-nearest neighbor classification.
 
 * i. How would you choose the value of k?
 
@@ -168,7 +170,7 @@ User-item matrix is more powerful for personalized recommendations but can requi
 
 Trust the prior knowledge obtained form customers similar to the new user.
 
-**11.**Is feature scaling necessary for kernel methods?
+**11.** Is feature scaling necessary for kernel methods?
 
 Yes. Consider SVM. It constructs the decision boundaries based on distances. Therefore on a disproportional space, it's decision boundary assignments wouldn't be accurate.
 
@@ -315,9 +317,13 @@ A word may have more than one meaning. To solve this problem, we have to approac
 
 **5.** Given 5 documents:
  D1: The duck loves to eat the worm
+
  D2: The worm doesn’t like the early bird
+
  D3: The bird loves to get up early to get the worm
+
  D4: The bird gets the worm from the early duck
+
  D5: The duck and the birds are so different from each other but one thing they have in common is that they both get the worm
 
 * i. Given a query Q: “The early bird gets the worm”, find the two top-ranked documents according to the TF/IDF rank using the cosine similarity measure and the term set {bird, duck, worm, early, get, love}. Are the top-ranked documents relevant to the query?
@@ -343,7 +349,7 @@ I would prefer n-grams because the Neural Language Models require lots of words 
 
 **7.** For n-gram language models, does increasing the context length (n) improve the model’s performance? Why or why not?
 
-Increasinf context length n may contribute the model performance especially the model is too simple for the given dataset. When we increase the size n, the context of the given word is detemined based on more nearby words. This allows the model to capture more complex meanings. However, if the model is already appropriate for the given task, increasing n may decrease the model performance (besides increasing the computational requirements). If the text data is not too complex, then model tends to overfit i.e. includes more words then necessary.
+Increasing context length n may contribute the model performance especially the model is too simple for the given dataset. When we increase the size n, the context of the given word is detemined based on more nearby words. This allows the model to capture more complex meanings. However, if the model is already appropriate for the given task, increasing n may decrease the model performance (besides increasing the computational requirements). If the text data is not too complex, then model tends to overfit i.e. includes more words then necessary.
 
 
 
@@ -351,7 +357,7 @@ Increasinf context length n may contribute the model performance especially the 
 
 **1.** For neural networks that work with images like VGG-19, InceptionNet, you often see a visualization of what type of features each filter captures. How are these visualizations created?
 
-.........
+...
 
 
 **2.** Filter size.
@@ -495,7 +501,7 @@ I've realized I havent mentioned τ in my handwritings. τ refers trajectory (ac
 
 τ = (s0,a0,s1,a1...)
 
-**7.**Pros and cons of on-policy vs. off-policy.
+**7.** Pros and cons of on-policy vs. off-policy.
 
 Lets start with definitions. In parameterized policies we try to optimize θ so J(πθ) will be optimal. Now we can optimize θ analytically or using gradient ascent. Each update uses the data coming from the latest version of our policy. This is called on-policy. On the other hand, we call an optimization style off-policy when each update is based on the data coming from an arbitrarily selected step. Off-policy methods are generally less stable and more efficient whereas on-policy methods are generally more stable and less efficient.
 
@@ -629,7 +635,7 @@ Bayesian Approach:
 * ii. How are the pros and cons of Bayesian neural networks compared to the mainstream neural networks?
 * iii. Why do we say that Bayesian neural networks are natural ensembles?
 
-........
+...
 
 
 **5.**
@@ -638,7 +644,7 @@ Bayesian Approach:
 * ii. Why are GANs so hard to train?
 
 
-.......
+...
 
 
 
