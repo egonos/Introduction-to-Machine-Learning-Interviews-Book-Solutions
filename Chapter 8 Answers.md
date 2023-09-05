@@ -641,12 +641,48 @@ Bayesian Approach:
 **5.**
 
 * i. What do GANs converge to?
+
+GAN is a generative model. THe main goal of the model is to match output distribution D' with the original distribution D. Random distribution sample z, is converted to D' from the model. Mathematically speaking:
+
+G(z) ~ D'
+
+z ∈ Z (random distribution)
+
+The model two feed forward neural networks: Generator and Discriminator. The Discriminator tries to disitnguish the generated samples from the real ones whereas the Generator tries the reverse i.e. generate samples such that the discriminator couldn't find the difference between original and generated samples. The model continuosly updated via backprop algorithm. The learning is sequential. One model is freezed and the other one is trained.
+
+Generator training:
+
+Maximize discriminator error rate or D ~ D' or max D(G(z)) = 1
+
+Loss Function: Binary Crossentropy
+
+Discriminator:
+
+y = 1 if the sample is real and y = 0 ,f the sample is generated.
+
+x ∈ P_data
+
+y_hat = D(x) -> D(x): The output of a disciriminator when the input is coming from real samples
+
+L(D(x),1) = log(D(x))
+
+If the input is fake (generated) then
+
+y = D(G(z)) -> The output of a disciriminator when the input is coming from the generated samples; G(z): Generator's output
+
+L(D(G(z)),0) = log(1-D(G(z))) z ∈ Z
+
+During the training process, the Discriminator gets gradually better so log(1-D(G(z))) and log(D(x)) are both maximized.
+
+When we combine these two:
+
+<img src = Images/GAN%20equation.jpg width = 400>
+
+Converges to Nash equilibrium: Generator and Discriminator are both incapable of increasing their skills
+
 * ii. Why are GANs so hard to train?
 
-
-...
-
-
+To be honest I have no prior experience in GAN so I can not ansewr this question. But you can find some valuable information in [here](https://developers.google.com/machine-learning/gan/training) I belive.
 
 ## 8.3 Training neural networks <a name = "6"></a>
 
