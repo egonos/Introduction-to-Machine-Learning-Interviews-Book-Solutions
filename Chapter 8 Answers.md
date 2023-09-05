@@ -1061,9 +1061,7 @@ A basic algorithm for pruning is as follows:
 1. Evaluate the importance of each neuron.
 2. Rank the neurons according to their importance (assuming there is a clearly defined measure for "importance").
 3. Remove the least important neuron.
-4. Check a termination condition (to be determined by the user) to see whether to continue pruning.
-
-ref: https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)#:~:text=In%20the%20context%20of%20artificial,network%20while%20increasing%20its%20efficiency.
+4. Check a termination condition (to be determined by the user) to see whether to continue pruning.([source]https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)#:~:text=In%20the%20context%20of%20artificial,network%20while%20increasing%20its%20efficiency)
 
 
 **29.** Under what conditions would it be possible to recover training data from the weight checkpoints?

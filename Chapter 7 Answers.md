@@ -82,7 +82,7 @@ Deep NN's are more expressive because they process the data more firmly therefor
 
 If we think the loss function as a path in the parameter space, local minima represents a minimum point relative to its nearby points. However this point is not the global minimum.
 
-In the saddle point the gradient of f is 0 Saddle points seem to be worse. (ref: https://or.stackexchange.com/questions/7778/quality-of-solutions-from-saddle-points-vs-local-minimums)
+In the saddle point the gradient of f is 0 Saddle points seem to be worse. ([source](https://or.stackexchange.com/questions/7778/quality-of-solutions-from-saddle-points-vs-local-minimums))
 
 **8.** 
 
@@ -265,9 +265,9 @@ There is a mismatch between the concepts that have been talked about. My friend 
 
 We can employ a handful of statistical tests to determine whether two sets of samples belng to the same distribution:
 
-* Mann-Whitney U Test: This is a non-parametric test used to determine whether two sample groups belong to the same distribution. To compute this test effectively, the variables should be ordered because the calculations are made based on the order of the values.  (ref: https://acikders.ankara.edu.tr/pluginfile.php/30763/mod_resource/content/0/10_Mann%20Whitney%20U%20Testi.pdf)
+* Mann-Whitney U Test: This is a non-parametric test used to determine whether two sample groups belong to the same distribution. To compute this test effectively, the variables should be ordered because the calculations are made based on the order of the values.  ([source](https://acikders.ankara.edu.tr/pluginfile.php/30763/mod_resource/content/0/10_Mann%20Whitney%20U%20Testi.pdf))
 
-* t-test: This test is used to determine whether the means of two different statistical distributions are significantly different. (ref: https://acikders.ankara.edu.tr/pluginfile.php/169671/mod_resource/content/0/12_T%20TEST%C4%B0.pdf)
+* t-test: This test is used to determine whether the means of two different statistical distributions are significantly different. ([source](https://acikders.ankara.edu.tr/pluginfile.php/169671/mod_resource/content/0/12_T%20TEST%C4%B0.pdf))
 
 * Chi-Square Test: This test is suitable for evaluating whether two sets of categorical data come from the same distribution.
 
@@ -707,6 +707,6 @@ Q: Reference Distributon
 
 I was aware of MAPE but I haven't use before to be honest. Let's look at it's definition:
 
-The mean absolute percentage error (MAPE), also known as mean absolute percentage deviation (MAPD), is a measure of prediction accuracy of a forecasting method in statistics. It usually expresses the **accuracy as a ratio** defined by the formula...(ref: https://en.wikipedia.org/wiki/Mean_absolute_percentage_error). Since what we are interested in is also percentage(ratio), using MAPE is the best choice.
+The mean absolute percentage error (MAPE), also known as mean absolute percentage deviation (MAPD), is a measure of prediction accuracy of a forecasting method in statistics. It usually expresses the **accuracy as a ratio** defined by the formula...([source](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)). Since what we are interested in is also percentage(ratio), using MAPE is the best choice.
 
 
