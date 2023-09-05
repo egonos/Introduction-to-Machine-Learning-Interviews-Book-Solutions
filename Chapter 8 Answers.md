@@ -823,7 +823,7 @@ Exploding gradients can be solved by  scaling the input data (min-max scaling an
 If the weight vector is in check during the training process then exploding or vanishing gradient problems won't occur. Moreover, our graidents will be in a similar scale resulting in a lot more stable training.
 
 
-**8.**When training a large neural network, say a language model with a billion parameters, you evaluate your model on a validation set at the end of every epoch. You realize that your validation loss is often lower than your train loss. What might be happening?
+**8.** When training a large neural network, say a language model with a billion parameters, you evaluate your model on a validation set at the end of every epoch. You realize that your validation loss is often lower than your train loss. What might be happening?
 
 -> If the validation set is small enough the errors can be monitored higher or lower than it actually is.
 
@@ -875,11 +875,11 @@ What to do?
 
 **13.** Learning rate.
 
-i. Draw a graph number of training epochs vs training error for when the learning rate is too high, too low,acceptable.
+* i. Draw a graph number of training epochs vs training error for when the learning rate is too high, too low,acceptable.
 
 ![Convex](Images/Convex%20Bowls.png)
 
-What’s learning rate warmup? Why do we need it?
+* ii. What’s learning rate warmup? Why do we need it?
 
 Consider gradient update:
 
@@ -892,7 +892,7 @@ We started with random initialization so that our weights are not the same and t
 
 ->BatchNorm applies vertical normalization whereas layer normalization applies horizontal normalization.
 
-->BatchNorm is dependent on Batches, layer norm does not.
+->BatchNorm is dependent on batches, layer norm does not.
 
 The mathematics:
 
@@ -1040,7 +1040,7 @@ All the randomness decrease the risk of overfitting or neuron dependence.
 
 * i. What’s a dead neuron?
 
-When all the graidents related to a neuron become zero, the neuron won't be updated during the training process. This is called the dead neuron problem.
+When all the gradients related to a neuron become zero, the neuron won't be updated during the training process. This is called the dead neuron problem.
 
 * ii.  How do we detect them in our neural network?
 
@@ -1052,9 +1052,7 @@ Dead neuron problem occurs mostly due to the negative part of the ReLU. We can u
 
 * i. Pruning is a popular technique where certain weights of a neural network are set to 0. Why is it desirable?
 
-The goal of this process is to maintain accuracy of the network while increasing its efficiency. This can be done to reduce the computational resources required to run the neural network.
-
-ref: https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)#:~:text=In%20the%20context%20of%20artificial,network%20while%20increasing%20its%20efficiency.
+The goal of this process is to maintain accuracy of the network while increasing its efficiency. This can be done to reduce the computational resources required to run the neural network.([source](https://en.wikipedia.org/wiki/Pruning_(artificial_neural_network)#:~:text=In%20the%20context%20of%20artificial,network%20while%20increasing%20its%20efficiency))
 
 * ii. How do you choose what to prune from a neural network?
 
