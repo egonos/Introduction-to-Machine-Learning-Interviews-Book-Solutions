@@ -20,6 +20,8 @@ Convolutional Neural Networks: https://www.youtube.com/watch?v=ArPaAX_PhIs&list=
 
 Deep Learning: https://www.youtube.com/watch?v=OVwEeSsSCHE&list=PLLssT5z_DsK_gyrQ_biidwvPYCRNGI3iv
 
+Reinforcement Learning: https://spinningup.openai.com/en/latest/
+
 ChatGPT: For correcting grammar mistakes, typos and validating my answers.
 
 Thanks...
